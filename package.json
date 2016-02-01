@@ -1,0 +1,24 @@
+{
+  "name": "nguymin4.github.io",
+  "description": "My personal website",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nguymin4/nguymin4.github.io/nguymin4.github.io.git"
+  },
+  "dependencies": {
+    "babel-core": "^6.1.21",
+    "babel-loader": "^6.1.0",
+    "babel-preset-es2015": "^6.1.18",
+	"browser-sync": "^2.10.0",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.1.0",
+    "webpack": "^1.12.6"
+  },
+  "author": {
+    "name": "Minh Son Nguyen",
+    "email": "minh.son.nguyen.1209@gmail.com",
+    "url": ""
+  },
+  "license": "MIT"
+}
