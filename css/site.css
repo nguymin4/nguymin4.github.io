@@ -1,0 +1,105 @@
+html {
+  font: 300 100%/1.5 "Open Sans",sans-serif;
+  background-color: #fff;
+  color: #444;
+}
+
+html, body {
+  height: 100%;
+}
+
+.band {
+  min-height: 100%;
+  background-image: url("../img/57170ef024a93bcd60e336093fa6ae91.jpg");
+  background-attachment: initial;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  overflow: hidden;
+}
+
+.smoke {
+  background-image: url("../img/smoke.png");
+  background-size: contain;
+  background-position: bottom;
+  width: 574px;
+  height: 60%;
+  position: absolute;
+  bottom: 0px;
+  -webkit-animation: smoke-float 15s infinite linear;
+  -moz-animation: smoke-float 15s infinite linear;
+  -o-animation: smoke-float 15s infinite linear;
+  animation: smoke-float 15s infinite linear;
+  opacity: 0.9;
+}
+
+@-webkit-keyframes smoke-float {
+  from {
+    transform: translateX(-574px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@-moz-keyframes smoke-float {
+  from {
+    transform: translateX(-574px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@-o-keyframes smoke-float {
+  from {
+    transform: translateX(-574px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes smoke-float {
+  from {
+    transform: translateX(-574px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+.jumbotron {
+  position: absolute;
+  background-color: transparent;
+  width: 100%;
+  padding-top: 80px;
+  color: #fff;
+}
+
+.jumbotron h2 {
+  text-shadow: 0px 0px 10px #fff;
+}
+
+#contact {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  list-style: none;
+  margin-top: 30px;
+}
+
+#contact a {
+  text-shadow: 0px 0px 10px #fff;
+  color: #ffffff;
+}
+
+#contact li {
+  margin-bottom: 10px;
+}
+
+#contact .fa {
+  font-size: 2.75em;
+  vertical-align: middle;
+  margin-right: 20px;
+}
