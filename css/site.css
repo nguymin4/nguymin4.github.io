@@ -94,14 +94,20 @@
   }
 }
 
-html {
-  font: 300 100%/1.5 "Open Sans",sans-serif;
-  background-color: #fff;
-  color: #444;
-}
-
 html, body {
   height: 100%;
+  background-color: #fff;
+  color: #ffffff;
+  font-family: "Open Sans", "Ubuntu", sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.fa.fa-lkin-square:before {
+  content: "\f08c";
+}
+
+.fa.fa-lkin:before {
+  content: "\f0e1";
 }
 
 .band {
@@ -188,9 +194,6 @@ html, body {
   #contact a {
     display: block;
     margin-bottom: 20px;
-  }
-  #contact .fa {
-    font-size: 2.5em;
   }
 }
 

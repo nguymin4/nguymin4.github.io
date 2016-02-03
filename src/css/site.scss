@@ -1,4 +1,5 @@
 @import "layout";
+@import "anti_adblock";
 
 .band {
 	min-height: 100%;
@@ -79,10 +80,6 @@
 		a {
 			display: block;
 			margin-bottom: 20px;
-		}
-		
-		.fa {
-			font-size: 2.5em;
 		}
 	}
 }
