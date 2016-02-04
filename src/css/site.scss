@@ -3,7 +3,7 @@
 
 .band {
 	min-height: 100%;
-	// background-image: url("https://static-pss-eu.gcdn.co/shop/media/items/item_details_background/WoT_Gold_Prem_Consumables.jpg")
+	// background-image: url("https://static-pss-eu.gcdn.co/shop/media/items/item_details_background/WoT_Gold_Prem_Consumables.jpg");
 	background-image: url("../img/57170ef024a93bcd60e336093fa6ae91.jpg");
 	background-attachment: initial;
 	background-size: cover;
@@ -11,10 +11,12 @@
 	position: relative;
 	overflow: hidden;
 }
+
 .smokes {
 	position: absolute;
 	height: 100%;
 	width: 100%;
+	overflow: hidden;
 }
 
 .smoke {
@@ -27,6 +29,10 @@
 	bottom: 0px;
 	@include animation(smoke-float 12s infinite linear);
 	opacity: 0.9;
+	
+	@media screen and (min-height: 720px) {
+		height: 100%;
+	}
 }
 
 #content {
