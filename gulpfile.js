@@ -1,11 +1,17 @@
 var env = {
 	isWindows: process.platform.indexOf("win") !== -1,
-	isProduction: /production/i.test(process.env.NODE_ENV)
+	isProduction: /production/i.test(process.env.NODE_ENV),
+	cmd: (command) => (env.isWindows) ?
+		".\\node_modules\\.bin\\" + command + ".cmd" :
+		"./node_modules/.bin/" + command
 };
 
 var input = {
 	html: ["src/index.html"],
-	scss: "src/css/**/*.scss",
+	scss: {
+		target: "src/css/site.scss",
+		list:"src/css/**/*.scss"
+	},
 	js: "src/js/**/*.js"
 };
 

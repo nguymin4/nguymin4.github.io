@@ -3,16 +3,14 @@ var gulp = require("gulp"),
 	uglify = require("gulp-uglify"),
 	rename = require("gulp-rename"),
 	replace = require("gulp-replace"),
-	fs = require("fs"),
 	exec = require("child_process").exec;
 
 module.exports = function (env, input, output) {
 	
-	gulp.task("build", ["build:prepare", "html", "sass:build", "webpack:build"]);
+	gulp.task("build", ["build:env", "html", "sass:build", "webpack:build"]);
 	
-	gulp.task("build:prepare", function() {
+	gulp.task("build:env", function() {
 		env.isProduction = true;
-		fs.unlink(output.css + "/site.css", (err) => null);
 	});
 	
 	gulp.task("html", function() {
@@ -24,9 +22,11 @@ module.exports = function (env, input, output) {
 			
 		return src.pipe(gulp.dest(output.html));
 	});
-
+	
+	gulp.task("html:build", ["build:env", "html"]);
+	
 	gulp.task("sass:build", function () {
-		return gulp.src(input.scss)
+		return gulp.src(input.scss.target)
 			.pipe(sass({ outputStyle: "compressed" }).on('error', sass.logError))
 			.pipe(rename((path) => path.basename += ".min"))
 			.pipe(gulp.dest(output.css));
@@ -35,10 +35,7 @@ module.exports = function (env, input, output) {
 	gulp.task("webpack:build", ["uglify:js"]);
 	
 	gulp.task("webpack", function (cb) {
-		var cmd = (env.isWindows) ?
-			".\\node_modules\\.bin\\webpack.cmd" :
-			"./node_modules/.bin/webpack";
-		exec(cmd, function (err) {
+		exec(env.cmd("webpack"), function (err) {
 			if (!err) cb(null)
 			else cb(true);
 		});

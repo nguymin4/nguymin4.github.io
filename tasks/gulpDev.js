@@ -9,15 +9,16 @@ module.exports = function (env, input, output) {
 	gulp.task("build:dev", ["html", "sass:dev", "webpack:watch"]);
 
 	gulp.task("webpack:watch", function () {
-		var cmd = (env.isWindows) ? "webpack.cmd" : "webpack";
-		spawn(cmd, ["--watch"], {
+		var webpack = spawn(env.cmd("webpack"), ["--watch"], {
 			detached: false,
 			stdio: "inherit"
-		})
+		});
+		
+		process.on("exit", () => webpack.kill());
 	});
 	
 	gulp.task("sass:dev", function () {
-		return gulp.src(input.scss)
+		return gulp.src(input.scss.target)
 			.pipe(sass({ outputStyle: "expanded" }).on('error', sass.logError))
 			.pipe(gulp.dest(output.css))
 			// .pipe(browserSync.stream()); 
@@ -51,7 +52,7 @@ module.exports = function (env, input, output) {
 		// 	.on("change", reload);
 	
 		// Watch SCSS
-		gulp.watch(input.scss, ["sass:dev"]);
+		gulp.watch(input.scss.list, ["sass:dev"]);
 	
 		// Watch JS
 		gulp.watch(output.js + "/**/*.js")
