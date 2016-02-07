@@ -1,0 +1,22 @@
+#smokes {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.smoke {
+	background-image: url("../img/smoke.png");
+	background-size: contain;
+	background-position: bottom;
+	width: 574px;
+	height: 75%;
+	position: absolute;
+	bottom: 0px;
+	@include animation(smoke-float 12s infinite linear);
+	opacity: 0.9;
+	
+	@media screen and (min-height: 720px) {
+		height: 100%;
+	}
+}

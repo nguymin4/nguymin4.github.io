@@ -1,0 +1,39 @@
+@import "anti_adblock";
+@import "loading_screen";
+@import "contact";
+@import "smoke";
+
+.band {
+	min-height: 100%;
+	// background-image: url("https://static-pss-eu.gcdn.co/shop/media/items/item_details_background/WoT_Gold_Prem_Consumables.jpg");
+	background-image: url("../img/57170ef024a93bcd60e336093fa6ae91.jpg");
+	background-attachment: initial;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+	overflow: hidden;
+}
+
+#content {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+.jumbotron {
+	position: absolute;
+	background-color: transparent;
+	width: 100%;
+	padding-top: 80px;
+	color: #fff;
+	
+	h3 {
+		text-shadow: 0px 0px 10px #fff;
+	}
+	
+	p {
+		font-size: 1.25em;
+		font-style: italic;
+		margin-top: 20px;
+	}
+}
