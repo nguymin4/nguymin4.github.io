@@ -2,11 +2,11 @@
 @import "loading_screen";
 @import "contact";
 @import "smoke";
+@import "view_indicator";
 
 .band {
 	min-height: 100%;
-	// background-image: url("https://static-pss-eu.gcdn.co/shop/media/items/item_details_background/WoT_Gold_Prem_Consumables.jpg");
-	background-image: url("../img/57170ef024a93bcd60e336093fa6ae91.jpg");
+	background-image: url($main-background);
 	background-attachment: initial;
 	background-size: cover;
 	background-position: center center;
@@ -25,10 +25,10 @@
 	background-color: transparent;
 	width: 100%;
 	padding-top: 80px;
-	color: #fff;
+	color: $main-color;
 	
 	h3 {
-		text-shadow: 0px 0px 10px #fff;
+		text-shadow: 0px 0px 10px $main-color;
 	}
 	
 	p {
