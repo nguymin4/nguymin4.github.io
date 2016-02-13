@@ -12,6 +12,7 @@
 	margin: 0px 5px;
 	// @include border-radius(5px);
 	color: $main-color;
+	@include transition(opacity 0.25s ease);
 	
 	span {
 		display: block;
@@ -20,6 +21,7 @@
 		height: 6px; 
 		transform: skewX(-40deg);
 		margin-bottom: 5px;
+		@include transition(initial);
 	}
 	
 	i {
@@ -27,12 +29,12 @@
 		font-size: 2em;
 	}
 	
-	&:hover {
+	&:hover, &.active {
 		opacity: 1;
 		color: $main-color;
 		
 		span {
-			box-shadow: 0px 0px 10px $main-color;
+			box-shadow: 0px 0px 5px $main-color;
 		}
 	}
 }
