@@ -9,14 +9,20 @@
 	background-image: url("../img/smoke.png");
 	background-size: contain;
 	background-position: bottom;
-	width: 574px;
+	background-repeat: repeat-x;
+	width: $smoke-width;
 	height: 75%;
 	position: absolute;
 	bottom: 0px;
-	@include animation(smoke-float 12s infinite linear);
+	@include animation(smoke-float $smoke-floating-time infinite linear);
 	opacity: 0.9;
 	
 	@media screen and (min-height: 720px) {
 		height: 100%;
 	}
+}
+
+@include keyframes(smoke-float) {
+	from {transform: translateX(-#{$smoke-width})}
+	to {transform: translateX(0px)}
 }

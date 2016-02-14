@@ -1,9 +1,0 @@
-@include keyframes(spin) {
-    from { @include transform(rotate(90deg)); }
-    to { @include transform(rotate(450deg)); }
-}
-
-@include keyframes(smoke-float) {
-	from {transform: translateX(-574px)}
-	to {transform: translateX(0px)}
-}

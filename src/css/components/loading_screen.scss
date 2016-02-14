@@ -41,3 +41,8 @@ body.loaded {
 		@include animation(initial);
 	}
 }
+
+@include keyframes(spin) {
+    from { @include transform(rotate(90deg)); }
+    to { @include transform(rotate(450deg)); }
+}

@@ -1,5 +1,5 @@
 var smokes, width, l;
-var n = 7;
+var n = 3;
 
 function floatSmoke() {
 	for (var i = 0; i < smokes.length; i++) {
@@ -11,19 +11,23 @@ function floatSmoke() {
 }
 
 export default function () {
+	var container = document.getElementById("smokes");
 	var smoke = document.getElementsByClassName("smoke")[0];
 	var style = window.getComputedStyle(smoke);
 	width = parseInt(style.width);
+	container.removeChild(smoke);
 	
-	var container = document.getElementById("smokes");
-	
-	for (var i = 1; i <= n; i++) {
+	var smokes = []
+	for (var i = 0; i <= n; i++) {
 		smoke = document.createElement("div");
-		smoke.className = "smoke";
-		smoke.style.left = width * i;
 		container.appendChild(smoke);
+		smokes.push(smoke);
 	}
-		
-		
+	
+	smokes.forEach((smoke, i) => {
+		smoke.style.left = width * i;
+		smoke.className = "smoke"
+	});
+	
 	// requestAnimationFrame(floatSmoke);
 }
