@@ -1,18 +1,33 @@
 export default function () {
-	var hash = ["#", "#about-me", "#achievements", "#projects", "#interests"];
+	var container = $("#content");
+	var views = {
+		"#": "views/main.html",
+		"#about-me": "views/about.html",
+		"#achievements": "views/achievements.html",
+		"#projects": "views/projects.html",
+		"#interests": "views/interests.html",
+	}
+	var hashes = ["#", "#about-me", "#achievements", "#projects", "#interests"];
 
-	var getViewIndex = function () {
-		var active = hash.indexOf(location.hash);
-		console.log(active, location.hash);
-		return (active == -1) ? 0 : active;
-	};
+	function loadView(hash) {
+		return $.ajax(views[hash || "#"])
+			.done(function (data, status, xhr) {
+				container.html(data);
+			}).fail(function(data, status, xhr) {
+				container.html("");
+			});
+	}
 
 	window.addEventListener("hashchange", function () {
-		console.log(location.hash);
+		loadView(location.hash);
 	});
 
 	return {
-		hash: hash,
-		getViewIndex: getViewIndex
+		loadView: loadView,
+		preloadViews: () => hashes.map((hash) => loadView(hash)),
+		getViewIndex: function () {
+			var active = hashes.indexOf(location.hash);
+			return (active == -1) ? 0 : active;
+		}
 	}
 }

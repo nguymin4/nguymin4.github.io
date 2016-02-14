@@ -30,12 +30,12 @@ module.exports = function (env, input, output) {
 				baseDir: "./"
 			},
 			files: [output.css + "/**/*.css"],
-			snippetOptions: {
-				rule: {
-					match: /<\/body>/i,
-					fn: (snippet, match) => snippet + match
-				}
-			},
+			// snippetOptions: {
+			// 	rule: {
+			// 		match: /<\/body>/i,
+			// 		fn: (snippet, match) => snippet + match
+			// 	}
+			// },
 			 plugins: [{
 				module: "bs-html-injector",
 				options: {
