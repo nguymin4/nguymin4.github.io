@@ -1,21 +1,29 @@
-var smoke = document.getElementsByClassName("smoke");
-var width;
+var smokes, width, l;
+var n = 7;
 
 function floatSmoke() {
-	var l;
-	for (var i = 0; i < smoke.length; i++) {
-		l = parseInt(smoke[i].style.left);
-		if (l >= width * 4) l = -width
-		smoke[i].style.left = l + 1
+	for (var i = 0; i < smokes.length; i++) {
+		l = parseInt(smokes[i].style.left);
+		if (l >= width * 4) l = -width;
+		smokes[i].style.left = l + 1;
 	}
-	requestAnimationFrame(floatSmoke)
+	requestAnimationFrame(floatSmoke);
 }
 
 export default function () {
-	var style = window.getComputedStyle(smoke[0]);
+	var smoke = document.getElementsByClassName("smoke")[0];
+	var style = window.getComputedStyle(smoke);
 	width = parseInt(style.width);
 	
-	for (var i = 0; i < smoke.length; i++)
-		smoke[i].style.left = width * i;
+	var container = document.getElementById("smokes");
+	
+	for (var i = 1; i <= n; i++) {
+		smoke = document.createElement("div");
+		smoke.className = "smoke";
+		smoke.style.left = width * i;
+		container.appendChild(smoke);
+	}
+		
+		
 	// requestAnimationFrame(floatSmoke);
 }
