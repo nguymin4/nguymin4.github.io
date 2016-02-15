@@ -1,19 +1,44 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
-<head>
-	<title>Minh Son Nguyen</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic|Ubuntu:400,400italic" />
+<head prefix="og: http://ogp.me/ns#">
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self' cdnjs.cloudflare.com fonts.googleapis.com fonts.gstatic.com; script-src 'self' cdnjs.cloudflare.com 'unsafe-inline'">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+
+	<!--General info -->
+	<title>Minh Son Nguyen - Personal website</title>
+	<meta name="description" content="The personal website of Minh Son Nguyen - a programmer and a final year student in Lahti UAS, Finland - presenting his biography, projects, achievements and interests." />
+	<meta name="keywords" content="Minh Son Nguyen, nguymin4, software engineer, full-stack developer, 
+	biography, projects, portfolio, interests"/>
+	<meta name="author" content="Minh Son Nguyen" />
+	<link rel="shortcut icon" type="image/png" href="img/zen_circle.png?" />
+
+	<!--Open graph protocol-->
+	<meta property="og:title" content="Minh Son Nguyen - Personal website" />
+	<meta property="og:description" content="The personal website of Minh Son Nguyen - a programmer and a final year student in Lahti UAS, Finland - presenting his biography, projects, achievements and interests." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://nguymin4.github.io" />
+	<meta property="og:image" content="https://nguymin4.github.io/img/field3.jpg" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic" />
 	<link rel="stylesheet" href="css/site.min.css" />
 </head>
 
 <body>
+	<!-- Redirect to https -->
+	<script type="text/javascript">
+		var host = "nguymin4.github.io";
+		if (location.host === host && location.protocol !== "https:") location.protocol = "https:";
+	</script>
+	
 	<!-- Loading screen -->
 	<div id="overlay">
 		<div class="loader"></div>
 	</div>
-	
+
 	<!-- Main -->
 	<div class="band">
 		<!-- Contact -->
@@ -21,24 +46,27 @@
 			<li>
 				<a href="https://github.com/nguymin4"><i class="fa fa-github-square"></i></a>
 				<a href="https://www.linkedin.com/in/minhsonnguyen1209"><i class="fa fa-lkin-square"></i></a>
-				<a href="mailto:minh.son.nguyen.1209@gmail.com"><i class="fa fa-paper-plane" style="font-size: 2.6em"></i></a>
+				<script type="text/javascript">
+					var addr = "minh.son.nguyen", host = "gmail.com";
+					document.write("<a href='" + "mail" + "to:" + addr + "@" + host + "'><i class='fa fa-paper-plane'></i></a>");
+				</script>
 			</li>
 		</ul>
-		
+
 		<!--Smoke effects -->
 		<div id="smokes">
 			<div class="smoke"></div>
 		</div>
-		
+
 		<!-- Content -->
 		<div id="content"></div>
-		
+
 		<!-- View indicators -->
 		<nav id="view-indicators"></nav>
 	</div>
-	
-	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-	<script src="js/site.min.js"></script>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/site.min.js"></script>
 </body>
 
 </html>

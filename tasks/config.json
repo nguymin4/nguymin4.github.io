@@ -1,0 +1,6 @@
+{
+	"content-security-policy" : {
+		"dev": "default-src * 'unsafe-inline'",
+		"build": "default-src 'self' cdnjs.cloudflare.com fonts.googleapis.com fonts.gstatic.com; script-src 'self' cdnjs.cloudflare.com 'unsafe-inline'" 
+	}
+}

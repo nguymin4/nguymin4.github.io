@@ -1,5 +1,5 @@
 var smokes, width, l;
-var n = 3;
+var n = 2;
 
 function floatSmoke() {
 	for (var i = 0; i < smokes.length; i++) {
@@ -25,8 +25,8 @@ export default function () {
 	}
 	
 	smokes.forEach((smoke, i) => {
-		smoke.style.left = width * i;
-		smoke.className = "smoke"
+		smoke.style.left = width * i + "px";
+		smoke.className = "smoke";
 	});
 	
 	// requestAnimationFrame(floatSmoke);

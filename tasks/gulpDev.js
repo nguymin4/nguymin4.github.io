@@ -39,7 +39,7 @@ module.exports = function (env, input, output) {
 			 plugins: [{
 				module: "bs-html-injector",
 				options: {
-					files: ["index.html"]
+					files: ["index.html", input.html.views]
 				}
 			}]
 		});
@@ -47,7 +47,7 @@ module.exports = function (env, input, output) {
 
 	gulp.task("dev", ["browser-sync"], function () {
 		// Watch HTML
-		gulp.watch(input.html, ["html"]);
+		gulp.watch(input.html.target, ["html"]);
 		// gulp.watch(output.html + "/index.html")
 		// 	.on("change", reload);
 	

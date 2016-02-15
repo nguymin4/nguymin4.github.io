@@ -7,7 +7,10 @@ var env = {
 };
 
 var input = {
-	html: ["src/index.html"],
+	html: {
+		target: "src/index.html",
+		views : "views/**/*.html"
+	},
 	scss: {
 		target: "src/css/site.scss",
 		list:"src/css/**/*.scss"
