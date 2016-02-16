@@ -1,19 +1,17 @@
 export default function () {
 	var container = $("#content");
-	var views = {
-		"#": "views/main.html",
-		"#about-me": "views/about.html",
-		"#achievements": "views/achievements.html",
-		"#projects": "views/projects.html",
-		"#interests": "views/interests.html",
-	}
-	var hashes = ["#", "#about-me", "#achievements", "#projects", "#interests"];
+	var hashes = ["#", "#about-me", "#skills", "#projects", "#interests"];
+	var templates = ["main", "about", "skills", "projects", "interests"]
+		.map((template) => "views/" + template + ".html")
+	
+	var views = {};
+	hashes.forEach((hash, i) => views[hash] = templates[i]);
 
 	function loadView(hash) {
 		return $.ajax(views[hash || "#"])
 			.done(function (data, status, xhr) {
 				container.html(data);
-			}).fail(function(data, status, xhr) {
+			}).fail(function (data, status, xhr) {
 				container.html("");
 			});
 	}
@@ -23,6 +21,7 @@ export default function () {
 	});
 
 	return {
+		hashes: hashes,
 		loadView: loadView,
 		preloadViews: () => hashes.map((hash) => loadView(hash)),
 		getViewIndex: function () {

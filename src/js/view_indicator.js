@@ -1,10 +1,8 @@
 import BaseClass from "./base.js"
 
-var active;
-
 class Indicator extends BaseClass {
 	constructor(specs) {
-		super(null);
+		super();
 		this.specs = specs;
 		this.container = document.getElementById("view-indicators");
 	}
@@ -17,32 +15,39 @@ class Indicator extends BaseClass {
 		indicator.innerHTML = "<span></span><i class='fa " + specs.icon + "'></i>";
 		this.container.appendChild(indicator);
 		this.html = indicator;
+		return this;
 	}
 	toggleClass(className) {
 		$(this.html).toggleClass(className);
+		return this;
 	}
 }
 
-var indicators = [
-	{ icon: "fa-home", title: "Home", href: "#" },
-	{ icon: "fa-user", title: "About me", href: "#about-me" },
-	{ icon: "fa-certificate", title: "Achievements and Certificates", href: "#achievements" },
-	{ icon: "fa-code-fork", title: "Projects", href: "#projects" },
-	{ icon: "fa-gamepad", title: "Interests", href: "#interests" }
-].map(specs => new Indicator(specs));
-
-
 export default function (router) {
+	var indicators = [
+		{ icon: "fa-home", title: "Home" },
+		{ icon: "fa-user", title: "About me" },
+		{ icon: "fa-certificate", title: "Skills and Achievements" },
+		{ icon: "fa-code-fork", title: "Projects" },
+		{ icon: "fa-gamepad", title: "Interests" }]
+		.map((indicator, i) => {
+			indicator.href = router.hashes[i]; 
+			return indicator })
+		.map((indicator) => new Indicator(indicator));
+
+
+	var active = router.getViewIndex();
+
 	for (var i = 0; i < indicators.length; i++) {
-		indicators[i].render();
-		indicators[i].on("click", function (index) {
-			if (active !== index) {
-				indicators[active].toggleClass("active");
-				indicators[index].toggleClass("active");
-				active = index;
-			}
-		}.bind(null, i));
+		indicators[i].render()
+			.on("click", function (index) {
+				if (active !== index) {
+					indicators[active].toggleClass("active");
+					indicators[index].toggleClass("active");
+					active = index;
+				}
+			}.bind(null, i));
 	}
-	active = router.getViewIndex();
+
 	indicators[active].toggleClass("active");
 }
