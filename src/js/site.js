@@ -14,11 +14,10 @@ var documentLoaded = setInterval(function () {
 
 (function init() {
 	var mediator = {};
-	mediator.router = router(mediator);
-
-	mediator.router.loadView(location.hash)
-		.always(() => ready = true);
+	var _router = router(mediator);
+	mediator.router = _router;
+	_router.preloadViews(() => ready = true);
 
 	smokeEffect();
-	initViewIndicator(mediator.router);
+	initViewIndicator(_router);
 })();

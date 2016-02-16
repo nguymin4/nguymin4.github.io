@@ -36,7 +36,7 @@ export default function (router) {
 		.map((indicator) => new Indicator(indicator));
 
 
-	var active = router.getViewIndex();
+	var active = router.currentViewIndex;
 
 	for (var i = 0; i < indicators.length; i++) {
 		indicators[i].render()
