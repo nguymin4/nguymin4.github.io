@@ -6,7 +6,6 @@ export default class View {
 		this.route = route;
 		this.id = /\/(\w+).html/.exec(this.route)[1];
 	}
-
 	load() {
 		var self = this;
 		self.render();
@@ -18,7 +17,6 @@ export default class View {
 				self.html.innerHTML = "";
 			});
 	}
-
 	render() {
 		var section = document.createElement("section");
 		section.className = "view";
@@ -27,7 +25,6 @@ export default class View {
 		this.html = section;
 		return this;
 	}
-
 	toggleClass(className) {
 		$(this.html).toggleClass(className);
 		return this;

@@ -18,23 +18,90 @@
 	position: absolute;
 	height: 100%;
 	width: 100%;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	// @include bg-gradient(right, rgba(255,255,255,0), rgba(255,255,255,0.05));
 }
 
-.jumbotron {
+section.view {
 	position: absolute;
-	background-color: transparent;
-	width: 100%;
-	padding-top: 80px;
+	transform: translateX(-50vw);
+	height: 100%;
 	color: $main-color;
+	padding-top: 80px;
+	transition: all 0.75s ease 0s;
+	opacity: 0;
+	z-index: -1;
 	
-	h1 {
-		font-size: 1.75em;
+	.container {
+		padding-left: 80px;
+	}
+	
+	&.active {
+		transform: translateX(0);
+		transition: all 0.75s ease 0.25s;
+		opacity: 1;
+		z-index: 98;
+	}
+	
+	h1, h2, h3 {
 		text-shadow: 0px 0px 10px $main-color;
 	}
 	
+	h2 {
+		font-size: 1.75em;
+		margin: 0px 0px 30px 15px;
+		font-style: italic;
+	}
+	
+	h1, h3 {
+		font-family: Ubuntu;
+	}
+	
+	@media screen and (max-width: 768px) {
+		.container {
+			padding-left: 0px;
+		}
+		
+		.row {
+			margin: auto 15px;
+		}
+	}
+	
+	@media screen and (max-width: 640px) {
+		padding-top: 40px;
+	}
+}
+
+#home {
+	background-color: transparent;
+	width: 100%;
+	
+	.container {
+		padding-left: 0px;
+	}
+	
+	h1 {
+		font-size: 1.5em;
+	}
+	
 	p {
-		font-size: 1.25em;
+		font-size: 1.15em;
 		font-style: italic;
 		margin-top: 20px;
+	}
+	
+	@media screen and (max-width: 768px) {
+		p br {
+			display: none;
+		}
+	}
+}
+
+#about {
+	p.col-sm-9 {
+		margin-top: 20px;
+		line-height: 1.5em;
 	}
 }

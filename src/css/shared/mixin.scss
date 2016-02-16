@@ -38,6 +38,13 @@
 	@include constructor(transform, translateZ(0))
 }
 
+@mixin bg-gradient($specs...) {
+	background: -webkit-linear-gradient($specs);
+	background: -moz-linear-gradient($specs);
+	background: -o-linear-gradient($specs);
+	background: linear-gradient($specs);
+}
+
 @mixin animation($animate...) {
     $max: length($animate);
     $animations: '';

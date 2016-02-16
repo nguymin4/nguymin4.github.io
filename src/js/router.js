@@ -23,9 +23,10 @@ export default function () {
 		views[active].toggleClass("active");
 		views[index].toggleClass("active");
 		active = index;
+		$(router).trigger("viewIndexChanged", [active]);
 	});
 
-	return {
+	var router = {
 		hashes: hashes,
 		preloadViews: function (callback) {
 			callback = typeof callback === "function" ? callback : function () { };
@@ -36,6 +37,8 @@ export default function () {
 				callback();
 			});
 		},
-		currentViewIndex: active
+		currentViewIndex: getViewIndex()
 	}
+	
+	return router;
 }

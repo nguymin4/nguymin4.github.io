@@ -14,8 +14,8 @@
 	height: 75%;
 	position: absolute;
 	bottom: 0px;
-	@include animation(smoke-float $smoke-floating-time infinite linear);
 	opacity: 0.9;
+	@include animation(smoke-float $smoke-floating-time infinite linear);
 	
 	@media screen and (min-height: 720px) {
 		height: 100%;

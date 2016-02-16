@@ -34,20 +34,14 @@ export default function (router) {
 			indicator.href = router.hashes[i]; 
 			return indicator })
 		.map((indicator) => new Indicator(indicator));
-
-
-	var active = router.currentViewIndex;
-
-	for (var i = 0; i < indicators.length; i++) {
-		indicators[i].render()
-			.on("click", function (index) {
-				if (active !== index) {
-					indicators[active].toggleClass("active");
-					indicators[index].toggleClass("active");
-					active = index;
-				}
-			}.bind(null, i));
-	}
-
+	
+	indicators.forEach(indicator => indicator.render());
+	
+	var active =  router.currentViewIndex;
 	indicators[active].toggleClass("active");
+	$(router).on("viewIndexChanged", function(e, index, init) {
+		indicators[index].toggleClass("active");
+		if (!init) indicators[active].toggleClass("active");
+		active = index;
+	});
 }

@@ -1,8 +1,9 @@
 #view-indicators {
 	position: absolute;
 	width: 100%;
-	bottom: 10%;
+	bottom: 20px;
 	text-align: center;
+	z-index: 99;
 }
 
 .view-indicator {
