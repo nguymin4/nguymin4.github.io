@@ -1,9 +1,3 @@
-@import "anti_adblock";
-@import "loading_screen";
-@import "contact";
-@import "smoke";
-@import "view_indicator";
-
 .band {
 	min-height: 100%;
 	background-image: url($main-background);
@@ -14,13 +8,15 @@
 	overflow: hidden;
 }
 
+.ps-scrollbar-y, .ps-scrollbar-y-rail {
+	@include border-radius(0px !important);
+	width: 6px !important;
+}
+
 #content {
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	overflow: hidden;
-	top: 0;
-	left: 0;
 	// @include bg-gradient(right, rgba(255,255,255,0), rgba(255,255,255,0.05));
 }
 
@@ -28,14 +24,18 @@ section.view {
 	position: absolute;
 	transform: translateX(-50vw);
 	height: 100%;
+	width: 100%;
 	color: $main-color;
-	padding-top: 80px;
 	transition: all 0.75s ease 0s;
 	opacity: 0;
 	z-index: -1;
+	-webkit-overflow-scrolling: touch;
+	overflow-y: scroll;
+	overflow-x: hidden;
 	
-	.container {
-		padding-left: 80px;
+	.row {
+		margin: 80px auto 40px auto;
+		padding: 40px 0px;
 	}
 	
 	&.active {
@@ -59,28 +59,26 @@ section.view {
 		font-family: Ubuntu;
 	}
 	
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 840px) {
+		
 		.container {
-			padding-left: 0px;
+			padding-top: 100px;
 		}
 		
 		.row {
 			margin: auto 15px;
 		}
-	}
-	
-	@media screen and (max-width: 640px) {
-		padding-top: 40px;
+		
+		&#home .container {
+			padding-top: 60px;
+		}
 	}
 }
 
 #home {
 	background-color: transparent;
 	width: 100%;
-	
-	.container {
-		padding-left: 0px;
-	}
+	padding-top: 100px;
 	
 	h1 {
 		font-size: 1.5em;
@@ -90,6 +88,8 @@ section.view {
 		font-size: 1.15em;
 		font-style: italic;
 		margin-top: 20px;
+		// @include bg-gradient(bottom, rgba(37, 57, 84, 0.4), rgba(37, 57, 84, 0));
+		// @include border-radius(5px);
 	}
 	
 	@media screen and (max-width: 768px) {
@@ -99,9 +99,17 @@ section.view {
 	}
 }
 
-#about {
-	p.col-sm-9 {
-		margin-top: 20px;
-		line-height: 1.5em;
+#interests {
+	.cell {
+		margin: 20px auto;
+		overflow: hidden;
+		min-height: 200px;
+		text-align: center;
+		
+		img {
+			width: 100%;
+			max-width: 400px;
+			margin: auto;
+		}
 	}
 }

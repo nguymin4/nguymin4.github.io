@@ -17,7 +17,7 @@ var documentLoaded = setInterval(function () {
 	var _router = router(mediator);
 	mediator.router = _router;
 	_router.preloadViews(() => ready = true);
-
+	
 	smokeEffect();
 	initViewIndicator(_router);
 })();

@@ -1,41 +1,58 @@
 #view-indicators {
 	position: absolute;
+	top: 0px;
 	width: 100%;
-	bottom: 20px;
+	height: 70px;
+	padding-top: 15px;
 	text-align: center;
 	z-index: 99;
+	@include forceGpu();
+	@include transition(all 0.25s ease);
 }
 
 .view-indicator {
 	display: inline-block;
-	opacity: 0.4;
 	cursor: pointer;
-	margin: 0px 5px;
-	// @include border-radius(5px);
 	color: $main-color;
+	opacity: 0.4;
+	margin: 0px 5px;
 	@include transition(opacity 0.25s ease);
-	
+
 	span {
+		position: relative;
+		top: 12px;
 		display: block;
+		width: 60px;
+		height: 4px;
+		transform: skew(-30deg, 0deg);
 		background-color: $main-color;
-		width: 50px; 
-		height: 6px; 
-		transform: skewX(-40deg);
-		margin-bottom: 5px;
 		@include transition(initial);
 	}
-	
+
 	i {
-		background: transparent;
+		display: inline-block;
+		width: 30px;
 		font-size: 2em;
+		background: transparent;
 	}
-	
+
 	&:hover, &.active {
 		opacity: 1;
 		color: $main-color;
 		
 		span {
-			box-shadow: 0px 0px 5px $main-color;
+			box-shadow: 0px 0px 10px $main-color;
+		}
+	}
+			
+	@media screen and (max-width: 768px) {
+		span {
+			width: 50px;
+		}
+		
+		i {
+			margin-left: 6px;
+			font-size: 1.75em;
 		}
 	}
 }

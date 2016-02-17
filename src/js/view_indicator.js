@@ -1,10 +1,10 @@
 import BaseClass from "./base.js"
-
+var $container = $("#view-indicators");
+ 
 class Indicator extends BaseClass {
 	constructor(specs) {
 		super();
 		this.specs = specs;
-		this.container = document.getElementById("view-indicators");
 	}
 	render() {
 		var specs = this.specs
@@ -12,8 +12,8 @@ class Indicator extends BaseClass {
 		indicator.href = specs.href;
 		indicator.title = specs.title;
 		indicator.className = "view-indicator";
-		indicator.innerHTML = "<span></span><i class='fa " + specs.icon + "'></i>";
-		this.container.appendChild(indicator);
+		indicator.innerHTML = "<i class='fa " + specs.icon + "'></i><span></span>";
+		$container.append(indicator);
 		this.html = indicator;
 		return this;
 	}
@@ -43,5 +43,11 @@ export default function (router) {
 		indicators[index].toggleClass("active");
 		if (!init) indicators[active].toggleClass("active");
 		active = index;
+	});
+	
+	$(document).on("viewIndicatorOpacity", function(event, opacity) {
+		// $containers.css("background-color", "rgba(60, 60, 60, " + opacity + ")");
+		// $container.css("background-color", "rgba(65, 171, 233, " + opacity + ")");
+		$container.css("background-color", "rgba(37, 57, 84, " + opacity + ")");
 	});
 }

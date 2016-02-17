@@ -1,4 +1,5 @@
 var container = $("#content");
+var md = new MobileDetect(window.navigator.userAgent);
 
 export default class View {
 	constructor(hash, route) {
@@ -9,24 +10,51 @@ export default class View {
 	load() {
 		var self = this;
 		self.render();
-
 		return $.ajax(self.route)
 			.done(function (data, status, xhr) {
 				self.html.innerHTML = data;
 			}).fail(function (data, status, xhr) {
 				self.html.innerHTML = "";
+			}).always(function () {
+				if (!md.mobile()) self.recalibratePerfectScrollbar();
 			});
 	}
 	render() {
+		var self = this;
 		var section = document.createElement("section");
 		section.className = "view";
-		section.id = this.id;
+		section.id = self.id;
 		container.append(section);
-		this.html = section;
-		return this;
+		self.html = section;
+		
+		var event = md.mobile() ? "scroll" : "ps-scroll-y";	
+		$(self.html).on(event, function () {
+			self.setIndicatorOpacity();
+		});
+		return self;
 	}
 	toggleClass(className) {
-		$(this.html).toggleClass(className);
+		var $html = $(this.html); 
+		$html.css("overflow-y", "hidden").toggleClass(className);
+		setTimeout(function() {
+			$html.css("overflow-y", "scroll");
+		}, 1000);
+		this.setIndicatorOpacity();
 		return this;
+	}
+	setIndicatorOpacity() {
+		var top = $(this.html).scrollTop();
+		$(document).trigger("viewIndicatorOpacity", [top / 200]);
+	}
+	recalibratePerfectScrollbar() {
+		var $html = $(this.html);
+		$html.perfectScrollbar({
+			suppressScrollX: true,
+			scrollYMarginOffset: 20
+		});
+
+		window.addEventListener("resize", function () {
+			$html.perfectScrollbar("update");
+		});
 	}
 }

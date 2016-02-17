@@ -1,9 +1,16 @@
+#about {
+	p.col-sm-9 {
+		margin-top: 20px;
+		line-height: 1.5em;
+	}
+}
+
 #contact {
-	position: absolute;
-	top: 20px;
-	right: 20px;
+	// position: absolute;
 	list-style: none;
 	z-index: 99;
+	padding: 20px 0px 0px 0px;
+	min-width: 175px;
 	
 	a {
 		color: $main-color;
@@ -14,22 +21,12 @@
 	}
 	
 	.fa {
-		font-size: 2.8em; 
+		font-size: 2em; 
 		vertical-align: middle;
 		margin-right: 20px;
 	}
 	
 	.fa-paper-plane {
-		font-size: 2.4em;
-	}
-	
-	@media screen and (max-width: 640px) {
-		top: 40px;
-		right: 10px;
-		
-		a {
-			display: block;
-			margin-bottom: 20px;
-		}
+		font-size: 1.6em;
 	}
 }

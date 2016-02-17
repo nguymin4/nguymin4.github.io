@@ -1,4 +1,4 @@
-@mixin constructor($property, $specs) {
+@mixin constructor($property, $specs...) {
 	-webkit-#{$property}: $specs;
 	-moz-#{$property}: $specs;
 	-o-#{$property}: $specs;
@@ -6,7 +6,7 @@
 	#{$property}: $specs;
 }
 
-@mixin border-radius($radius) {
+@mixin border-radius($radius...) {
 	@include constructor(border-radius, $radius)
 }
 
