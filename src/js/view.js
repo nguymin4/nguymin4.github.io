@@ -27,10 +27,12 @@ export default class View {
 		container.append(section);
 		self.html = section;
 		
-		var event = md.mobile() ? "scroll" : "ps-scroll-y";	
-		$(self.html).on(event, function () {
-			self.setIndicatorOpacity();
-		});
+		// Deprecated used background-image instead of set opacity
+		// var event = md.mobile() ? "scroll" : "ps-scroll-y";	
+		// $(self.html).on(event, function () {
+		// 	self.setIndicatorOpacity();
+		// });
+		
 		return self;
 	}
 	toggleClass(className) {
@@ -39,9 +41,10 @@ export default class View {
 		setTimeout(function() {
 			$html.css("overflow-y", "scroll");
 		}, 1000);
-		this.setIndicatorOpacity();
+		// this.setIndicatorOpacity();
 		return this;
 	}
+	// Deprecated because of using background-image
 	setIndicatorOpacity() {
 		var top = $(this.html).scrollTop();
 		$(document).trigger("viewIndicatorOpacity", [top / 200]);

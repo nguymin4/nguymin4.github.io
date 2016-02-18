@@ -1,6 +1,7 @@
 var smokes, width, l;
 var n = 2;
 
+// For testing purpose - no use at all
 function floatSmoke() {
 	for (var i = 0; i < smokes.length; i++) {
 		l = parseInt(smokes[i].style.left);

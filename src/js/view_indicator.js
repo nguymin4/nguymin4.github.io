@@ -12,7 +12,8 @@ class Indicator extends BaseClass {
 		indicator.href = specs.href;
 		indicator.title = specs.title;
 		indicator.className = "view-indicator";
-		indicator.innerHTML = "<i class='fa " + specs.icon + "'></i><span></span>";
+		// indicator.innerHTML = "<i class='fa " + specs.icon + "'></i><span></span>";
+		indicator.innerHTML = "<i>"+specs.title+"</i><span></span>";
 		$container.append(indicator);
 		this.html = indicator;
 		return this;
@@ -26,8 +27,8 @@ class Indicator extends BaseClass {
 export default function (router) {
 	var indicators = [
 		{ icon: "fa-home", title: "Home" },
-		{ icon: "fa-user", title: "About me" },
-		{ icon: "fa-certificate", title: "Skills and Achievements" },
+		{ icon: "fa-user", title: "About" },
+		{ icon: "fa-certificate", title: "Skills" },
 		{ icon: "fa-code-fork", title: "Projects" },
 		{ icon: "fa-gamepad", title: "Interests" }]
 		.map((indicator, i) => {
@@ -45,9 +46,8 @@ export default function (router) {
 		active = index;
 	});
 	
-	$(document).on("viewIndicatorOpacity", function(event, opacity) {
-		// $containers.css("background-color", "rgba(60, 60, 60, " + opacity + ")");
-		// $container.css("background-color", "rgba(65, 171, 233, " + opacity + ")");
-		$container.css("background-color", "rgba(37, 57, 84, " + opacity + ")");
-	});
+	// Deprecated because of using background-image 
+	// $(document).on("viewIndicatorOpacity", function(event, opacity) {
+	// 	$container.css("background-color", "rgba(37, 57, 84, " + opacity + ")");
+	// });
 }

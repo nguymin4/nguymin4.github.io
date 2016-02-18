@@ -6,8 +6,8 @@
 	#{$property}: $specs;
 }
 
-@mixin border-radius($radius...) {
-	@include constructor(border-radius, $radius)
+@mixin border-radius($specs) {
+	@include constructor(border-radius, #{$specs})
 }
 
 @mixin box-shadow($specs) {

@@ -2,43 +2,55 @@
 	position: absolute;
 	top: 0px;
 	width: 100%;
-	height: 70px;
-	padding-top: 15px;
+	padding: 10px 20px 10px 0px;
 	text-align: center;
 	z-index: 99;
 	@include forceGpu();
 	@include transition(all 0.25s ease);
+	background: url($main-background) no-repeat;
+	background-size: cover;
+	background-position: top center;
+	
+	@media screen and (max-width: 1000px) {
+		background-size: auto 100vh;
+	}
 }
 
-.view-indicator {
+a.view-indicator {
 	display: inline-block;
+	min-width: 65px;
 	cursor: pointer;
 	color: $main-color;
 	opacity: 0.4;
 	margin: 0px 5px;
 	@include transition(opacity 0.25s ease);
-
+	text-decoration: none;
+	text-align: center;
+	
 	span {
-		position: relative;
-		top: 12px;
 		display: block;
-		width: 60px;
 		height: 4px;
+		width: 100%;
+		margin-top: 2px;
 		transform: skew(-30deg, 0deg);
 		background-color: $main-color;
 		@include transition(initial);
 	}
 
 	i {
-		display: inline-block;
-		width: 30px;
-		font-size: 2em;
-		background: transparent;
+		display: block;
+		width: 100%;
+		font-size: 1.2em;
+		padding-left: 3px;
 	}
 
 	&:hover, &.active {
 		opacity: 1;
 		color: $main-color;
+		
+		i {
+			text-shadow: 0px 0px 5px $main-color;
+		}
 		
 		span {
 			box-shadow: 0px 0px 10px $main-color;
@@ -46,13 +58,10 @@
 	}
 			
 	@media screen and (max-width: 768px) {
-		span {
-			width: 50px;
-		}
-		
+		min-width: 55px;
+				
 		i {
-			margin-left: 6px;
-			font-size: 1.75em;
+			font-size: 1.1em;
 		}
 	}
 }
