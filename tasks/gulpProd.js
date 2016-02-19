@@ -4,7 +4,7 @@ var gulp = require("gulp"),
 	rename = require("gulp-rename"),
 	replace = require("gulp-replace"),
 	exec = require("child_process").exec,
-	config = require("./config.json");
+	config = require("./config.js");
 
 module.exports = function (env, input, output) {
 
