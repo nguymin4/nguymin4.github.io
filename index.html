@@ -20,21 +20,26 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://nguymin4.github.io" />
 	<meta property="og:image" content="https://nguymin4.github.io/assets/img/field3.jpg" />
+	
+	<script type="text/javascript">
+		// Redirect to https
+		var host = "nguymin4.github.io";
+		if (location.host === host && location.protocol !== "https:") location.protocol = "https:";
+		
+		// Load font based on platform	
+		var weight = /win/i.test(navigator.platform) ? 300 : 400;
+		var fontHref = "https://fonts.googleapis.com/css?family=Open+Sans:${weight},${weight}italic|Ubuntu:400,400italic";
+		var linkTag = "<link rel='stylesheet' href='"+ fontHref +"' />";
+		document.write(linkTag.replace(/\$\{weight\}/g, weight));
+	</script>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.10/css/perfect-scrollbar.min.css" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic|Ubuntu:400,400italic" />
 	<link rel="stylesheet" href="dist/css/site.min.css" />
 </head>
 
 <body>
-	<!-- Redirect to https -->
-	<script type="text/javascript">
-		var host = "nguymin4.github.io";
-		if (location.host === host && location.protocol !== "https:") location.protocol = "https:";
-	</script>
-
 	<!-- Loading screen -->
 	<div id="overlay">
 		<div class="loader"></div>
