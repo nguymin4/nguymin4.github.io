@@ -4,7 +4,7 @@ export default function () {
 	var routes = {}, active = 0;
 	var hashes = ["#", "#about-me", "#skills", "#projects", "#interests"];
 	var templates = ["home", "about", "skills", "projects", "interests"]
-		.map((template) => "views/" + template + ".html");
+		.map((template) => "assets/views/" + template + ".html");
 
 	hashes.forEach((hash, i) => routes[hash] = templates[i]);
 

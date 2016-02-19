@@ -1,7 +1,7 @@
 var env = {
 	isWindows: process.platform.indexOf("win") !== -1,
 	isProduction: /production/i.test(process.env.NODE_ENV),
-	cmd: (command) => (env.isWindows) ?
+	cmd: (command) => (this.isWindows) ?
 		".\\node_modules\\.bin\\" + command + ".cmd" :
 		"./node_modules/.bin/" + command
 };
@@ -9,7 +9,7 @@ var env = {
 var input = {
 	html: {
 		target: "src/index.html",
-		views : "views/**/*.html"
+		views : "assets/views/**/*.html"
 	},
 	scss: {
 		target: "src/css/site.scss",
@@ -20,8 +20,8 @@ var input = {
 
 var output = {
 	html: ".",
-	css: "css",
-	js: "js"
+	css: "dist/css",
+	js: "dist/js"
 };
 
 // Load development tasks
