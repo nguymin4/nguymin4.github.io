@@ -14,7 +14,7 @@
 	@include constructor(box-shadow, $specs)
 }
 
-@mixin transition($specs) {
+@mixin transition($specs...) {
 	@include constructor(transition, $specs)
 }
 

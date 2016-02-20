@@ -26,6 +26,7 @@ a.view-indicator {
 	@include transition(opacity 0.25s ease);
 	text-decoration: none;
 	text-align: center;
+	outline: none;
 	
 	span {
 		display: block;

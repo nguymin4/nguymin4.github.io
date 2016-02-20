@@ -1,0 +1,17 @@
+// Anti ad-block
+.fa {
+	&.fa-lkin-square:before {
+		content:"\f08c";
+	}
+	
+	&.fa-lkin:before {
+		content:"\f0e1";
+	}
+}
+
+// Customize perfect scrollbar
+.ps-scrollbar-y, .ps-scrollbar-y-rail {
+	@include border-radius(0px "!important");
+	width: 6px !important;
+	// @include forceGpu();
+}

@@ -1,0 +1,34 @@
+#home {
+	background-color: transparent;
+	width: 100%;
+	padding-top: 100px;
+	
+	h1 {
+		font-size: 1.5em;
+	}
+	
+	p {
+		font-size: 1.1em;
+		font-style: italic;
+		margin-top: 20px;
+		font-weight: 300;
+		// @include bg-gradient(bottom, rgba(37, 57, 84, 0.4), rgba(37, 57, 84, 0));
+		// @include border-radius(5px);
+	}
+	
+	@media screen and (max-width: 840px) {
+		p br {
+			display: none;
+		}
+		
+		& {
+			padding-top: 80px;
+		}
+	}
+	
+	@media screen and (max-width: 640px) {
+		p {
+			font-size: 1em;
+		}
+	}
+}

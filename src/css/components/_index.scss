@@ -1,6 +1,9 @@
-@import "main";
-@import "anti_adblock";
 @import "loading_screen";
-@import "about";
 @import "smoke";
 @import "view_indicator";
+
+// Views
+@import "main";
+@import "home";
+@import "about";
+@import "interest";

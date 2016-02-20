@@ -7,11 +7,6 @@
 	overflow: hidden;
 }
 
-.ps-scrollbar-y, .ps-scrollbar-y-rail {
-	@include border-radius(0px "!important");
-	width: 6px !important;
-}
-
 #content {
 	position: absolute;
 	height: 100%;
@@ -25,20 +20,21 @@ section.view {
 	height: 100%;
 	width: 100%;
 	color: $main-color;
-	transition: all 0.75s ease 0s;
+	@include transition(all 0.75s ease 0s);
 	opacity: 0;
 	z-index: -1;
 	overflow-y: scroll;
 	overflow-x: hidden;
+	padding-top: 40px;
 	
 	.row {
-		margin: 80px auto 40px auto;
+		margin: 15px auto;
 		padding: 40px 0px;
 	}
 	
 	&.active {
 		transform: translateX(0);
-		transition: all 0.75s ease 0.25s;
+		@include transition(all 0.75s ease 0.25s);
 		opacity: 1;
 		z-index: 98;
 	}
@@ -48,67 +44,12 @@ section.view {
 	}
 	
 	h2 {
-		font-size: 1.75em;
+		font-size: 1.6em;
 		margin: 0px 0px 30px 15px;
 		font-style: italic;
 	}
 	
 	h1, h3 {
 		font-family: Ubuntu;
-	}
-	
-	@media screen and (max-width: 840px) {
-		
-		.container {
-			padding-top: 60px;
-		}
-		
-		.row {
-			margin: auto 15px;
-		}
-		
-		&#home .container {
-			padding-top: 20px;
-		}
-	}
-}
-
-#home {
-	background-color: transparent;
-	width: 100%;
-	padding-top: 100px;
-	
-	h1 {
-		font-size: 1.5em;
-	}
-	
-	p {
-		font-size: 1.15em;
-		font-style: italic;
-		margin-top: 20px;
-		font-weight: 300;
-		// @include bg-gradient(bottom, rgba(37, 57, 84, 0.4), rgba(37, 57, 84, 0));
-		// @include border-radius(5px);
-	}
-	
-	@media screen and (max-width: 768px) {
-		p br {
-			display: none;
-		}
-	}
-}
-
-#interests {
-	.cell {
-		margin: 20px auto;
-		overflow: hidden;
-		min-height: 200px;
-		text-align: center;
-		
-		img {
-			width: 100%;
-			max-width: 400px;
-			margin: auto;
-		}
 	}
 }
