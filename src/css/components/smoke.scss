@@ -7,19 +7,13 @@
 
 .smoke {
 	background-image: url("/assets/img/smoke.png");
-	background-size: contain;
-	background-position: bottom;
-	background-repeat: repeat-x;
+	background-repeat: repeat;
 	width: $smoke-width;
-	height: 75%;
+	height: calc(100% - 80px);
 	position: absolute;
 	bottom: 0px;
 	opacity: 0.9;
 	@include animation(smoke-float $smoke-floating-time infinite linear);
-	
-	@media screen and (min-height: 720px) {
-		height: 100%;
-	}
 }
 
 @include keyframes(smoke-float) {

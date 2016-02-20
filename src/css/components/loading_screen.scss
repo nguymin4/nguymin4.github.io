@@ -17,13 +17,12 @@ $radius: #{$loading-circle-radius}#{$loading-circle-unit};
 	top: calc(50% - #{$diameter});
 	left: calc(50% - #{$radius});
 	margin: auto;
-	font-size: 1em;
+	font-size: 0.8em;
 	text-indent: -9999em;
-	border-top: 1.1em solid #D50F25;
-	border-bottom: 1.1em solid #009925;
-	border-left: 1.1em solid #3369E8;
-	border-right: 1.1em solid #EEB211;
-	// @include forceGpu();
+	border-top: 0.8em solid #D50F25;
+	border-bottom: 0.8em solid #009925;
+	border-left: 0.8em solid #3369E8;
+	border-right: 0.8em solid #EEB211;
 	@include animation(spin 1.5s infinite ease);
 	transition: opacity 0.75s ease;
 	

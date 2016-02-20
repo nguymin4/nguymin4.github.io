@@ -1,7 +1,7 @@
 var env = {
 	isWindows: process.platform.indexOf("win") !== -1,
 	isProduction: /production/i.test(process.env.NODE_ENV),
-	cmd: (command) => (this.isWindows) ?
+	cmd: (command) => (env.isWindows) ?
 		".\\node_modules\\.bin\\" + command + ".cmd" :
 		"./node_modules/.bin/" + command
 };
