@@ -1,14 +1,67 @@
 #interests {
 	.cell {
+		font-family: Helvetica, Arial, sans-serif;
 		margin: 20px auto;
 		overflow: hidden;
-		min-height: 200px;
 		text-align: center;
+		perspective: 1000;
 		
-		img {
+		.flipper {
+			transition: 0.6s;
+			transform-style: preserve-3d;
+		}
+		
+		&:hover .flipper, &.hover .flipper {
+			transform: rotateX(180deg);
+		}
+		
+		.front, .back {
+			backface-visibility: hidden;
+			top: 0;
+			left: 0;
 			width: 100%;
-			max-width: 400px;
-			margin: auto;
+			max-width: 320px;
+			height: 100%;
+			min-height: 200px;
+			border: solid 1px $main-color;
+			@include border-radius(5px);
+		}
+		
+		/* front pane, placed above back */
+		.front {
+			z-index: 2;
+			transform: rotateX(0deg);
+			position: relative;
+			
+			div {
+				width: 100%;
+				position: absolute;
+				top: calc(50% - 40px);
+			}
+			
+			h4 {
+				font-size: 1em;
+			}
+			
+			.fa {
+				font-size: 0.5em;
+			}
+		}
+
+		/* back, initially hidden pane */
+		.back {
+			position: absolute;
+			background: $main-color;
+			transform: rotateX(180deg);
+			color: #303030;
+			padding: 20px 10px;
+			text-align: justify;
+		}
+		
+		@media screen and (max-width: 768px) {
+			.front, .back {
+				left: calc(50% - 160px);
+			}
 		}
 	}
 }
