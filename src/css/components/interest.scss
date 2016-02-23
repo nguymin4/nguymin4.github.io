@@ -1,5 +1,5 @@
 #interests {
-	.cell {
+	.card {
 		font-family: Helvetica, Arial, sans-serif;
 		margin: 20px auto;
 		overflow: hidden;
@@ -27,7 +27,6 @@
 			@include border-radius(5px);
 		}
 		
-		/* front pane, placed above back */
 		.front {
 			z-index: 2;
 			transform: rotateX(0deg);
@@ -48,14 +47,14 @@
 			}
 		}
 
-		/* back, initially hidden pane */
 		.back {
 			position: absolute;
 			background: $main-color;
 			transform: rotateX(180deg);
 			color: #303030;
-			padding: 20px 10px;
+			padding: 20px 15px;
 			text-align: justify;
+			letter-spacing: 0.75px;
 		}
 		
 		@media screen and (max-width: 768px) {

@@ -1,6 +1,8 @@
 export default class BaseClass {
-	constructor() {
+	constructor(tagName, $container) {
 		this.events = {};
+		this.$html = $(`<${tagName}></${tagName}>`);
+		$container.append(this.$html);
 	}
 	
 	on(event, fn) {

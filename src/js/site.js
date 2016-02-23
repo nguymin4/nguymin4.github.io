@@ -1,13 +1,15 @@
 "use strict";
 import "./base.js"
 import router from "./router.js";
-import smokeEffect from "./smoke.js";
-import initViewIndicator from "./view_indicator.js";
+import renderSmokeEffect from "./smoke.js";
+import renderViewIndicator from "./view_indicator.js";
+import renderInterestSection from "./interest_card.js";
 
 var ready = false;
 var documentLoaded = setInterval(function () {
 	if (/loaded|complete/.test(document.readyState) && ready) {
 		clearInterval(documentLoaded);
+		initWhenReady();
 		document.body.className = "loaded";
 	}
 }, 100);
@@ -18,6 +20,10 @@ var documentLoaded = setInterval(function () {
 	mediator.router = _router;
 	_router.preloadViews(() => ready = true);
 	
-	smokeEffect();
-	initViewIndicator(_router);
+	renderSmokeEffect();
+	renderViewIndicator(_router);
 })();
+
+function initWhenReady() {
+	renderInterestSection();
+}
