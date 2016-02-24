@@ -4,13 +4,12 @@ export default class BaseClass {
 		this.$html = $(`<${tagName}></${tagName}>`);
 		$container.append(this.$html);
 	}
-	
 	on(event, fn) {
 		if (this.events[event]) this.events[event].append(fn);
 		else this.events[event] = [fn];
 		this.html.addEventListener(event, fn);
 	}
-	
+
 	off(event, fn) {
 		var html = this.html;
 		var listeners = this.events[event];
@@ -20,5 +19,9 @@ export default class BaseClass {
 			listeners.forEach(function (fn) {
 				html.removeEventListener(event, fn)
 			}, this);
+	}
+	toggleClass(className) {
+		this.$html.toggleClass(className);
+		return this;
 	}
 }

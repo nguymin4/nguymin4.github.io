@@ -23,7 +23,6 @@ section.view {
 	@include transition(all 0.75s ease 0s);
 	opacity: 0;
 	z-index: -1;
-	overflow-y: scroll;
 	overflow-x: hidden;
 	padding-top: 40px;
 	

@@ -23,10 +23,6 @@ class Card extends BaseClass {
 
 		return this;
 	}
-	toggleClass(className) {
-		this.$html.toggleClass(className);
-		return this;
-	}
 }
 
 export default function () {
@@ -44,6 +40,6 @@ export default function () {
 		{
 			title: "World of Tanks", bgColor: "#D50F25",
 			content: ""
-		},
+		}
 	].map((card) => new Card(card).render());
 }

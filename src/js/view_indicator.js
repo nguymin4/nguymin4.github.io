@@ -15,10 +15,6 @@ class Indicator extends BaseClass {
 		}).html(`<i>${model.title}</i><span></span>`);
 		return this;
 	}
-	toggleClass(className) {
-		this.$html.toggleClass(className);
-		return this;
-	}
 }
 
 export default function (router) {

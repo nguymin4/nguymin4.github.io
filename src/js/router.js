@@ -1,17 +1,29 @@
 import View from "./view.js";
 
-export default function () {
-	var routes = {}, active = 0;
-	var hashes = ["#", "#about-me", "#skills", "#projects", "#interests"];
+var hashes = ["#", "#about-me", "#skills", "#projects", "#interests"];
+var routes = mapRoutes(); 
+
+function mapRoutes() {
+	var routes = {}
 	var templates = ["home", "about", "skills", "projects", "interests"]
-		.map((template) => "assets/views/" + template + ".html");
-
+		.map(template => "assets/views/" + template + ".html");
+	
 	hashes.forEach((hash, i) => routes[hash] = templates[i]);
+	return routes;
+}
 
-	var views = hashes.map((hash) => {
+function initViews($container) {
+	return hashes.map(hash => {
 		hash = hash || "#";
-		return new View(hash, routes[hash])
+		var view = new View(hash, routes[hash]);
+		view.$html.appendTo($container);
+		return view;
 	});
+}
+
+export default function () {
+	var active = 0;
+	var views = initViews($("#content"));
 
 	function getViewIndex() {
 		var active = hashes.indexOf(location.hash);

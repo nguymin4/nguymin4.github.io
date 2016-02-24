@@ -1,4 +1,3 @@
-var container = $("#content");
 var md = new MobileDetect(window.navigator.userAgent);
 
 export default class View {
@@ -6,26 +5,24 @@ export default class View {
 		this.hash = hash;
 		this.route = route;
 		this.id = /\/(\w+).html/.exec(this.route)[1];
+		this.render();
 	}
 	load() {
 		var self = this;
-		self.render();
 		return $.ajax(self.route)
 			.done(function (data, status, xhr) {
-				self.html.innerHTML = data;
+				self.$html.html(data);
 			}).fail(function (data, status, xhr) {
-				self.html.innerHTML = "";
+				self.$html.html("");
 			}).always(function () {
 				if (!md.mobile()) self.recalibratePerfectScrollbar();
 			});
 	}
 	render() {
-		var self = this;
-		var section = document.createElement("section");
-		section.className = "view";
-		section.id = self.id;
-		container.append(section);
-		self.html = section;
+		this.$html = $("<section></section>").attr({
+			id: this.id,
+			class: "view"
+		}).css("overflow-y", "hidden");
 		
 		// Deprecated used background-image instead of set opacity
 		// var event = md.mobile() ? "scroll" : "ps-scroll-y";	
@@ -33,12 +30,12 @@ export default class View {
 		// 	self.setIndicatorOpacity();
 		// });
 		
-		return self;
+		return this;
 	}
 	toggleClass(className) {
-		var $html = $(this.html); 
+		var $html = this.$html;
 		$html.css("overflow-y", "hidden").toggleClass(className);
-		setTimeout(function() {
+		setTimeout(function () {
 			$html.css("overflow-y", "scroll");
 		}, 1000);
 		// this.setIndicatorOpacity();
@@ -46,11 +43,11 @@ export default class View {
 	}
 	// Deprecated because of using background-image
 	setIndicatorOpacity() {
-		var top = $(this.html).scrollTop();
+		var top = this.$html.scrollTop();
 		$(document).trigger("viewIndicatorOpacity", [top / 200]);
 	}
 	recalibratePerfectScrollbar() {
-		var $html = $(this.html);
+		var $html = this.$html;
 		$html.perfectScrollbar({
 			suppressScrollX: true,
 			scrollYMarginOffset: 20
