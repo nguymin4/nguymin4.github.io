@@ -12,7 +12,7 @@ class Card extends BaseClass {
 			class: "card col-md-4 col-sm-6"
 		}).html(`
 			<div class="flipper">
-				<div class="front" style="background-color: ${model.bgColor}">
+				<div class="front" style="background-image: url(${model.background})">
 					<div>
 						<h4>${model.title}</h4>
 						${"<i class='fa fa-circle'></i>&nbsp;".repeat(3) }
@@ -27,19 +27,31 @@ class Card extends BaseClass {
 
 export default function () {
 	$container = $("#interests .container .row");
-	
+
 	[
 		{
-			title: "Running and Walking", bgColor: "#FFCC2B",
-			content: "In the summer time, I usually run around the park near my home."
+			title: "Instrumental music", background: "assets/img/Moonlight_Waltz.jpg",
+			content: `I do like music, especially instrumental music. Its softness eases my mind so I listen to music a lot whenever I can.`
 		},
 		{
-			title: "Swimming", bgColor: "#39D0C1",
-			content: ""
+			title: "Literature", background: "assets/img/galician-literature-day-spain.jpg",
+			content: `My childhood filled with classics novel.
+			Jules Verne, Victor Hugo, Alexandre Dumas, Hector Malot, Mark Twain, Jack London, Edmondo De Amicis etc. are so familiar names to me.`
 		},
 		{
-			title: "World of Tanks", bgColor: "#D50F25",
-			content: ""
+			title: "Running and Strolling", background: "assets/img/Launeen_perhepuisto.jpg",
+			content: `When the weather is not too cold, I usually run around the park (Launeen perhepuisto) near my home
+			and then walking along with leisurely pace to enjoy the weather, plus a little instrumental music.`
+		},
+		{
+			title: "Swimming", background: "https://media.timeout.com/images/122739/617/347/image.jpg",
+			content: `I used to swim a lot back in my hometown and even achieved a non-professional gold medal.
+			Since I moved to Finland, I've had few chances to maintain this habit.`
+		},
+		{
+			title: "World of Tanks", background: "assets/img/shot_010.jpg",
+			content: `At the moment, I only play one game named World of Tanks and not so frequently either, about once or twice a week.
+			This game requires not only personal skills but more importantly, team work and a tactical mindset.`
 		}
 	].map((card) => new Card(card).render());
 }
