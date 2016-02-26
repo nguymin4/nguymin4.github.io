@@ -1,4 +1,4 @@
-import BaseClass from "./base.js"
+import BaseClass from "../shared/base.js"
 var $container;
 
 class Card extends BaseClass {
@@ -15,7 +15,7 @@ class Card extends BaseClass {
 				<div class="front" style="background-image: url(${model.background})">
 					<div>
 						<h4>${model.title}</h4>
-						${"<i class='fa fa-circle'></i>&nbsp;".repeat(3) }
+						${"<i class='fa fa-circle'></i>".repeat(3) }
 					</div>
 				</div>
 				<div class="back">${model.content}</div>
@@ -31,21 +31,22 @@ export default function () {
 	[
 		{
 			title: "Instrumental music", background: "assets/img/Moonlight_Waltz.jpg",
-			content: `I do like music, especially instrumental music. Its softness eases my mind so I listen to music a lot whenever I can.`
+			content: `I do like music, especially instrumental music. I love it softness. 
+			To name a few of my favourite artists and composers: Kim Yoon, The daydream, S.E.N.S, Yukie Nishimura, Yuhki Kuramoto, etc.`
 		},
 		{
 			title: "Literature", background: "assets/img/galician-literature-day-spain.jpg",
 			content: `My childhood filled with classics novel.
-			Jules Verne, Victor Hugo, Alexandre Dumas, Hector Malot, Mark Twain, Jack London, Edmondo De Amicis etc. are so familiar names to me.`
+			Jules Verne, Victor Hugo, Alexandre Dumas, Hector Malot, Mark Twain, Jack London, Edmondo De Amicis etc. are familiar names to me.`
 		},
 		{
 			title: "Running and Strolling", background: "assets/img/Launeen_perhepuisto.jpg",
-			content: `When the weather is not too cold, I usually run around the park (Launeen perhepuisto) near my home
-			and then walking along with leisurely pace to enjoy the weather, plus a little instrumental music.`
+			content: `When the weather is not too cold, I usually run around the park (Launeen perhepuisto) near my home.
+			Then to cool down, I walk along with leisurely pace to enjoy the weather while listen to music based on my mood.`
 		},
 		{
 			title: "Swimming", background: "https://media.timeout.com/images/122739/617/347/image.jpg",
-			content: `I used to swim a lot back in my hometown and even achieved a non-professional gold medal.
+			content: `I used to swim a lot and even achieved a gold medal back in my home city.
 			Since I moved to Finland, I've had few chances to maintain this habit.`
 		},
 		{

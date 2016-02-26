@@ -1,9 +1,8 @@
 "use strict";
-import "./base.js"
-import router from "./router.js";
-import renderSmokeEffect from "./smoke.js";
-import renderViewIndicator from "./view_indicator.js";
-import renderInterestSection from "./interest_card.js";
+import router from "./view/router.js";
+import renderViewIndicator from "./view/view_indicator.js";
+import renderSmokeEffect from "./components/smoke.js";
+import renderInterestSection from "./components/interest_card.js";
 
 var ready = false;
 var documentLoaded = setInterval(function () {
@@ -14,7 +13,7 @@ var documentLoaded = setInterval(function () {
 	}
 }, 100);
 
-(function init() {
+(function() {
 	var mediator = {};
 	var _router = router(mediator);
 	mediator.router = _router;
