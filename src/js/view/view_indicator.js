@@ -32,9 +32,9 @@ export default function (router) {
 	
 	var active =  router.currentViewIndex;
 	indicators[active].toggleClass("active");
-	$(router).on("viewIndexChanged", function(e, index, init) {
+	$(router).on("viewIndexChanged", function(e, index) {
 		indicators[index].toggleClass("active");
-		if (!init) indicators[active].toggleClass("active");
+		indicators[active].toggleClass("active");
 		active = index;
 	});
 	

@@ -3,8 +3,7 @@ var $container;
 
 class Card extends BaseClass {
 	constructor(model) {
-		super("div", $container);
-		this.model = model;
+		super("div", $container, model);
 	}
 	render() {
 		var model = this.model;
@@ -32,7 +31,7 @@ export default function () {
 		{
 			title: "Instrumental music", background: "assets/img/Moonlight_Waltz.jpg",
 			content: `I do like music, especially instrumental music. I love it softness. 
-			To name a few of my favourite artists and composers: Kim Yoon, The daydream, S.E.N.S, Yukie Nishimura, Yuhki Kuramoto, etc.`
+			My favourite artists and composers are Kim Yoon, The daydream, S.E.N.S, Yukie Nishimura, Yuhki Kuramoto, etc. to name a few.`
 		},
 		{
 			title: "Literature", background: "assets/img/galician-literature-day-spain.jpg",
@@ -54,5 +53,5 @@ export default function () {
 			content: `At the moment, I only play one game named World of Tanks and not so frequently either, about once or twice a week.
 			This game requires not only personal skills but more importantly, team work and a tactical mindset.`
 		}
-	].map((card) => new Card(card).render());
+	].map(model => new Card(model).render());
 }

@@ -27,7 +27,7 @@ export default function () {
 
 	function getViewIndex() {
 		var active = hashes.indexOf(location.hash);
-		return (active == -1) ? 0 : active;
+		return (active === -1) ? 0 : active;
 	}
 
 	window.addEventListener("hashchange", function () {

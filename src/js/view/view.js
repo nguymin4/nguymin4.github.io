@@ -1,3 +1,5 @@
+/* global MobileDetect */
+
 var md = new MobileDetect(window.navigator.userAgent);
 
 export default class View {
