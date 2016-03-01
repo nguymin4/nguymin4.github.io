@@ -1,4 +1,4 @@
-import BaseClass from "../shared/base.js"
+import BaseClass from "../shared/base.js";
 var $container;
 
 class Card extends BaseClass {

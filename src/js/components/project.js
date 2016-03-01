@@ -1,7 +1,8 @@
 /* global marked */
+import BaseClass from "../shared/base.js";
+import $detailView from "./project_detail.js";
 
-import BaseClass from "../shared/base.js"
-var $container, $detailView;
+var $projects, $container;
 var markedRenderer = new marked.Renderer();
 markedRenderer.heading = (text, level) => `<h${level}>${text}</h${level}>`;
 
@@ -20,15 +21,23 @@ class Project extends BaseClass {
 					<img class="img-responsive img-rounded" src="${model.thumbnail}" alt=" " height="240" />
 				</div>
 				<div class="info">${model.info}</div>
-			</div>`);
-
+			</div>`)
+		this.wiredEvent();
 		return this;
+	}
+	wiredEvent() {
+		var self = this;
+		self.on(".project click", () => {
+			$detailView.render(self.model.info, $projects.scrollTop());
+		});
 	}
 }
 
-export default function () {
-	$container = $("#projects .container .row");
-	$detailView = $(".project-detail", $container);
+export default function (router) {
+	$projects = $("#projects");
+	$container = $(".container .row", $projects);
+	$detailView.init("#projects .project-detail", router);
+
 	[
 		{
 			title: "Project Euler - Python",
@@ -37,7 +46,7 @@ export default function () {
 					insights to solve. Although mathematics will help you arrive at elegant and efficient methods, the use of a computer
 					and programming skills will be required to solve most problems.The motivation for starting Project Euler, and its continuation,
 					is to provide a platform for the inquiring mind to delve into unfamiliar areas and learn new concepts in a fun and recreational
-					context." (https://projecteuler.net/)`
+					context. (https://projecteuler.net/)`
 		},
 		{
 			title: "Lanban - Kanban web application",
@@ -50,7 +59,7 @@ export default function () {
 			info: `## Flask`
 		}
 	].map(model => {
-		model.info = marked(model.info, { renderer: markedRenderer });
+		model.info = marked(model.info, { renderer: markedRenderer }).replace(/\n/g, "");
 		return new Project(model).render();
 	});
 }

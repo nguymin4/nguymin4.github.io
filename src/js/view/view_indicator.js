@@ -30,16 +30,13 @@ export default function (router) {
 			return indicator })
 		.map(indicator => new Indicator(indicator).render())
 	
-	var active =  router.currentViewIndex;
+	var active =  router.initialViewIndex;
 	indicators[active].toggleClass("active");
-	$(router).on("viewIndexChanged", function(e, index) {
-		indicators[index].toggleClass("active");
-		indicators[active].toggleClass("active");
-		active = index;
-	});
 	
-	// Deprecated because of using background-image 
-	// $(document).on("viewIndicatorOpacity", function(event, opacity) {
-	// 	$container.css("background-color", "rgba(37, 57, 84, " + opacity + ")");
-	// });
+	$(router).on("viewIndicator:viewIndexChanged", function(e, index) {
+		indicators[active].toggleClass("active");
+		indicators[index].toggleClass("active");
+		active = index;
+		
+	});
 }

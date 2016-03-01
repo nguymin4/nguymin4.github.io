@@ -1,4 +1,8 @@
-#projects {	
+#projects {
+	.container .row {
+		@include transition(all 0.5s ease);
+	}
+
 	.project {
 		max-width: 320px;
 		padding: 10px 20px 20px 20px;
@@ -14,8 +18,8 @@
 			text-align: center;
 			margin-bottom: 10px;
 			padding-bottom: 5px;
-			border-bottom: solid 1px #808080;
-			text-shadow: 0px 0px 5px $main-color;
+			border-bottom: solid 1px darken($main-color, 10%);
+			text-shadow: 0px 0px 8px $main-color;
 		}
 		
 		.info {
@@ -24,13 +28,65 @@
 		
 		img {
 			margin: auto;
-			box-shadow: 6px 6px 10px #333;
 			height: 240px;
+			box-shadow: 2px 2px 10px #333;
 		}
 		
 		&:hover {
 			// box-shadow: 0px 0px 10px $main-color;
-			@include transform(scale(0.96));
+			@include transform(scale(0.975));
+		}
+	}
+	
+	.project-detail {
+		position: absolute;
+		top: $project-detail-top;
+		height: calc(100% - #{$project-detail-top} - 20px);
+		width: 100%;
+		text-align: center;
+		color: #888;
+		opacity: 0;
+		@include transition(all 0.75s ease 0.1s);
+		@include transform(translateY(-100%));
+		
+		.detail {
+			height: 100%;
+			width: 100%;
+			max-width: $project-detail-width;
+			margin: auto;
+			background-color: $main-color;
+			padding: 40px 20px 20px 20px;
+			text-align: left;
+			@include border-radius(10px);
+		}
+		
+		.btn-close {
+			position: absolute;
+			top: 20px;
+			font-size: 1.5em;
+			cursor: pointer;
+			@include transform(rotate(180deg));
+			@include transition(transform 0.1s ease);
+		}
+		
+		&.active {
+			opacity: 1;
+			@include transform(translateY($project-detail-top));
+			
+			.btn-close {
+				@include transform(rotate(0deg));
+			}
+		}
+		
+		
+		@media screen and (max-width: $project-detail-width) {
+			padding: 0;
+			height: calc(100% - #{$project-detail-top});
+			
+			.detail {
+				margin: 0;
+				@include border-radius(5px 5px 0px 0px);
+			}
 		}
 	}
 }

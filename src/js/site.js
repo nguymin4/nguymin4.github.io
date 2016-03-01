@@ -9,6 +9,8 @@ import renderProjectSection from "./components/project.js";
 
 
 var ready = false;
+var mediator = {};
+
 var documentLoaded = setInterval(function () {
 	if (/loaded|complete/.test(document.readyState) && ready) {
 		clearInterval(documentLoaded);
@@ -18,16 +20,13 @@ var documentLoaded = setInterval(function () {
 }, 100);
 
 (function() {
-	var mediator = {};
-	var _router = router(mediator);
+	var _router = router(mediator).preloadViews(() => ready = true);
 	mediator.router = _router;
-	_router.preloadViews(() => ready = true);
-	
 	renderSmokeEffect();
 	renderViewIndicator(_router);
 })();
 
 function initWhenReady() {
 	renderInterestSection();
-	renderProjectSection();
+	renderProjectSection(mediator.router);
 }
