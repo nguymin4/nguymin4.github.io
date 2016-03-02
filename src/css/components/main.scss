@@ -26,16 +26,16 @@ section.view {
 	overflow-x: hidden;
 	padding-top: 40px;
 	
+	&.active {
+		transform: translateX(0);
+		@include transition(all 0.75s ease 0s);
+		opacity: 1;
+		z-index: 98;
+	}
+	
 	.row {
 		margin: 15px auto;
 		padding: 40px 0px;
-	}
-	
-	&.active {
-		transform: translateX(0);
-		@include transition(all 0.75s ease 0.25s);
-		opacity: 1;
-		z-index: 98;
 	}
 	
 	h1, h2, h3 {
@@ -50,5 +50,21 @@ section.view {
 	
 	h1, h3 {
 		font-family: Ubuntu;
+	}
+	
+	@media screen and (max-width: 768px) {
+		@include transition(all 0.5s ease 0s);
+		
+		&:active {
+			@include transition(all 0.5s ease 0s);
+		}
+	}
+	
+	@media screen and (min-width: 1600px) {
+		@include transition(all 1s ease 0s);
+		
+		&:active {
+			@include transition(all 1s ease 0s);
+		}
 	}
 }

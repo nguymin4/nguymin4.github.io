@@ -45,8 +45,8 @@
 		width: 100%;
 		text-align: center;
 		color: #888;
-		opacity: 0;
-		@include transition(all 0.75s ease 0.1s);
+		// opacity: 0;
+		@include transition(transform 0.75s ease);
 		@include transform(translateY(-100%));
 		
 		.detail {
@@ -63,18 +63,18 @@
 		.btn-close {
 			position: absolute;
 			top: 20px;
-			font-size: 1.5em;
+			font-size: 1.6em;
 			cursor: pointer;
-			@include transform(rotate(180deg));
-			@include transition(transform 0.1s ease);
+			@include transform(rotate(0deg));
+			@include transition(transform 0.25s ease);
 		}
 		
 		&.active {
-			opacity: 1;
+			// opacity: 1;
 			@include transform(translateY($project-detail-top));
 			
-			.btn-close {
-				@include transform(rotate(0deg));
+			.btn-close:hover {
+				@include transform(rotate(180deg));
 			}
 		}
 		

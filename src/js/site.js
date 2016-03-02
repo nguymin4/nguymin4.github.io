@@ -1,17 +1,18 @@
 "use strict";
-import router from "./view/router.js";
-import renderViewIndicator from "./view/view_indicator.js";
+import app from "./shared/app.js";
+
+import Router from "./view/router.js";
+import renderViewIndicator from "./indicator/index.js";
 import renderSmokeEffect from "./components/smoke.js";
 
 // Contents in each section
-import renderInterestSection from "./components/interest_card.js";
-import renderProjectSection from "./components/project.js";
+import renderInterestSection from "./interest/index.js";
+import renderProjectSection from "./project/index.js";
 
 
 var ready = false;
-var mediator = {};
 
-var documentLoaded = setInterval(function () {
+var documentLoaded = setInterval(() => {
 	if (/loaded|complete/.test(document.readyState) && ready) {
 		clearInterval(documentLoaded);
 		initWhenReady();
@@ -20,13 +21,13 @@ var documentLoaded = setInterval(function () {
 }, 100);
 
 (function() {
-	var _router = router(mediator).preloadViews(() => ready = true);
-	mediator.router = _router;
+	var router = Router().preloadViews(() => ready = true);
+	app.router = router;
 	renderSmokeEffect();
-	renderViewIndicator(_router);
+	renderViewIndicator();
 })();
 
 function initWhenReady() {
 	renderInterestSection();
-	renderProjectSection(mediator.router);
+	renderProjectSection();
 }

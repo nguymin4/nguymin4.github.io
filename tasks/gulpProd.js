@@ -4,7 +4,7 @@ var gulp = require("gulp"),
 	rename = require("gulp-rename"),
 	replace = require("gulp-replace"),
 	exec = require("child_process").exec,
-	config = require("./config.js");
+	metaTag = require("./metaTag.js");
 
 module.exports = function (env, input, output) {
 
@@ -21,10 +21,10 @@ module.exports = function (env, input, output) {
 			src = src.pipe(replace("js/site.js", "js/site.min.js"))
 				.pipe(replace("css/site.css", "css/site.min.css"))
 				.pipe(replace("${content-security-policy}",
-					config["content-security-policy"].build));
+					metaTag["content-security-policy"].build));
 		else
 			src = src.pipe(replace("${content-security-policy}",
-				config["content-security-policy"].dev));
+				metaTag["content-security-policy"].dev));
 
 		return src.pipe(gulp.dest(output.html));
 	});

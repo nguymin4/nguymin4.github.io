@@ -1,19 +1,15 @@
-function Observer (mediator) {
-	var observer = {
-		targets: [],
-		register: (obj) => {
-			var self = observer;
-			self.targets.push(obj);
-			obj.emit = (event, msg) => self.broadcast(event, msg);
-		},
-		unregister: (obj) => this.targets.remove(obj),
-		broadcast: function (event, message) {
-			var self = observer;
-			for (var i = 0; i < self.targets.length; i++) {
-				self.targets[i].on(event, message);
-			}
-		}
+export default class Observer {
+	constructor() {
+		this.targets = [];
 	}
-	
-	mediator.observer = observer;
+	register(obj) {
+		this.targets.push(obj);
+		obj.emit = (event, msg) => this.broadcast(event, msg);
+	}
+	unregister(obj) {
+		this.targets.remove(obj);
+	}
+	broadcast(event, message) {
+		this.targets.forEach(target => target.on(event, message));
+	}
 }

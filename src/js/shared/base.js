@@ -1,27 +1,26 @@
-function analyzeEvent(event) {
-	var args = event.split(" ");
-	var ev = args.splice(args.length - 1)[0];
-	var selector = args.join(" ");
-	return {
-		selector: selector,
-		ev: ev
-	}
-}
+import {analyzeEvent} from "./ulti.js";
 
 export default class BaseClass {
 	constructor(tagName, $container, model) {
-		this.events = {};
-		this.$html = $(`<${tagName}></${tagName}>`);
-		$container.append(this.$html);
+		// Model
 		this.model = model;
+		
+		// View
+		this.$html = $(`<${tagName}></${tagName}>`);
+		this.render();
+		this.$container = $container.append(this.$html);
+		
+		// Events
+		this.events = {};
+		if (this.wiredEvent) this.wiredEvent();
 	}
 	on(event, fn) {
-		if (this.events[event]) this.events[event].append(fn);
+		if (this.events[event]) this.events[event].push(fn);
 		else this.events[event] = [fn];
 
 		var args = analyzeEvent(event);
-		if (args.selector) $(args.selector, this.$html).on(args.ev, fn);
-		else this.$html.on(event, fn);
+		var $html = args.selector ? $(args.selector, this.$html) : this.$html;
+		$html.on(event, fn);
 		return this;
 	}
 	off(event, fn) {
@@ -35,9 +34,8 @@ export default class BaseClass {
 		return this;
 	}
 	destroy() {
-		var self = this;
-		for (var event in self.events) self.off(event);
-		self.$html.remove();
+		for (var event in this.events) this.off(event);
+		this.$html.remove();
 	}
 	toggleClass(className) {
 		this.$html.toggleClass(className);

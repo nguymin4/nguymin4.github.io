@@ -1,23 +1,13 @@
 import View from "./view.js";
+import app from "../shared/app.js";
+var hashes = app.config.hashes,
+	routes = app.config.routes;
 
-var hashes = ["#", "#about-me", "#skills", "#projects", "#interests"];
-var routes = mapRoutes();
-
-function mapRoutes() {
-	var routes = {}
-	var templates = ["home", "about", "skills", "projects", "interests"]
-		.map(template => "assets/views/" + template + ".html");
-
-	hashes.forEach((hash, i) => routes[hash] = templates[i]);
-	return routes;
-}
-
-function initViews($container) {
+function initViews() {
+	var $container = $("#content");
 	return hashes.map(hash => {
 		hash = hash || "#";
-		var view = new View(hash, routes[hash]);
-		view.$html.appendTo($container);
-		return view;
+		return new View(hash, routes[hash], $container);
 	});
 }
 
@@ -40,18 +30,26 @@ function getViewState() {
 
 export default function () {
 	var active = 0;
-	var views = initViews($("#content"));
+	var views = initViews();
 
-	window.addEventListener("hashchange", function () {
+	$(window).on("hashchange", () => {
 		var index = getViewState().activeViewIndex;
 		views[active].toggleClass("active");
 		views[index].toggleClass("active");
 		active = index;
-		$(router).trigger("viewIndicator:viewIndexChanged", [active]);
+		app.channel.trigger("viewIndicator:viewIndexChanged", [active]);
 	});
-
+	
+	app.channel.on("view:toggleScroll", (e, id, state) => {
+		for (var i = 0; i < views.length; i++) {
+			if (views[i].model.id === id) {
+				views[i].toggleScroll(state);
+				break;
+			}
+		}
+	});
+	
 	var router = {
-		hashes: hashes,
 		preloadViews: function (callback) {
 			callback = typeof callback === "function" ? callback : function () { };
 			var deferreds = views.map(view => view.load());
@@ -64,15 +62,6 @@ export default function () {
 		},
 		initialViewIndex: getViewState().activeViewIndex
 	}
-	
-	$(router).on("view:toggleScroll", function(e, id, state) {
-		for (var i = 0; i< views.length; i++) {
-			if (views[i].id === id) {
-				views[i].toggleScroll(state);
-				break;
-			}
-		}
-	});
-	
+
 	return router;
 }

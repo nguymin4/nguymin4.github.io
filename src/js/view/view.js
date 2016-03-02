@@ -1,55 +1,51 @@
-/* global MobileDetect */
+import BaseClass from "../shared/base.js";
+import app from "../shared/app.js";
 
-var md = new MobileDetect(window.navigator.userAgent);
-var psOption = {
-	suppressScrollX: true,
-	scrollYMarginOffset: 25
-};
+var isMobile = app.env.isMobile;
+var psOption = app.config.psOption;
 
-export default class View {
-	constructor(hash, route) {
-		this.hash = hash;
-		this.route = route;
-		this.id = /\/(\w+).html/.exec(this.route)[1];
-		this.render();
+export default class View extends BaseClass {
+	constructor(hash, route, $container) {
+		super("section", $container, {
+			hash: hash,
+			route: route,
+			id: /\/(\w+).html/.exec(route)[1]
+		});
 	}
 	load() {
-		var self = this;
-		return $.ajax(self.route)
-			.done(function (data, status, xhr) {
-				self.$html.html(data);
-			}).fail(function (data, status, xhr) {
-				self.$html.html("");
-			}).always(function () {
-				if (!md.mobile()) self.recalibratePerfectScrollbar();
+		return $.ajax(this.model.route)
+			.done((data, status, xhr) => {
+				this.$html.html(data);
+			}).fail((data, status, xhr) => {
+				this.$html.html("");
+			}).always(() => {
+				if (!isMobile) this.recalibratePerfectScrollbar();
 			});
 	}
 	render() {
-		this.$html = $("<section></section>").attr({
-			id: this.id,
+		this.$html.attr({
+			id: this.model.id,
 			class: "view"
 		}).css("overflow-y", "hidden");
+
 		return this;
 	}
 	toggleClass(className) {
 		var $html = this.$html;
 		$html.css("overflow-y", "hidden").toggleClass(className);
-		if (md.mobile()) 
+		if (isMobile)
 			setTimeout(() => $html.css("overflow-y", "scroll"), 1250);
 		return this;
 	}
 	recalibratePerfectScrollbar() {
 		var $html = this.$html;
 		$html.perfectScrollbar(psOption);
-
-		window.addEventListener("resize", function () {
-			$html.perfectScrollbar("update");
-		});
+		window.addEventListener("resize", () => $html.perfectScrollbar("update"));
 	}
 	toggleScroll(active) {
 		var overflow = active ? "scroll" : "hidden";
 		var option = active ? psOption : "destroy";
 		this.$html.css("overflow-y", overflow);
-		if (!md.mobile()) this.$html.perfectScrollbar(option);
+		if (!isMobile) this.$html.perfectScrollbar(option);
 	}
 }
