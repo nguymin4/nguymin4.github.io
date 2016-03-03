@@ -1,5 +1,6 @@
 import BaseClass from "../shared/base.js";
 import app from "../shared/app.js";
+import htmlViews from "./htmlViews.js"
 
 var isMobile = app.env.isMobile;
 var psOption = app.config.psOption;
@@ -13,14 +14,19 @@ export default class View extends BaseClass {
 		});
 	}
 	load() {
-		return $.ajax(this.model.route)
-			.done((data, status, xhr) => {
-				this.$html.html(data);
-			}).fail((data, status, xhr) => {
-				this.$html.html("");
-			}).always(() => {
-				if (!isMobile) this.recalibratePerfectScrollbar();
-			});
+		var content = htmlViews[this.model.id];
+		var req = content ? $.Deferred() : $.ajax(this.model.route); 
+		
+		req.done((data, status, xhr) => {
+			this.$html.html(data);
+		}).fail((data, status, xhr) => {
+			this.$html.html("");
+		}).always(() => {
+			if (!isMobile) this.recalibratePerfectScrollbar();
+		});
+		
+		if (content) return req.resolve(content);
+		return req;
 	}
 	render() {
 		this.$html.attr({
