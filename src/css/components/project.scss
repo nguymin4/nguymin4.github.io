@@ -41,13 +41,15 @@
 	.project-detail {
 		position: absolute;
 		top: $project-detail-top;
-		height: calc(100% - #{$project-detail-top} - 20px);
+		height: calc(100vh - #{$project-detail-top} - 20px);
 		width: 100%;
 		text-align: center;
 		color: #888;
+		z-index: 99;
 		opacity: 0;
-		@include transition(all 0.75s ease);
 		@include transform(translateY(-100%));
+		@include transition(opacity 0.75s, transform 0.75s);
+		
 		
 		.detail {
 			height: 100%;
@@ -81,7 +83,7 @@
 		
 		@media screen and (max-width: $project-detail-width) {
 			padding: 0;
-			height: calc(100% - #{$project-detail-top});
+			height: calc(100vh - #{$project-detail-top});
 			
 			.detail {
 				margin: 0;

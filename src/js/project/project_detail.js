@@ -20,19 +20,22 @@ export default class ProjectDetail extends BaseClass {
 		this.on(".btn-close click", () => {
 			this.$html.removeClass("active");
 			setTimeout(() => {
-				app.channel.trigger("view:toggleScroll", ["projects", true]);
 				this.$html.css("top", 0);
-			}, 500);
+				app.channel.trigger("view:toggleScroll", ["projects", true]);
+			}, 750);
 		});
 
 		if (!isMobile) this.$contentBox.perfectScrollbar(app.config.psOption);
 		return this;
 	}
 	addContent(content) {
-		this.$html.css("top", this.$container.scrollTop()).addClass("active");
 		this.$contentBox.html("<hr />" + content);
 		if (!isMobile) this.$contentBox.perfectScrollbar("update");
 		app.channel.trigger("view:toggleScroll", ["projects", false]);
+		
+		this.$html.css({
+			top: this.$container.scrollTop()
+		}).addClass("active");
 		return this;
 	}
 }

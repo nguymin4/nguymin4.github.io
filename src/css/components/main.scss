@@ -16,7 +16,7 @@
 
 section.view {
 	position: absolute;
-	transform: translateX(-50vw);
+	@include transform(translateX(-50vw));
 	height: 100%;
 	width: 100%;
 	color: $main-color;
@@ -27,7 +27,7 @@ section.view {
 	padding-top: 40px;
 	
 	&.active {
-		transform: translateX(0);
+		@include transform(translateX(0));
 		@include transition(all 0.75s ease 0s);
 		opacity: 1;
 		z-index: 98;

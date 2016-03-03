@@ -17,6 +17,6 @@
 }
 
 @include keyframes(smoke-float) {
-	from {transform: translateX(-#{$smoke-width})}
-	to {transform: translateX(0px)}
+	from {@include transform(translateX(-#{$smoke-width}))}
+	to {@include transform(translateX(0px))}
 }
