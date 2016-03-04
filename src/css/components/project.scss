@@ -2,93 +2,115 @@
 	.container .row {
 		@include transition(all 0.5s ease);
 	}
+}
 
-	.project {
-		max-width: 320px;
-		padding: 10px 20px 20px 20px;
-		margin: 20px auto;
-		// background-color: $main-color;
-		color: $main-color;
-		@include transition(all 0.25s ease);
-		cursor: pointer;
-			
+.project {
+	max-width: 320px;
+	padding: 10px 20px 20px 20px;
+	margin: 20px auto;
+	// background-color: $main-color;
+	color: $main-color;
+	@include transition(all 0.25s ease);
+	cursor: pointer;
 		
-		.title {
-			// color: lighten(invert($main-color), 20%);
-			text-align: center;
-			margin-bottom: 10px;
-			padding-bottom: 5px;
-			border-bottom: solid 1px darken($main-color, 10%);
-			text-shadow: 0px 0px 8px $main-color;
-		}
+	
+	.title {
+		// color: lighten(invert($main-color), 20%);
+		text-align: center;
+		margin-bottom: 10px;
+		padding-bottom: 5px;
+		border-bottom: solid 1px darken($main-color, 10%);
+		text-shadow: 0px 0px 8px $main-color;
+	}
+	
+	img {
+		display: block;
+		max-width: 100%;			
+		height: 240px;
+		margin: auto;
+		box-shadow: 2px 2px 10px #333;
+		@include border-radius(10px);
+	}
+	
+	&:hover {
+		// box-shadow: 0px 0px 10px $main-color;
+		@include transform(scale(0.975));
+	}
+}
+	
+.project-detail {
+	position: absolute;
+	top: $project-detail-top;
+	height: calc(100% - #{$project-detail-top} - 20px);
+	width: 100%;
+	color: $secondary-color;
+	z-index: 99;
+	opacity: 0;
+	@include transform(translateY(-100%));
+	@include transition(opacity 0.75s, transform 0.75s);
+	
+	&.active {
+		opacity: 1;
+		@include transform(translateY($project-detail-top));
+	}
+	
+	.detail {
+		height: 100%;
+		width: 100%;
+		max-width: $project-detail-width;
+		margin: auto;
+		padding-bottom: 20px;
+		background-color: $main-color;
+		text-align: center;
+		overflow: hidden;
+		@include border-radius(10px);
+	}
+	
+	.detail-top {
+		padding-top: 20px;
 		
-		.info {
-			display: none;
-		}
-		
-		img {
+		.btn-close {
 			margin: auto;
-			height: 240px;
-			box-shadow: 2px 2px 10px #333;
+			font-size: 1.6em;
+			cursor: pointer;
+			@include transition(transform 0.25s ease);
 		}
-		
-		&:hover {
-			// box-shadow: 0px 0px 10px $main-color;
-			@include transform(scale(0.975));
+	
+		hr {
+			margin-top: 15px;
+			margin-bottom: 0;
 		}
 	}
 	
-	.project-detail {
-		position: absolute;
-		top: $project-detail-top;
-		height: calc(100vh - #{$project-detail-top} - 20px);
-		width: 100%;
-		text-align: center;
-		color: #888;
-		z-index: 99;
-		opacity: 0;
-		@include transform(translateY(-100%));
-		@include transition(opacity 0.75s, transform 0.75s);
+	.detail-body {
+		position: relative;
+		height: calc(100% - 75px);
+		text-align: left;
+		margin: 10px 0px;
+		padding: 10px 20px;
+		overflow-y: scroll;
+		font-size: 15px;
 		
+		img {
+			margin: 5px 0px;
+			
+			&[align="right"] {
+				margin-left: 15px;
+			}
+			
+			&[align="left"] {
+				margin-right: 15px;
+			}
+		}
+	}
+	
+	@media screen and (max-width: $project-detail-width) {
+		padding: 0;
+		height: calc(100vh - #{$project-detail-top});
 		
 		.detail {
-			height: 100%;
-			width: 100%;
-			max-width: $project-detail-width;
-			margin: auto;
-			background-color: $main-color;
-			padding: 40px 20px 20px 20px;
-			text-align: left;
-			@include border-radius(10px);
-		}
-		
-		.btn-close {
-			position: absolute;
-			top: 20px;
-			font-size: 1.6em;
-			cursor: pointer;
-			@include transform(rotate(0deg));
-			@include transition(transform 0.25s ease);
-		}
-		
-		&.active {
-			opacity: 1;
-			@include transform(translateY($project-detail-top));
-			
-			.btn-close:hover {
-				@include transform(rotate(180deg));
-			}
-		}
-		
-		
-		@media screen and (max-width: $project-detail-width) {
-			padding: 0;
-			height: calc(100vh - #{$project-detail-top});
-			
-			.detail {
-				margin: 0;
-				@include border-radius(5px 5px 0px 0px);
-			}
+			margin: 0;
+			@include border-radius(5px 5px 0px 0px);
 		}
 	}
 }

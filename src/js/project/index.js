@@ -8,7 +8,9 @@ export default function () {
 	Project.setDetailView();
 
 	projectList.map(model => {
-		model.info = marked(model.info, { renderer: markedRenderer }).replace(/\n/g, "");
+		model.info = marked(model.info, {
+			renderer: markedRenderer
+		}).replace(/\n/g, "");
 		return new Project(model, $container);
 	});
 }

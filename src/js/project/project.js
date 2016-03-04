@@ -15,9 +15,8 @@ export default class Project extends BaseClass {
 			<div class="project">
 				<div class="title">${model.title}</div>
 				<div class="text-center">
-					<img class="img-responsive img-rounded" src="${model.thumbnail}" alt=" " height="240" />
+					<img src="${model.thumbnail}" alt=" " />
 				</div>
-				<div class="info">${model.info}</div>
 			</div>`);
 			
 		return this;

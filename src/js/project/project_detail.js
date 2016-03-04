@@ -10,10 +10,17 @@ export default class ProjectDetail extends BaseClass {
 	render() {
 		this.$html.attr({
 			class: "container project-detail"
-		}).html(`<i class="fa fa-chevron-circle-down btn-close"></i>
-				<div class="detail"></div>`);
+		}).html(`<div class="detail">
+					<div class="detail-top">
+						<i class="fa fa-chevron-circle-up btn-close"></i>
+						<hr />
+					</div>
+					<div class="detail-body">
+						<div class="content-box"></div>
+					</div>
+				</div>`);
 
-		this.$contentBox = $(".detail", this.$html);
+		this.$contentBox = $(".content-box", this.$html);
 		return this;
 	}
 	wiredEvent() {
@@ -25,14 +32,17 @@ export default class ProjectDetail extends BaseClass {
 			}, 750);
 		});
 
-		if (!isMobile) this.$contentBox.perfectScrollbar(app.config.psOption);
+		if (!isMobile)
+			this.$detailBody = $(".detail-body", this.$html)
+				.perfectScrollbar(app.config.psOption);
+				
 		return this;
 	}
 	addContent(content) {
-		this.$contentBox.html("<hr />" + content);
-		if (!isMobile) this.$contentBox.perfectScrollbar("update");
+		this.$contentBox.html(content);
+		if (!isMobile) this.$detailBody.perfectScrollbar("update");
 		app.channel.trigger("view:toggleScroll", ["projects", false]);
-		
+
 		this.$html.css({
 			top: this.$container.scrollTop()
 		}).addClass("active");

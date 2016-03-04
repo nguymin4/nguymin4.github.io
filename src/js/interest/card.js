@@ -7,7 +7,7 @@ export default class Card extends BaseClass {
 	render() {
 		var model = this.model;
 		this.$html.attr({
-			class: "card col-md-4 col-sm-6"
+			class: "interest-card col-md-4 col-sm-6"
 		}).html(`
 				<div class="flipper">
 					<div class="front" style="background-image: url(${model.background})">
