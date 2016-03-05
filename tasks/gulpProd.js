@@ -4,9 +4,18 @@ var gulp = require("gulp"),
 	rename = require("gulp-rename"),
 	replace = require("gulp-replace"),
 	exec = require("child_process").exec,
-	metaTag = require("./metaTag.js");
+	metaData = require("../src/meta.js");
 
-module.exports = function (env, input, output) {
+module.exports = function (env, config) {
+	var input = config.input,
+		output = config.output
+
+	var pipeMetaTag = function (src, keyword) {
+		var meta = metaData[keyword];
+		if (typeof meta !== "string")
+			meta = env.isProduction ? meta["build"] : meta["dev"];
+		src = src.pipe(replace.call(this, "${" + keyword + "}", meta));
+	}
 
 	gulp.task("build", ["build:env", "html", "sass:build", "webpack:build"]);
 
@@ -16,15 +25,10 @@ module.exports = function (env, input, output) {
 
 	gulp.task("html", function () {
 		var src = gulp.src(input.html.target)
-
-		if (env.isProduction)
-			src = src.pipe(replace("js/site.js", "js/site.min.js"))
-				.pipe(replace("css/site.css", "css/site.min.css"))
-				.pipe(replace("${content-security-policy}",
-					metaTag["content-security-policy"].build));
-		else
-			src = src.pipe(replace("${content-security-policy}",
-				metaTag["content-security-policy"].dev));
+		
+		// Add meta data
+		for (var key in metaData) 
+			pipeMetaTag(src, key);
 
 		return src.pipe(gulp.dest(output.html));
 	});
@@ -48,19 +52,9 @@ module.exports = function (env, input, output) {
 	})
 
 	gulp.task("uglify:js", ["webpack"], function () {
-		var options = {
-			mangle: false,
-			output: {
-				semicolons: true,
-			},
-			compress: {
-				warnings: false
-			}
-		};
-
 		gulp.src([output.js + "/**/*.js",
 			"!" + output.js + "/**/*.min.js"])
-			.pipe(uglify(options))
+			.pipe(uglify(config.uglifyOptions))
 			.pipe(rename((path) => path.basename += ".min"))
 			.pipe(gulp.dest(output.js));
 	});

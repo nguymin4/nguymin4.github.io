@@ -4,8 +4,10 @@ var gulp = require("gulp"),
 	browserSync = require("browser-sync").create(),
 	reload = browserSync.reload;
 
-module.exports = function (env, input, output) {
-
+module.exports = function (env, config) {
+	var input = config.input,
+		output = config.output
+		
 	gulp.task("build:dev", ["html", "sass:dev", "webpack:watch"]);
 
 	gulp.task("webpack:watch", function () {
@@ -13,43 +15,34 @@ module.exports = function (env, input, output) {
 			detached: false,
 			stdio: "inherit"
 		});
-		
+
 		process.on("exit", () => webpack.kill());
 	});
-	
+
 	gulp.task("sass:dev", function () {
 		return gulp.src(input.scss.target)
 			.pipe(sass({ outputStyle: "expanded" }).on('error', sass.logError))
 			.pipe(gulp.dest(output.css))
-			// .pipe(browserSync.stream()); 
 	});
 
-	gulp.task("browser-sync", ["build:dev"], function () {
+	gulp.task("browser-sync", ["build:dev"], function (done) {
 		browserSync.init({
 			server: {
 				baseDir: "./"
 			},
 			files: [output.css + "/**/*.css"],
-			// snippetOptions: {
-			// 	rule: {
-			// 		match: /<\/body>/i,
-			// 		fn: (snippet, match) => snippet + match
-			// 	}
-			// },
-			 plugins: [{
+			plugins: [{
 				module: "bs-html-injector",
 				options: {
 					files: ["index.html", input.html.views]
 				}
 			}]
-		});
+		}, done);
 	});
 
 	gulp.task("dev", ["browser-sync"], function () {
 		// Watch HTML
 		gulp.watch(input.html.target, ["html"]);
-		// gulp.watch(output.html + "/index.html")
-		// 	.on("change", reload);
 	
 		// Watch SCSS
 		gulp.watch(input.scss.list, ["sass:dev"]);

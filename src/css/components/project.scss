@@ -8,7 +8,6 @@
 	max-width: 320px;
 	padding: 10px 20px 20px 20px;
 	margin: 20px auto;
-	// background-color: $main-color;
 	color: $main-color;
 	@include transition(all 0.25s ease);
 	cursor: pointer;
@@ -41,33 +40,32 @@
 .project-detail {
 	position: absolute;
 	top: $project-detail-top;
-	height: calc(100% - #{$project-detail-top} - 20px);
+	height: 100%;
 	width: 100%;
 	color: $secondary-color;
 	z-index: 99;
-	opacity: 0;
+	// opacity: 0;
 	@include transform(translateY(-100%));
 	@include transition(opacity 0.75s, transform 0.75s);
 	
 	&.active {
-		opacity: 1;
+		// opacity: 1;
 		@include transform(translateY($project-detail-top));
 	}
 	
 	.detail {
-		height: 100%;
+		height: calc(100% - #{$project-detail-top} - 20px);
 		width: 100%;
 		max-width: $project-detail-width;
 		margin: auto;
-		padding-bottom: 20px;
 		background-color: $main-color;
 		text-align: center;
 		overflow: hidden;
-		@include border-radius(10px);
+		@include border-radius(5px);
 	}
 	
 	.detail-top {
-		padding-top: 20px;
+		padding-top: 25px;
 		
 		.btn-close {
 			margin: auto;
@@ -106,10 +104,10 @@
 	
 	@media screen and (max-width: $project-detail-width) {
 		padding: 0;
-		height: calc(100vh - #{$project-detail-top});
 		
 		.detail {
 			margin: 0;
+			height: calc(100vh - #{$project-detail-top});
 			@include border-radius(5px 5px 0px 0px);
 		}
 	}

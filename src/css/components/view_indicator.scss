@@ -2,7 +2,7 @@
 	position: absolute;
 	top: 0px;
 	width: 100%;
-	padding: 10px 20px 10px 0px;
+	padding: 10px 0px 15px 0px;
 	text-align: center;
 	z-index: 99;
 	@include forceGpu();
@@ -57,12 +57,14 @@ a.view-indicator {
 			box-shadow: 0px 0px 10px $main-color;
 		}
 	}
-			
+	
 	@media screen and (max-width: 768px) {
 		min-width: 55px;
-				
+		margin: 0 3px;
+			
 		i {
 			font-size: 1em;
+			padding-left: 2px;
 		}
 	}
 }

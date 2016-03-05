@@ -6,7 +6,7 @@ module.exports = {
 		site: "./src/js/site.js"
 	},
 	output: {
-		path: "./dist/js",
+		path: "./assets/js",
 		filename: "[name].js"
 	},
 	cache: true,
