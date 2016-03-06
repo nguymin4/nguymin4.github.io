@@ -1,15 +1,20 @@
 import {analyzeEvent} from "./ulti.js";
 
 export default class BaseClass {
-	constructor(tagName, $container, model) {
+	constructor(specs) {
 		// Model
-		this.model = model;
+		this.model = specs.model || {};
 		
-		// View
-		this.$html = $(`<${tagName}></${tagName}>`);
-		this.render();
-		this.$container = $container.append(this.$html);
-		
+		// View - render if there is tagName
+		if (specs.tagName) {
+			this.$html = $(`<${specs.tagName}></${specs.tagName}>`);
+			this.render();
+			this.$container = specs.container.append(this.$html);
+		} else {
+			this.$html = specs.html;
+			this.$container = specs.container;
+		}
+		 
 		// Events
 		this.events = {};
 		if (this.wiredEvent) this.wiredEvent();

@@ -7,16 +7,20 @@ var psOption = app.config.psOption;
 
 export default class View extends BaseClass {
 	constructor(hash, route, $container) {
-		super("section", $container, {
-			hash: hash,
-			route: route,
-			id: /\/(\w+).html/.exec(route)[1]
+		super({
+			tagName: "section",
+			container: $container,
+			model: {
+				hash: hash,
+				route: route,
+				id: /\/(\w+).html/.exec(route)[1]
+			}
 		});
 	}
 	load() {
 		var content = htmlViews[this.model.id];
-		var req = content ? $.Deferred() : $.ajax(this.model.route); 
-		
+		var req = content ? $.Deferred() : $.ajax(this.model.route);
+
 		req.done((data, status, xhr) => {
 			this.$html.html(data);
 		}).fail((data, status, xhr) => {
@@ -24,7 +28,7 @@ export default class View extends BaseClass {
 		}).always(() => {
 			if (!isMobile) this.recalibratePerfectScrollbar();
 		});
-		
+
 		if (content) return req.resolve(content);
 		return req;
 	}

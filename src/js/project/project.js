@@ -5,7 +5,11 @@ var detailView;
 
 export default class Project extends BaseClass {
 	constructor(model, $container) {
-		super("div", $container, model);
+		super({
+			tagName: "div",
+			container: $container,
+			model: model
+		});
 	}
 	render() {
 		var model = this.model;
@@ -18,7 +22,7 @@ export default class Project extends BaseClass {
 					<img src="${model.thumbnail}" alt=" " />
 				</div>
 			</div>`);
-			
+
 		return this;
 	}
 	wiredEvent() {

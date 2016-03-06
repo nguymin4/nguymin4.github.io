@@ -5,7 +5,10 @@ var isMobile = app.env.isMobile;
 
 export default class ProjectDetail extends BaseClass {
 	constructor($container) {
-		super("div", $container);
+		super({ 
+			tagName: "div", 
+			container: $container 
+		});
 	}
 	render() {
 		this.$html.attr({
@@ -35,7 +38,7 @@ export default class ProjectDetail extends BaseClass {
 		if (!isMobile)
 			this.$detailBody = $(".detail-body", this.$html)
 				.perfectScrollbar(app.config.psOption);
-				
+
 		return this;
 	}
 	addContent(content) {

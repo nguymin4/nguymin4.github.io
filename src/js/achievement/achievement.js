@@ -2,7 +2,11 @@ import BaseClass from "../shared/base.js";
 
 export default class Achievement extends BaseClass {
 	constructor(model, $container) {
-		super("div", $container, model);
+		super({
+			tagName: "div",
+			container: $container,
+			model: model
+		});
 	}
 	render() {
 		var model = this.model;

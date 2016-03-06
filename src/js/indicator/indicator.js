@@ -2,7 +2,11 @@ import BaseClass from "../shared/base.js";
 
 export default class Indicator extends BaseClass {
 	constructor(model, $container) {
-		super("a", $container, model);
+		super({
+			tagName: "a",
+			container: $container,
+			model: model
+		});
 	}
 	render() {
 		var model = this.model;
