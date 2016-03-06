@@ -26,7 +26,10 @@ export default class View extends BaseClass {
 		}).fail((data, status, xhr) => {
 			this.$html.html("");
 		}).always(() => {
-			if (!isMobile) this.recalibratePerfectScrollbar();
+			if (!isMobile) {
+				this.$html.perfectScrollbar(psOption);
+				$(window).on("resize", () => this.$html.perfectScrollbar("update"));
+			};
 		});
 
 		if (content) return req.resolve(content);
@@ -40,6 +43,16 @@ export default class View extends BaseClass {
 
 		return this;
 	}
+	wiredEvent() {
+		app.channel.on("view:updateScroll", (event, id) => {
+			if (this.model.id === id && !isMobile)
+				this.$html.perfectScrollbar("update");
+		}).on("view:toggleScroll", (event, id, state) => {
+			if (this.model.id === id) 
+				this.toggleScroll(state);
+		});
+	}
+	
 	toggleClass(className) {
 		var $html = this.$html;
 		// Temporarily disable scrollbar when change view

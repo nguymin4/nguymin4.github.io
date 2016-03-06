@@ -40,15 +40,6 @@ export default function () {
 		app.channel.trigger("viewIndicator:viewIndexChanged", [active]);
 	});
 	
-	app.channel.on("view:toggleScroll", (e, id, state) => {
-		for (var i = 0; i < views.length; i++) {
-			if (views[i].model.id === id) {
-				views[i].toggleScroll(state);
-				break;
-			}
-		}
-	});
-	
 	var router = {
 		preloadViews: function (callback) {
 			callback = typeof callback === "function" ? callback : function () { };

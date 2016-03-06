@@ -1,5 +1,8 @@
 import BaseClass from "../shared/base.js";
 import {animate} from "../shared/ulti.js";
+import app from "../shared/app.js";
+
+var isMobile = app.env.isMobile;
 
 export default class SkillPart extends BaseClass {
 	constructor($html, $container) {
@@ -20,6 +23,8 @@ export default class SkillPart extends BaseClass {
 			this.minHeight : this.maxHeight
 
 		this.$html.css("max-height", maxHeight).toggleClass("active");
+		
+		app.channel.trigger("view:updateScroll", [this.$container.attr("id")]);
 		this.$container.animate({
 			scrollTop: this.$html.offset().top - this.minHeight - 10
 		}, "slow");
