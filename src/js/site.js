@@ -8,6 +8,7 @@ import renderSmokeEffect from "./components/smoke.js";
 // Contents in each section
 import renderInterestSection from "./interest/index.js";
 import renderProjectSection from "./project/index.js";
+import renderAchievementSection from "./achievement/index.js";
 
 
 var ready = false;
@@ -30,4 +31,5 @@ var documentLoaded = setInterval(() => {
 function initWhenReady() {
 	renderInterestSection();
 	renderProjectSection();
+	renderAchievementSection();
 }

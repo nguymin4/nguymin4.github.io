@@ -3,7 +3,7 @@ var views = {};
 
 [
 	{
-		id: "skills",
+		// id: "skills",
 		title: "Skills &amp; Achievements"
 	}, {
 		id: "projects",

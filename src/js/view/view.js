@@ -38,6 +38,7 @@ export default class View extends BaseClass {
 	}
 	toggleClass(className) {
 		var $html = this.$html;
+		// Temporarily disable scrollbar when change view
 		$html.css("overflow-y", "hidden").toggleClass(className);
 		if (isMobile)
 			setTimeout(() => $html.css("overflow-y", "scroll"), 1250);
