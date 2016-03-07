@@ -5,10 +5,11 @@ var isMobile = app.env.isMobile;
 
 export default class ProjectDetail extends BaseClass {
 	constructor($container) {
-		super({ 
-			tagName: "div", 
-			container: $container 
+		super({
+			tagName: "div",
+			container: $container
 		});
+		this.ready = true;
 	}
 	render() {
 		this.$html.attr({
@@ -16,6 +17,7 @@ export default class ProjectDetail extends BaseClass {
 		}).html(`<div class="detail">
 					<div class="detail-top">
 						<i class="fa fa-chevron-circle-up btn-close"></i>
+						<a class="fa fa-github-square btn-github"><i></i></a>
 						<hr />
 					</div>
 					<div class="detail-body">
@@ -24,25 +26,30 @@ export default class ProjectDetail extends BaseClass {
 				</div>`);
 
 		this.$contentBox = $(".content-box", this.$html);
+		this.$github = $(".btn-github", this.$html);
 		return this;
 	}
 	wiredEvent() {
 		this.on(".btn-close click", () => {
+			this.ready = false;
 			this.$html.removeClass("active");
 			setTimeout(() => {
 				this.$html.css("top", 0);
 				app.channel.trigger("view:toggleScroll", ["projects", true]);
-			}, 750);
+				this.ready = true;
+			}, 500);
 		});
 
-		if (!isMobile)
+		if (!isMobile) {
 			this.$detailBody = $(".detail-body", this.$html)
 				.perfectScrollbar(app.config.psOption);
+		}
 
 		return this;
 	}
-	addContent(content) {
-		this.$contentBox.html(content);
+	addContent(model) {
+		this.$contentBox.html(model.info);
+		this.$github.attr("href", model.github);
 		if (!isMobile) this.$detailBody.perfectScrollbar("update");
 		app.channel.trigger("view:toggleScroll", ["projects", false]);
 

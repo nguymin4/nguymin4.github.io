@@ -29,6 +29,8 @@ export default class View extends BaseClass {
 			if (!isMobile) {
 				this.$html.perfectScrollbar(psOption);
 				$(window).on("resize", () => this.$html.perfectScrollbar("update"));
+			} else {
+				this.$html.css("overflow-y", "scroll");
 			};
 		});
 
@@ -39,7 +41,7 @@ export default class View extends BaseClass {
 		this.$html.attr({
 			id: this.model.id,
 			class: "view"
-		}).css("overflow-y", "hidden");
+		});
 
 		return this;
 	}
@@ -69,7 +71,7 @@ export default class View extends BaseClass {
 	toggleScroll(active) {
 		var overflow = active ? "scroll" : "hidden";
 		var option = active ? psOption : "destroy";
-		this.$html.css("overflow-y", overflow);
 		if (!isMobile) this.$html.perfectScrollbar(option);
+		else this.$html.css("overflow-y", overflow);
 	}
 }

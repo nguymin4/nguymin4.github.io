@@ -27,7 +27,7 @@ export default class Project extends BaseClass {
 	}
 	wiredEvent() {
 		this.on(".project click", () => {
-			detailView.addContent(this.model.info);
+			if (detailView.ready) detailView.addContent(this.model);
 		});
 	}
 	static setDetailView() {
