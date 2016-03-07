@@ -1,4 +1,6 @@
 #skills {
+	padding-top: 100px;
+	
 	.row {
 		max-width: 900px;
 		background-color: $main-color;
@@ -12,7 +14,7 @@
 	}
 	
 	h2 {
-		font-size: 1.5em;
+		font-size: 1.4em;
 		margin-bottom: 25px;
 		cursor: pointer;
 	}
@@ -32,6 +34,7 @@
 
 .skill {
 	min-height: 180px;
+	font-size: 15px;
 	
 	li {
 		margin: 5px auto;

@@ -13,8 +13,8 @@ This is project is my personal website (this website). Source code is available 
 About the front-end technologies, I used:
 - HTML5
 - CSS3 (SCSS)
-- Javascript (ES6) packaged by webpack and transpiled by babel. 
-Features used: \`class, import/export, lambda expression, template string\` 
+- Javascript (ES6) packaged by webpack and transpiled by babel.
+Features used: \`class, import/export, lambda expression, template string\`
 `
 	},
 	{
@@ -48,11 +48,11 @@ This project helps me  a lot to practice several modern technologies.
 	- ultilize httpInterceptor for routing host depend on config
 	- folder structure based on module functionality instead of of module type
 
-  => reuse 98%-99% javascript code when developing hybrid app with cordova
+  <i class="fa fa-arrow-right"></i> reuse 98% - 99% javascript code when developing hybrid app with cordova
 
 - CSS3 (SCSS): Responsive design and ultilze GPU processing to make transition and animation smoothly in mobile.
 
-	=> reuse 100% css for hybrid app
+  <i class="fa fa-arrow-right"></i> reuse 100% css for hybrid app
 <br /><br />
 
 #### Back-end
@@ -60,7 +60,11 @@ This project helps me  a lot to practice several modern technologies.
 	- Restful API support both web app and hybrid app
 	- dependency injection to make code loosely couple
 - MongoDB with its C# driver. Use convention pack to convert CamelCase property between C# code convention and MongoDB convention
-- Deploy to Heroku with custom .NET buildpack 
+- Deploy to Heroku with custom .NET buildpack
+<br /><br />
+
+After this project, I used Python (Flask) instead of ASP.NET in the back-end while still keep the front-end. It's also deployed to Heroku. 
+https://github.com/nguymin4/flask-bookstore
 <br /><br />
 
 #### What's next
@@ -87,6 +91,20 @@ working. The board also works as basis for every day standup meeting content (Sh
 <img class="img-responsive" src="https://github.com/nguymin4/Lanban/raw/master/Lanban/images/Chart-Demo.png"  alt=" " width="500" />
 
 <img class="img-responsive" src="https://github.com/nguymin4/Lanban/raw/master/Lanban/images/Comment-Demo.png"  alt=" " width="500" />
+`
+	},
+	{
+		title: "Production Software Oy - Website",
+		thumbnail: "assets/img/production_software_oy.jpg",
+		info: `
+<img align="right" src="assets/img/production_software_oy.jpg"  alt =" " width="300" />
+This project is a part of the course Content Managment System at my school. 
+I designed custom theme and then coded and deployed it in August 2014.
+
+It's powered by **Wordpress**. The customer is quite satisfied with it that's why it's mostly the same as I designed it nearly two years ago.
+You can visit the website at http://productionsoftware.fi
+
+However, the website's biggest drawback is that it's not responsive.
 `
 	},
 ];

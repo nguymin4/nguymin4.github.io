@@ -17,7 +17,7 @@ export default class ProjectDetail extends BaseClass {
 		}).html(`<div class="detail">
 					<div class="detail-top">
 						<i class="fa fa-chevron-circle-up btn-close"></i>
-						<a class="fa fa-github-square btn-github"><i></i></a>
+						<a class="fa fa-github-square btn-github"></a>
 						<hr />
 					</div>
 					<div class="detail-body">
@@ -49,7 +49,8 @@ export default class ProjectDetail extends BaseClass {
 	}
 	addContent(model) {
 		this.$contentBox.html(model.info);
-		this.$github.attr("href", model.github);
+		this.$github.attr("href", model.github)
+			.css("display", model.github ? "inline-block" : "none");
 		if (!isMobile) this.$detailBody.perfectScrollbar("update");
 		app.channel.trigger("view:toggleScroll", ["projects", false]);
 

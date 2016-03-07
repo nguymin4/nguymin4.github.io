@@ -3,9 +3,6 @@ var views = {};
 
 [
 	{
-		// id: "skills",
-		title: "Skills &amp; Achievements"
-	}, {
 		id: "projects",
 		class: "project-list",
 		title: "Projects &amp; Works"
