@@ -1,14 +1,18 @@
 #about {
 	p.col-sm-9 {
-		margin-top: 20px;
+		height: calc(80vh - 80px);
+		padding: 20px;
 		line-height: 1.5em;
+		background: $main-color;
+		color: $secondary-color;
+		@include border-radius(5px);
 	}
 }
 
 #contact {
 	// position: absolute;
+	// z-index: 99;
 	list-style: none;
-	z-index: 99;
 	padding: 20px 0px 0px 0px;
 	min-width: 175px;
 	

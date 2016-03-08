@@ -12,9 +12,10 @@ This is project is my personal website (this website). Source code is available 
 
 About the front-end technologies, I used:
 - HTML5
-- CSS3 (SCSS)
-- Javascript (ES6) packaged by webpack and transpiled by babel.
-Features used: \`class, import/export, lambda expression, template string\`
+- CSS3 (SCSS) and Twitter bootstrap
+- Javascript (ES6) packaged by webpack and transpiled by babel.  
+Features used: \`class, import/export, lambda expression, template string\`  
+No 3rd-party framework.
 `
 	},
 	{

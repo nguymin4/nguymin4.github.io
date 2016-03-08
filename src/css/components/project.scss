@@ -70,21 +70,25 @@
 		position: relative;
 		
 		.btn-close {
-			margin: auto;
-			font-size: 1.6em;
-			cursor: pointer;
-			@include transition(transform 0.25s ease);
-		}
-		
-		.btn-github {
-			text-decoration: none;
-			font-size: 2.4em;
 			position: absolute;
 			right: 20px;
 			top: 20px;
+			font-size: 1.75em;
+			cursor: pointer;
+			@include transition(transform 0.25s ease);
+			
+			&:hover {
+				@include animation(pulse 1s infinite ease);
+			}
+		}
+		
+		.btn-github {
+			margin: auto;
+			font-size: 2.8em;
 			color: $secondary-color;
+			text-decoration: none;
 			@include transition(color 0.25s ease);
-			// @include animation(pulse 1s infinite ease);
+			
 			
 			&:hover {
 				color: #337ab7;
@@ -105,6 +109,10 @@
 		padding: 10px 20px;
 		overflow-y: scroll;
 		font-size: 15px;
+		
+		.content-box {
+			padding-bottom: 30px;
+		}
 		
 		img {
 			margin: 5px 0px;
@@ -134,5 +142,5 @@
 @include keyframes(pulse) {
 	0% {@include transform(scale(1.1))}
 	50% {@include transform(scale(0.9))}
-	100% {@include transform(scale(1))}
+	100% {@include transform(scale(1.1))}
 }

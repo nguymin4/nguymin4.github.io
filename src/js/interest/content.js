@@ -7,7 +7,7 @@ export default [
 	{
 		title: "Literature", background: "assets/img/galician-literature-day-spain.jpg",
 		content: `My childhood filled with classics novel.
-		Jules Verne, Victor Hugo, Alexandre Dumas, Hector Malot, Mark Twain, Jack London, Edmondo De Amicis etc. are familiar names to me.`
+		Jules Verne, Victor Hugo, Alexandre Dumas, Hector Malot, Mark Twain, Jack London, Edmondo De Amicis etc. are all my favourite authors.`
 	},
 	{
 		title: "Running and Strolling", background: "assets/img/Launeen_perhepuisto.jpg",

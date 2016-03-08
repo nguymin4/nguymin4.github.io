@@ -16,11 +16,11 @@
 
 section.view {
 	position: absolute;
-	@include transform(translateX(-50vw));
 	height: 100%;
 	width: 100%;
-	color: $main-color;
+	@include transform(translateX(-50vw));
 	@include transition(all 0.75s ease 0s);
+	color: $main-color;
 	opacity: 0;
 	z-index: -1;
 	overflow-x: hidden;
