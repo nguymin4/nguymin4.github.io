@@ -14,8 +14,17 @@ About the front-end technologies, I used:
 - HTML5
 - CSS3 (SCSS) and Twitter bootstrap
 - Javascript (ES6) packaged by webpack and transpiled by babel.  
-Features used: \`class, import/export, lambda expression, template string\`  
-No 3rd-party framework.
+Main features used: \`class, import/export, lambda expression, template string\`  
+
+	- Framework: No 3rd-party framework, self-organized code based on class and module.  
+
+Testing:
+- Unit testing: Jasmine, Karma, PhantomJS
+- E2E testing: To carry out the test, I created a custom nodejs module dependent on \`selenium-webdriver\` for browser automation and \`jasmine\` as framework. 
+I also added a \`gulp\` task to run the test against multi-browsers which is config in config file.  
+
+	Other prerequisites components to run the test are \`selenium-standalone-server*.jar\`, \`chromedriver(exe)\`, 
+\`phantomjs\` (installed via package phantomjs-prebuilt), firefox is supported by selenium out of the box.
 `
 	},
 	{
@@ -24,8 +33,8 @@ No 3rd-party framework.
 		github: getGithubLink("python-euler-project"),
 		info: `
 <img align="right" src="${eulerImg}"  alt =" " width="200" />
-Project Euler is a series of challenging mathematical/computer programming problems that will require more than just mathematical insights to solve.\
-Although mathematics will help you arrive at elegant and efficient methods, the use of a computer and programming skills will be required to solve most problems.\
+Project Euler is a series of challenging mathematical/computer programming problems that will require more than just mathematical insights to solve. 
+Although mathematics will help you arrive at elegant and efficient methods, the use of a computer and programming skills will be required to solve most problems. 
 The motivation for starting Project Euler, and its continuation, is to provide a platform for the inquiring mind to delve into unfamiliar areas and learn new concepts in a fun and recreational context. (https://projecteuler.net/)
 
 I solved the problems with **Python** as programming language.
@@ -38,14 +47,12 @@ I solved the problems with **Python** as programming language.
 		info: `
 ### Book Store
 <img align="right" src="https://github.com/nguymin4/aspnet-bookstore/raw/master/docs/img/ss3.jpg" alt=" " height="375" />
-This project helps me  a lot to practice several modern technologies.
-<br /><br />
-
+<br />
 #### Front-end
 - AngularJS: Angular way
 	- manipulate dom with jquery only in directive
 	- communication via service
-	- keep controller thin
+	- keep controller thin and avoid scope with *controllerAs* syntax
 	- ultilize httpInterceptor for routing host depend on config
 	- folder structure based on module functionality instead of of module type
 
@@ -53,13 +60,17 @@ This project helps me  a lot to practice several modern technologies.
 
 - CSS3 (SCSS): Responsive design and ultilze GPU processing to make transition and animation smoothly in mobile.
 
-  <i class="fa fa-arrow-right"></i> reuse 100% css for hybrid app
+  <i class="fa fa-arrow-right"></i> reuse 100% css for hybrid app  
+
+- Testing: 
+	- Unit testing: Jasmine, Karma, PhantomJS
+	- E2E testing: Protractor, Jasmine as framework, browsers Chrome (PhantomJS is not stable for protractor) 
 <br /><br />
 
 #### Back-end
 - ASP.NET 5
 	- Restful API support both web app and hybrid app
-	- dependency injection to make code loosely couple
+	- DI to make code loosely couple
 - MongoDB with its C# driver. Use convention pack to convert CamelCase property between C# code convention and MongoDB convention
 - Deploy to Heroku with custom .NET buildpack
 <br /><br />

@@ -53,12 +53,11 @@
 	.back {
 		position: absolute;
 		background-color: rgba(255, 255,255, 1);
-		// background-color: rgba(60, 60, 60, 0.6);
 		color: $secondary-color;
 		padding: 20px 15px;
 		text-align: left;
 		line-height: 1.4em;
-		font-size: 15px;
+		font-size: 0.9em;
 		@include transform(rotateX(180deg));
 		
 	}

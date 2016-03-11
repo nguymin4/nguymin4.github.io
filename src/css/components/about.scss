@@ -1,7 +1,8 @@
 #about {
-	p.col-sm-9 {
-		height: calc(80vh - 80px);
+	div.col-sm-9 {
+		min-height: calc(60vh - 80px);
 		padding: 20px;
+		font-size: 0.9em;
 		line-height: 1.5em;
 		background: $main-color;
 		color: $secondary-color;
@@ -10,10 +11,9 @@
 }
 
 #contact {
-	// position: absolute;
-	// z-index: 99;
 	list-style: none;
-	padding: 20px 0px 0px 0px;
+	padding: 0px;
+	margin: 20px 0px 30px 0px;
 	min-width: 175px;
 	
 	a {
