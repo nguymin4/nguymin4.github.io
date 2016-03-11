@@ -1,0 +1,6 @@
+{
+	"seleniumPath": "./bin",
+	"seleniumVersion": "2.51.0",
+	"driverPath": "./bin",
+	"jasmineConf": "test/e2e.conf.js"
+}
