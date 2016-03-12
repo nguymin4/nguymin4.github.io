@@ -14,6 +14,7 @@ module.exports = function (env, config) {
 		var meta = metaData[keyword];
 		if (typeof meta !== "string")
 			meta = env.isProduction ? meta["build"] : meta["dev"];
+		meta = meta.replace(/[\n\t]/g, "");
 		src = src.pipe(replace.call(this, "${" + keyword + "}", meta));
 	}
 
