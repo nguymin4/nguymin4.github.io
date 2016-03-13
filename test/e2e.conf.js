@@ -14,13 +14,12 @@ module.exports = {
 	// Config the same as in selenium-webdriver capablities
 	multiCapabilities: [
 		{
-			"browserName": "firefox"
-		}, 
-		{
 			"browserName": "chrome"
 		},
 		{
 			"browserName": "phantomjs"
 		}
-	]
+	],
+	// Maximum number of instances of each browser that can be spawned
+	maxIntances: 3
 }

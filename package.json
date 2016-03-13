@@ -1,45 +1,46 @@
 {
-  "name": "nguymin4.github.io",
-  "description": "My personal website",
-  "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nguymin4/nguymin4.github.io/nguymin4.github.io.git"
-  },
-  "scripts": {
-    "e2e": "gulp e2e --config test/e2e.conf.js"
-  },
-  "dependencies": {
-    "babel-core": "^6.7.0",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.6.0",
-    "gulp": "^3.9.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-replace": "^0.5.4",
-    "gulp-sass": "^2.2.0",
-    "gulp-uglify": "^1.5.3",
-    "gulp-util": "^3.0.7",
-    "webpack": "^1.12.14"
-  },
-  "devDependencies": {
-    "browser-sync": "^2.11.1",
-    "bs-html-injector": "^3.0.0",
-    "jasmine-core": "^2.4.1",
-    "jasmine-spec-reporter": "^2.4.0",
-    "karma": "^0.13.22",
-    "karma-jasmine": "^0.3.7",
-    "karma-mocha-reporter": "^2.0.0",
-    "karma-ng-html2js-preprocessor": "^0.2.1",
-    "karma-phantomjs-launcher": "^1.0.0",
-    "karma-webpack": "^1.7.0",
-    "phantomjs-prebuilt": "^2.1.5",
-    "selenium-webdriver": "^2.52.0",
-    "webpack": "^1.12.14"
-  },
-  "author": {
-    "name": "Minh Son Nguyen",
-    "email": "minh.son.nguyen.1209@gmail.com",
-    "url": "https://nguymin4.github.io"
-  },
-  "license": "MIT"
+	"name": "nguymin4.github.io",
+	"description": "My personal website",
+	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/nguymin4/nguymin4.github.io/nguymin4.github.io.git"
+	},
+	"scripts": {
+		"e2e-seq": "gulp e2e --config test/e2e.conf.js",
+		"e2e": "gulp e2e --config test/e2e.conf.js --parallel"
+	},
+	"dependencies": {
+		"babel-core": "^6.7.0",
+		"babel-loader": "^6.2.4",
+		"babel-preset-es2015": "^6.6.0",
+		"gulp": "^3.9.1",
+		"gulp-rename": "^1.2.2",
+		"gulp-replace": "^0.5.4",
+		"gulp-sass": "^2.2.0",
+		"gulp-uglify": "^1.5.3",
+		"gulp-util": "^3.0.7",
+		"webpack": "^1.12.14"
+	},
+	"devDependencies": {
+		"browser-sync": "^2.11.1",
+		"bs-html-injector": "^3.0.0",
+		"jasmine-core": "^2.4.1",
+		"jasmine-spec-reporter": "^2.4.0",
+		"karma": "^0.13.22",
+		"karma-jasmine": "^0.3.7",
+		"karma-mocha-reporter": "^2.0.0",
+		"karma-ng-html2js-preprocessor": "^0.2.1",
+		"karma-phantomjs-launcher": "^1.0.0",
+		"karma-webpack": "^1.7.0",
+		"phantomjs-prebuilt": "^2.1.5",
+		"selenium-webdriver": "^2.52.0",
+		"webpack": "^1.12.14"
+	},
+	"author": {
+		"name": "Minh Son Nguyen",
+		"email": "minh.son.nguyen.1209@gmail.com",
+		"url": "https://nguymin4.github.io"
+	},
+	"license": "MIT"
 }

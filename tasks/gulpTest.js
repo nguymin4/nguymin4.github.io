@@ -3,23 +3,64 @@ var gulp = require("gulp"),
 	path = require("path"),
 	fork = require("child_process").fork;
 
-var absPath = relPath => path.join(process.cwd(), relPath); 
+var absPath = relPath => path.join(process.cwd(), relPath);
 
-gulp.task("e2e", function (done) {
-	var configFile = util.env["config"];
-	var multiCapabilities = require(absPath(configFile)).multiCapabilities;
-	
-	forkE2E();
-	function forkE2E() {
-		var capability = multiCapabilities.pop();
-		
-		if (!capability) {
-			done();
-			return;
-		}
-		console.log("Running test with browser:", capability.browserName);
-		var test = fork(absPath("lib/selenium-jasmine"), [configFile]);
-		test.send(capability);
-		test.on("close", forkE2E);
+var configFile, multiCapabilities, port;
+
+gulp.task("e2e", function(done) {
+	configFile = util.env["config"];
+	multiCapabilities = require(absPath(configFile)).multiCapabilities;
+	port = util.env["port"] || 4444;
+	util.env["parallel"] ? executeParallel(done) : executeSequence(done);
+
+});
+
+function executeParallel(done) {
+	// Create hub
+	var hub = forkTestRunner({
+		seleniumPort: port,
+		seleniumRole: "hub"
+	}).on("message", runParallelTest);
+
+	function runParallelTest(data) {
+		var count = multiCapabilities.length;
+		multiCapabilities.forEach((capability, i) => {
+			forkTestRunner({
+				capability: capability,
+				config: {
+					seleniumHost: data.seleniumHub,
+					seleniumPort: port + i + 1,
+					seleniumRole: "node",
+					seleniumHub: `http://${data.seleniumHub}:${port}/grid/register/`
+				}
+			}).on("close", () => {
+				count -= 1;
+				if (count === 0) {
+					hub.kill("SIGINT");
+					return done();
+				}
+			});
+		});
 	}
-})
+}
+
+function executeSequence(done) {
+	var capability = multiCapabilities.pop();
+	if (!capability) return done();
+	forkTestRunner({
+		config: {
+			seleniumPort: port
+		},
+		capability: capability
+	}).on("close", executeSequence.bind(this, done));
+}
+
+function forkTestRunner(msg) {
+	var test = fork(absPath("lib/selenium-jasmine"), [configFile]);
+
+	process.on("SIGINT", () => test.kill("SIGINT"))
+		.on("exit", () => test.kill("SIGINT"));
+	
+	test.send(msg);
+	return test;
+}
