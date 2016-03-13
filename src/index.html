@@ -29,7 +29,7 @@
 			
 			/* Load fonts based on platform */
 			var weight = /win/i.test(navigator.platform) ? 300 : 400;
-			var fontHref = "https://fonts.googleapis.com/css?family=Open+Sans:${weight},${weight}italic|Ubuntu:400,400italic";
+			var fontHref = "https://fonts.googleapis.com/css?family=Open+Sans:400,${weight}italic|Ubuntu:400,400italic";
 			var linkTag = "<link rel='stylesheet' href='"+ fontHref +"' />";
 			document.write(linkTag.replace(/\$\{weight\}/g, weight));
 		}());
