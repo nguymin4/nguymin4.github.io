@@ -9,10 +9,10 @@ var configFile, multiCapabilities, port;
 
 gulp.task("e2e", function(done) {
 	configFile = util.env["config"];
-	multiCapabilities = require(absPath(configFile)).multiCapabilities;
-	port = util.env["port"] || 4444;
+	var config = require(absPath(configFile))
+	multiCapabilities = config.multiCapabilities;
+	port = util.env["port"] || config.hubPort  || 4444;
 	util.env["parallel"] ? executeParallel(done) : executeSequence(done);
-
 });
 
 function executeParallel(done) {

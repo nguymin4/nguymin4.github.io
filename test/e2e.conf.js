@@ -17,9 +17,14 @@ module.exports = {
 			"browserName": "chrome"
 		},
 		{
-			"browserName": "phantomjs"
+			"browserName": "phantomjs",
+			"phantomjs.cli.args": ["--load-images=false"]
 		}
 	],
-	// Maximum number of instances of each browser that can be spawned
+	// Port of selenium grid hub 
+	// or port of selenium standalone server in running sequencial tests 
+	// - Optional
+	hubPort: 4444,
+	// Maximum number of instances of each browser that can be spawned - Optional
 	maxIntances: 3
 }

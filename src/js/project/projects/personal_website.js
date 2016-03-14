@@ -15,10 +15,16 @@ About the front-end technologies, I used:
 
 Testing:
 - Unit testing: Jasmine, Karma, PhantomJS
-- E2E testing: To carry out the test, I created a custom nodejs module dependent on \`selenium-webdriver\` for browser automation and \`jasmine\` as framework. 
-I also added a \`gulp\` task to run the test against multi-browsers which is config in config file.  
+- E2E testing: To carry out the test, I created a custom nodejs module dependent on \`selenium-webdriver\` for browser automation and \`jasmine\` as framework.  
+ 
+	I also added a \`gulp\` task to run the test against multi-browsers which is config in config file.
+The gulp task accept parameters \`--parallel\` which run parallel tests using *Selenium Grid*.    
 
 	Other prerequisites components to run the test are \`selenium-standalone-server*.jar\`, \`chromedriver(exe)\`, 
 \`phantomjs\` (installed via package phantomjs-prebuilt), firefox is supported by selenium out of the box.
+Setting up webdriver either in \`PATH\`, in config file or download and place it in \`bin\` folder inside \`lib/selenium-jasmine\`  
+
+	Limitation: Work stable on Linux. On Windows, there are performance issues and errors with firefox and phantomjs. Those issues are addressed on 
+https://github.com/seleniumhq/selenium-google-code-issue-archive/issues
 `
 };
