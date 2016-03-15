@@ -1,5 +1,5 @@
 /* global marked */
-import markedRenderer from "../shared/config.js"
+import markedRenderer from "../shared/config.js";
 import projectList from "./content.js";
 import Project from "./project.js";
 

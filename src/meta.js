@@ -41,4 +41,4 @@ module.exports = {
 		"dev": "assets/css/site.css",
 		"build": "assets/css/site.min.css"
 	}
-}
+};

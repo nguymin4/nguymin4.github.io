@@ -21,10 +21,10 @@ module.exports = {
 				// exclude: /(node_modules|bower_components|lib)/,
 				loader: "babel-loader",
 				query: {
-					presets: ['es2015'],
+					presets: ["es2015"],
 					cacheDirectory: true
 				}
 			}
 		]
 	}
-}
+};

@@ -14,7 +14,7 @@ export default class BaseClass {
 			this.$html = specs.html;
 			this.$container = specs.container;
 		}
-		 
+		
 		// Events
 		this.events = {};
 		if (this.wiredEvent) this.wiredEvent();
@@ -33,7 +33,7 @@ export default class BaseClass {
 		var args = analyzeEvent(event);
 		var $html = args.selector ? $(args.selector, $html) : this.$html;
 
-		if (fn) $html.off(event, fn)
+		if (fn) $html.off(event, fn);
 		else listeners.forEach(fn => $html.off(event, fn));
 
 		return this;

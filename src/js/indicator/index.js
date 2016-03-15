@@ -4,7 +4,7 @@ import iconList from "./icons.js";
 
 export default function () {
 	var $container = $("#view-indicators");	
-	var indicators = iconList.map(indicator => new Indicator(indicator, $container))
+	var indicators = iconList.map(model => new Indicator(model, $container));
 	
 	var active =  app.router.initialViewIndex;
 	indicators[active].toggleClass("active");

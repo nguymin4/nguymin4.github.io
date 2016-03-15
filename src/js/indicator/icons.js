@@ -8,7 +8,7 @@ var indicators = [
 	{ icon: "fa-gamepad", title: "Interests" }
 ].map((indicator, i) => {
 	indicator.href = app.config.hashes[i];
-	return indicator
+	return indicator;
 });
 
 export default indicators;

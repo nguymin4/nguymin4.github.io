@@ -52,7 +52,7 @@ export default function () {
 			return this;
 		},
 		initialViewIndex: getViewState().activeViewIndex
-	}
+	};
 
 	return router;
 }

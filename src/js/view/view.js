@@ -1,6 +1,6 @@
 import BaseClass from "../shared/base.js";
 import app from "../shared/app.js";
-import htmlViews from "./htmlViews.js"
+import htmlViews from "./htmlViews.js";
 
 var isMobile = app.env.isMobile;
 var psOption = app.config.psOption;
@@ -19,19 +19,20 @@ export default class View extends BaseClass {
 	}
 	load() {
 		var content = htmlViews[this.model.id];
+		var $html = this.$html;
 		var req = content ? $.Deferred() : $.ajax(this.model.route);
 
 		req.done((data, status, xhr) => {
-			this.$html.html(data);
+			$html.html(data);
 		}).fail((data, status, xhr) => {
-			this.$html.html("");
+			$html.html("");
 		}).always(() => {
 			if (!isMobile) {
-				this.$html.perfectScrollbar(psOption);
-				$(window).on("resize", () => this.$html.perfectScrollbar("update"));
+				$html.perfectScrollbar(psOption);
+				$(window).on("resize", () => $html.perfectScrollbar("update"));
 			} else {
-				this.$html.css("overflow-y", "scroll");
-			};
+				$html.css("overflow-y", "scroll");
+			}
 		});
 
 		if (content) return req.resolve(content);

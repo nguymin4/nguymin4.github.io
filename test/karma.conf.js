@@ -9,22 +9,22 @@ module.exports = function (config) {
 			"bower_components/jquery/dist/jquery.min.js",
 			"bower_components/es6-shim/es6-shim.min.js",
 			"bower_components/jasmine-jquery/lib/jasmine-jquery.js",
-			"test/unit/**/*Spec.js",
+			"test/unit/**/*Spec.js"
 		],
 		preprocessors: {
 			"test/unit/**/*Spec.js": ["webpack"]
-        },
+		},
 
 		// Webpack
-        webpack: {
+		webpack: {
 			module: webpackModule,
 			resolve: {
-				 root: [path.resolve('src/js')]
+				root: [path.resolve("src/js")]
 			}
-        },
-        webpackServer: {
-            noInfo: true
-        },
+		},
+		webpackServer: {
+			noInfo: true
+		},
 
 		// Reporter
 		reporters: ["mocha"],
@@ -40,9 +40,9 @@ module.exports = function (config) {
 				base: "PhantomJS",
 				options: {
 					windowName: "my-window",
-					settings: {},
+					settings: {}
 				},
-				flags: ["--load-images=false"],
+				flags: ["--load-images=false"]
 			}
 		},
 
@@ -53,6 +53,6 @@ module.exports = function (config) {
 			"karma-phantomjs-launcher"
 		],
 		autowatch: true,
-		singleRun: false,
-	})
-}
+		singleRun: false
+	});
+};

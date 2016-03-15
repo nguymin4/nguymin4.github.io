@@ -2,13 +2,11 @@ import BaseClass from "../shared/base.js";
 import {animate} from "../shared/ulti.js";
 import app from "../shared/app.js";
 
-var isMobile = app.env.isMobile;
-
 export default class SkillPart extends BaseClass {
 	constructor($html, $container) {
 		super({
 			html: $html,
-			container: $container,
+			container: $container
 		});
 		this.minHeight = this.$html.outerHeight();
 		this.calculateHeight();
@@ -20,7 +18,7 @@ export default class SkillPart extends BaseClass {
 	}
 	toggleActive() {
 		var maxHeight = this.$html.hasClass("active") ?
-			this.minHeight : this.maxHeight
+			this.minHeight : this.maxHeight;
 
 		this.$html.css("max-height", maxHeight).toggleClass("active");
 		

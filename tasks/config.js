@@ -20,10 +20,10 @@ module.exports = {
 	uglifyOptions: {
 		mangle: false,
 		output: {
-			semicolons: true,
+			semicolons: true
 		},
 		compress: {
 			warnings: false
 		}
 	}
-}
+};

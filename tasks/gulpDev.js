@@ -6,7 +6,7 @@ var gulp = require("gulp"),
 
 module.exports = function (env, config) {
 	var input = config.input,
-		output = config.output
+		output = config.output;
 		
 	gulp.task("build:dev", ["html", "sass:dev", "webpack:watch"]);
 
@@ -22,7 +22,7 @@ module.exports = function (env, config) {
 	gulp.task("sass:dev", function () {
 		return gulp.src(input.scss.target)
 			.pipe(sass({ outputStyle: "expanded" }).on('error', sass.logError))
-			.pipe(gulp.dest(output.css))
+			.pipe(gulp.dest(output.css));
 	});
 
 	gulp.task("browser-sync", ["build:dev"], function (done) {
@@ -51,4 +51,4 @@ module.exports = function (env, config) {
 		gulp.watch(output.js + "/**/*.js")
 			.on("change", reload);
 	});
-}
+};

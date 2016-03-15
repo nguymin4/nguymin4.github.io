@@ -24,4 +24,4 @@ export default [
 		content: `At the moment, I only play one game named World of Tanks and not so frequently either, about once or twice a week.
 		This game requires not only personal skills but more importantly, team work and a tactical mindset.`
 	}
-]
+];

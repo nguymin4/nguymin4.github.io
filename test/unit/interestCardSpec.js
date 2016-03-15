@@ -1,3 +1,4 @@
+/* global setFixtures */
 import Card from "interest/card.js";
 
 describe("Interests section", function() {
@@ -26,12 +27,12 @@ describe("Interests section", function() {
 	
 	it("should display cards", function() {
 		expect($("> div", $container).length).toEqual(2);
-	})
+	});
 	
 	describe("and cards", function() {
 		var $html;		
 		
-		beforeAll(() => $html = cards[0].$html)
+		beforeAll(() => $html = cards[0].$html);
 		
 		it("should render correctly", function() {
 			expect($html).toHaveClass("interest-card");
@@ -45,4 +46,4 @@ describe("Interests section", function() {
 			expect($(".back", $html)).toHaveHtml(model.content);
 		});
 	});
-})
+});

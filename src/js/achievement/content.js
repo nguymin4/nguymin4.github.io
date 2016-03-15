@@ -2,7 +2,7 @@ var logos = {
 	"Codility": "https://media.licdn.com/media/p/2/000/100/3f7/32cb3ab.png",
 	"MongoDB": "https://media.licdn.com/media/AAEAAQAAAAAAAATFAAAAJDBlYjQ4YjBhLWEyNDAtNDA4ZC05OWJkLTRkYTFhN2Q2YmE2Yw.png",
 	"edX": "https://media.licdn.com/media/AAEAAQAAAAAAAAOqAAAAJDQ5YmUzOGFlLWIwYWMtNDdjYy04ZTY5LThhODFiMWQ5NTc5MQ.png"
-}
+};
 export default [
 	{
 		"name": "MongoDB for Java Developers",
@@ -33,6 +33,5 @@ export default [
 		"authority": "Codility",
 		"url": "https://codility.com/cert/view/certA5GUAY-U833PD35QNBBT6NJ",
 		"logo": logos["Codility"]
-	},
-	
-]
+	}
+];

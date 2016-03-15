@@ -11,7 +11,7 @@ export default [
 	project_euler_python,
 	bookstore,
 	lanban,
-	productionsoftware_website,
+	productionsoftware_website
 ].map(project => {
 	project.github = getGithubLink(project.github);
 	return project;

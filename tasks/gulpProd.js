@@ -8,7 +8,7 @@ var gulp = require("gulp"),
 
 module.exports = function (env, config) {
 	var input = config.input,
-		output = config.output
+		output = config.output;
 
 	var pipeMetaTag = function (src, keyword) {
 		var meta = metaData[keyword];
@@ -16,7 +16,7 @@ module.exports = function (env, config) {
 			meta = env.isProduction ? meta["build"] : meta["dev"];
 		meta = meta.replace(/[\n\t]/g, "");
 		src = src.pipe(replace.call(this, "${" + keyword + "}", meta));
-	}
+	};
 
 	gulp.task("build", ["build:env", "html", "sass:build", "webpack:build"]);
 
@@ -25,7 +25,7 @@ module.exports = function (env, config) {
 	});
 
 	gulp.task("html", function () {
-		var src = gulp.src(input.html.target)
+		var src = gulp.src(input.html.target);
 		
 		// Add meta data
 		for (var key in metaData) 
@@ -47,10 +47,10 @@ module.exports = function (env, config) {
 
 	gulp.task("webpack", function (cb) {
 		exec(env.cmd("webpack"), function (err) {
-			if (!err) cb(null)
+			if (!err) cb(null);
 			else cb(true);
 		});
-	})
+	});
 
 	gulp.task("uglify:js", ["webpack"], function () {
 		gulp.src([output.js + "/**/*.js",
@@ -59,4 +59,4 @@ module.exports = function (env, config) {
 			.pipe(rename((path) => path.basename += ".min"))
 			.pipe(gulp.dest(output.js));
 	});
-}
+};

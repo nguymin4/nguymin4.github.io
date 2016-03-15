@@ -27,4 +27,4 @@ module.exports = {
 	hubPort: 4444,
 	// Maximum number of instances of each browser that can be spawned - Optional
 	maxIntances: 3
-}
+};
