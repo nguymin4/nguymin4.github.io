@@ -7,7 +7,8 @@
     "url": "https://github.com/nguymin4/nguymin4.github.io/nguymin4.github.io.git"
   },
   "scripts": {
-	"start": "python -m SimpleHTTPServer 3000",  
+    "start": "python -m SimpleHTTPServer 3000",
+    "test": "node node_modules/karma/bin/karma start test/karma.conf.js",
     "e2e-seq": "gulp e2e --config test/e2e.conf.js",
     "e2e": "gulp e2e --config test/e2e.conf.js --parallel"
   },

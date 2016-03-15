@@ -22,7 +22,7 @@ module.exports = {
 		}
 	],
 	// Port of selenium grid hub 
-	// or port of selenium standalone server in running sequencial tests 
+	// or port of selenium standalone server 
 	// - Optional
 	hubPort: 4444,
 	// Maximum number of instances of each browser that can be spawned - Optional
