@@ -1,3 +1,5 @@
 assets/css/site.css
 assets/js/site.js
 lib/selenium-jasmine/bin
+**/typings/**/*
+!selenium-jasmine.d.ts

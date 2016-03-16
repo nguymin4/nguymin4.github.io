@@ -18,12 +18,16 @@
 			"always"
 		],
 		"no-unused-vars": [
-			2,
+			1,
 			{
 				"vars": "all",
 				"args": "none"
 			}
 		],
 		"no-console": 0 
-	}
+	},
+	"globals": {
+        "forkBrowserInstance": true,
+        "browserName": true
+    }
 }

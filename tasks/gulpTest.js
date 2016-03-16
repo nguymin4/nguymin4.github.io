@@ -11,7 +11,7 @@ gulp.task("e2e", function(done) {
 	configFile = util.env["config"];
 	var config = require(absPath(configFile));
 	multiCapabilities = config.multiCapabilities;
-	port = util.env["port"] || config.hubPort  || 4444;
+	port = util.env["port"] || config.hubPort || 4444;
 	util.env["parallel"] ? executeParallel(done) : executeSequence(done);
 });
 
@@ -21,7 +21,7 @@ function executeParallel(done) {
 		seleniumPort: port,
 		seleniumRole: "hub"
 	}).on("message", runParallelTest);
-
+	
 	function runParallelTest(data) {
 		var count = multiCapabilities.length;
 		multiCapabilities.forEach((capability, i) => {
@@ -60,7 +60,7 @@ function forkTestRunner(msg) {
 
 	process.on("SIGINT", () => test.kill("SIGINT"))
 		.on("exit", () => test.kill("SIGINT"));
-	
+
 	test.send(msg);
 	return test;
 }
