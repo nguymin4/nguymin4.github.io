@@ -7,7 +7,7 @@ module.exports = {
 	"keyword": "Minh Son Nguyen, nguymin4, software engineer, full-stack developer, biography, projects, portfolio, interests",
 
 	"content-security-policy": {
-		"dev": "default-src * 'unsafe-inline'",
+		"dev": "default-src * 'unsafe-inline' 'unsafe-eval'",
 		"build": [
 			"default-src 'self'",
 			"script-src 'self' cdnjs.cloudflare.com www.google-analytics.com 'unsafe-inline'",

@@ -10,35 +10,37 @@ describe(`[${browserName}] In general, when the user visit homepage`, function()
 	});
 
 	it("should display loading screen", function(done) {
-		var loading_container = browser.findElement(by.css("#overlay"));
-		loading_container.getCssValue("z-index").then(value => {
-			expect(value).toEqual("9999");
-			done();
-		});
+		browser.findElement(by.css("#overlay"))
+			.getCssValue("z-index").then(value => {
+				expect(value).toEqual("9999");
+				done();
+			});
 	});
 
 	it("then hide the loading screen", function(done) {
-		var loading_container = browser.findElement(by.css("#overlay"));
 		browser.sleep(1000).then(() => {
-			loading_container.getCssValue("z-index").then(value => {
-				expect(value).toEqual("-1");
-				done();
-			});
+			browser.findElement(by.css("#overlay"))
+				.getCssValue("opacity").then(value => {
+					expect(parseFloat(value)).toBeCloseTo(0);
+					done();
+				});
 		});
 	});
-	
+
 	it("then display the homepage", function(done) {
-		var home = browser.findElement(by.css("#home"));
-		var ready = 0;
-		home.getAttribute("class").then(value => {
-			expect(value).toContain("active");
-			ready += 1;
-			if (ready === 2) done();
-		});
-		home.getInnerHtml().then(value => {
-			expect(value).toContain("<h1>Minh Son Nguyen</h1>");
-			ready += 1;
-			if (ready === 2) done();
+		browser.findElement(by.css("#home")).then(home => {
+			var ready = 0;
+			home.getAttribute("class").then(value => {
+				expect(value).toContain("active");
+				ready += 1;
+				if (ready === 2) done();
+			});
+			
+			home.getInnerHtml().then(value => {
+				expect(value).toContain("<h1>Minh Son Nguyen</h1>");
+				ready += 1;
+				if (ready === 2) done();
+			});
 		});
 	});
 });

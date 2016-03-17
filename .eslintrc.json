@@ -29,5 +29,8 @@
 	"globals": {
         "forkBrowserInstance": true,
         "browserName": true
-    }
+    },
+	"ignore": [
+		"assets/js/**/*"
+	]
 }

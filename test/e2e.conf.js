@@ -1,7 +1,7 @@
 var SpecReporter = require("jasmine-spec-reporter");
 
 module.exports = {
-	scriptTimeout: 5000,
+	scriptTimeout: 11000,
     spec_dir: "test/e2e", // Relative path from root folder
     spec_files: [
         "*Spec.js"
@@ -17,11 +17,11 @@ module.exports = {
 	multiCapabilities: [
 		{
 			"browserName": "chrome"
+		},
+		{
+			"browserName": "phantomjs",
+			"phantomjs.cli.args": ["--load-images=false", "--webdriver-loglevel=ERROR"]
 		}
-		// {
-		// 	"browserName": "phantomjs",
-		// 	"phantomjs.cli.args": ["--load-images=false"]
-		// }
 	],
 	// Port of selenium grid hub 
 	// or port of selenium standalone server 
