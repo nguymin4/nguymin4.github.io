@@ -9,8 +9,8 @@
   "scripts": {
     "start": "python -m SimpleHTTPServer 3000",
     "test": "node node_modules/karma/bin/karma start test/karma.conf.js",
-    "e2e-seq": "gulp e2e --config test/e2e.conf.js",
-    "e2e": "gulp e2e --config test/e2e.conf.js --parallel"
+    "e2e": "gulp e2e --config test/e2e.conf.js",
+	"pack:vendor": "node node_modules/webpack/bin/webpack --config webpack.vendor.config.js"
   },
   "dependencies": {
     "babel-core": "^6.7.0",
@@ -27,6 +27,7 @@
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "bs-html-injector": "^3.0.0",
+    "expose-loader": "^0.7.1",
     "jasmine": "^2.4.1",
     "jasmine-core": "^2.4.1",
     "jasmine-spec-reporter": "^2.4.0",

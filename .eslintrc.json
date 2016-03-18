@@ -24,12 +24,12 @@
 				"args": "none"
 			}
 		],
-		"no-console": 0 
+		"no-console": 0
 	},
 	"globals": {
-        "forkBrowserInstance": true,
-        "browserName": true
-    },
+		"forkBrowserInstance": true,
+		"browserName": true
+	},
 	"ignore": [
 		"assets/js/**/*"
 	]

@@ -53,8 +53,7 @@ module.exports = function (env, config) {
 	});
 
 	gulp.task("uglify:js", ["webpack"], function () {
-		gulp.src([output.js + "/**/*.js",
-			"!" + output.js + "/**/*.min.js"])
+		gulp.src([output.js + "/site.js"])
 			.pipe(uglify(config.uglifyOptions))
 			.pipe(rename((path) => path.basename += ".min"))
 			.pipe(gulp.dest(output.js));
