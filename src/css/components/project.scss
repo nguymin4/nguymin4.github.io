@@ -45,12 +45,12 @@
 	width: 100%;
 	color: $secondary-color;
 	z-index: 99;
-	// opacity: 0;
+	opacity: 0;
 	@include transform(translateY(-100%));
 	@include transition(opacity 0.75s, transform 0.75s);
 	
 	&.active {
-		// opacity: 1;
+		opacity: 1;
 		@include transform(translateY($project-detail-top));
 	}
 	

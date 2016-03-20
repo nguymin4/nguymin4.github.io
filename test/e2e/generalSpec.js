@@ -21,7 +21,7 @@ describe(`[${browserName}] In general, when the user visit homepage`, function()
 		browser.sleep(1000).then(() => {
 			browser.findElement(by.css("#overlay"))
 				.getCssValue("opacity").then(value => {
-					expect(parseFloat(value)).toBeCloseTo(0);
+					expect(parseFloat(value)).toBeCloseTo(0, 0);
 					done();
 				});
 		});

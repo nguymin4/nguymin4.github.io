@@ -27,9 +27,12 @@ export default class ProjectDetail extends BaseClass {
 
 		this.$contentBox = $(".content-box", this.$html);
 		this.$github = $(".btn-github", this.$html);
+		this.$detailBody = $(".detail-body", this.$html);
 		return this;
 	}
 	wiredEvent() {
+		if (!isMobile) this.$detailBody.perfectScrollbar(app.config.psOption);
+		
 		this.on(".btn-close click", () => {
 			this.ready = false;
 			this.$html.removeClass("active");
@@ -40,17 +43,14 @@ export default class ProjectDetail extends BaseClass {
 			}, 500);
 		});
 
-		if (!isMobile) {
-			this.$detailBody = $(".detail-body", this.$html)
-				.perfectScrollbar(app.config.psOption);
-		}
-
 		return this;
 	}
 	addContent(model) {
 		this.$contentBox.html(model.info);
 		this.$github.attr("href", model.github)
 			.css("visibility", model.github ? "visible" : "hidden");
+		
+		this.$detailBody.scrollTop(0);
 		if (!isMobile) this.$detailBody.perfectScrollbar("update");
 		app.channel.trigger("view:toggleScroll", ["projects", false]);
 
