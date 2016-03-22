@@ -1,4 +1,4 @@
-describe(`[${browserName}] In general, when the user visit homepage`, function() {
+describe(`[${browserName}] In general, when the user visit the page`, function() {
 
 	browser.get("http://localhost:3000");
 
@@ -27,20 +27,23 @@ describe(`[${browserName}] In general, when the user visit homepage`, function()
 		});
 	});
 
-	it("then display the homepage", function(done) {
+	it("then display the the correct view", function(done) {
 		browser.findElement(by.css("#home")).then(home => {
 			var ready = 0;
 			home.getAttribute("class").then(value => {
 				expect(value).toContain("active");
-				ready += 1;
-				if (ready === 2) done();
+				checkReady();
 			});
 			
 			home.getInnerHtml().then(value => {
 				expect(value).toContain("<h1>Minh Son Nguyen</h1>");
+				checkReady();
+			});
+			
+			function checkReady() {
 				ready += 1;
 				if (ready === 2) done();
-			});
+			}
 		});
 	});
 });
