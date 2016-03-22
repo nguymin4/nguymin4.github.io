@@ -14,9 +14,9 @@ export default class SkillPart extends BaseClass {
 	wiredEvent() {
 		$(window).on("resize", this.calculateHeight.bind(this));
 
-		this.on("h2 click", this.toggleActive.bind(this));
+		this.on("h2 click", SkillPart.toggleActive.bind(this));
 	}
-	toggleActive() {
+	static toggleActive() {
 		var maxHeight = this.$html.hasClass("active") ?
 			this.minHeight : this.maxHeight;
 

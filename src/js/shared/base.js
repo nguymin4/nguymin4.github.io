@@ -4,7 +4,7 @@ export default class BaseClass {
 	constructor(specs) {
 		// Model
 		this.model = specs.model || {};
-		
+
 		// View - render if there is tagName
 		if (specs.tagName) {
 			this.$html = $(`<${specs.tagName}></${specs.tagName}>`);
@@ -14,7 +14,7 @@ export default class BaseClass {
 			this.$html = specs.html;
 			this.$container = specs.container;
 		}
-		
+
 		// Events
 		this.events = {};
 		if (this.wiredEvent) this.wiredEvent();
@@ -24,17 +24,17 @@ export default class BaseClass {
 		else this.events[event] = [fn];
 
 		var args = analyzeEvent(event);
-		var $html = args.selector ? $(args.selector, this.$html) : this.$html;
-		$html.on(event, fn);
+		this.$html.on(args.event, args.selector, fn);
+
 		return this;
 	}
 	off(event, fn) {
-		var listeners = this.events[event];
 		var args = analyzeEvent(event);
-		var $html = args.selector ? $(args.selector, $html) : this.$html;
 
-		if (fn) $html.off(event, fn);
-		else listeners.forEach(fn => $html.off(event, fn));
+		if (fn) this.$html.off(args.event, args.selector, fn);
+		else
+			this.events[event]
+				.forEach(fn => this.$html.off(args.event, args.selector, fn));
 
 		return this;
 	}

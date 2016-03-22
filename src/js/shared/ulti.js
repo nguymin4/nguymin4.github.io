@@ -1,10 +1,10 @@
 export function analyzeEvent(event) {
 	var args = event.split(" ");
-	var ev = args.splice(args.length - 1)[0];
+	event = args.splice(args.length - 1)[0];
 	var selector = args.join(" ");
 	return {
-		selector: selector,
-		ev: ev
+		selector: selector || null, // To be compatible with jQuery api 
+		event: event
 	};
 }
 
