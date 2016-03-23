@@ -9,5 +9,8 @@ export default function () {
 	// Skills section include 2 part: Skills and Achievement
 	// This function will allow to minimize and maximize each part
 	$container = $("#skills");
-	$("#skills .row").map((i, el) => new SkillPart($(el), $container));
+	$(".row", $container).toArray()
+		.map(el => new SkillPart($(el), $container))
+		.forEach(part => part.toggleActive());
+	$container.stop(true, true).scrollTop(0);
 }

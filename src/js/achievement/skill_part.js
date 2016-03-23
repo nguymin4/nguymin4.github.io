@@ -12,20 +12,10 @@ export default class SkillPart extends BaseClass {
 		this.calculateHeight();
 	}
 	wiredEvent() {
+		this.toggleActive = toggleActive.bind(this);
 		$(window).on("resize", this.calculateHeight.bind(this));
 
-		this.on("h2 click", SkillPart.toggleActive.bind(this));
-	}
-	static toggleActive() {
-		var maxHeight = this.$html.hasClass("active") ?
-			this.minHeight : this.maxHeight;
-
-		this.$html.css("max-height", maxHeight).toggleClass("active");
-		
-		app.channel.trigger("view:updateScroll", [this.$container.attr("id")]);
-		this.$container.animate({
-			scrollTop: this.$html.offset().top - this.minHeight - 10
-		}, "slow");
+		this.on("h2 click", this.toggleActive);
 	}
 
 	calculateHeight() {
@@ -35,7 +25,7 @@ export default class SkillPart extends BaseClass {
 		currentValue = currentValue === this.minHeight ? this.minHeight : this.maxHeight;
 		this.$html.css("max-height", currentValue);
 	}
-	
+
 	// Demo request animation
 	changeHeight() {
 		var initialHeight = this.$html.outerHeight();
@@ -52,3 +42,14 @@ export default class SkillPart extends BaseClass {
 	}
 }
 
+function toggleActive() {
+	var maxHeight = this.$html.hasClass("active") ?
+		this.minHeight : this.maxHeight;
+
+	this.$html.css("max-height", maxHeight).toggleClass("active");
+
+	app.channel.trigger("view:updateScroll", [this.$container.attr("id")]);
+	this.$container.animate({
+		scrollTop: this.$html.offset().top - this.minHeight - 10
+	}, "slow");
+}
