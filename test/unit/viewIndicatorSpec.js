@@ -18,6 +18,7 @@ describe("View indicators", () => {
 	it("should render correctly", () => {
 		var $html = indicators[0].$html;
 		var model = iconList[0];
+		expect($html).toHaveClass("view-indicator");
 		expect($("i", $html)).toHaveHtml(model.title);
 		expect($html).toHaveAttr("href", model.href);
 	});

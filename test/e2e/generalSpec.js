@@ -20,8 +20,7 @@ describe(`[${browserName}] In general, when the user visit the page`, function()
 	it("then hide the loading screen", function(done) {
 		async.waterfall([
 			() => browser.sleep(1000),
-			() => browser.findElement(by.css("#overlay")),
-			el => el.getCssValue("opacity")
+			() => browser.findElement(by.css("#overlay")).getCssValue("opacity")
 		])
 			.then(value => expect(parseFloat(value)).toBeLessThan(1))
 			.then(done);
