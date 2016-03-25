@@ -9,7 +9,7 @@
   "scripts": {
     "start": "python -m SimpleHTTPServer 3000",
     "test": "node node_modules/karma/bin/karma start test/karma.conf.js",
-    "e2e": "gulp e2e --config test/e2e.conf.js",
+    "e2e": "gulp html --test && gulp e2e --config test/e2e.conf.js",
 	"pack:vendor": "node node_modules/webpack/bin/webpack --config webpack.vendor.config.js"
   },
   "dependencies": {

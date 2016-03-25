@@ -17,7 +17,7 @@ var documentLoaded = setInterval(() => {
 	if (/loaded|complete/.test(document.readyState) && ready) {
 		clearInterval(documentLoaded);
 		initWhenReady();
-		document.body.className = "loaded";
+		$(document.body).addClass("loaded");
 	}
 }, 100);
 

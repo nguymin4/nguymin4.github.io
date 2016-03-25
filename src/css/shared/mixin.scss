@@ -75,3 +75,9 @@
         @content;
     }
 }
+
+$no-duration: "0s !important";
+@mixin no-animation() {
+	@include constructor(transition-duration, #{$no-duration});
+	@include constructor(animation-duration, #{$no-duration});
+}
