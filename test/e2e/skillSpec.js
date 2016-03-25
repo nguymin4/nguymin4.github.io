@@ -6,10 +6,9 @@ describe(`[${browserName}] When the user visit page via hash #skills`, function(
 	beforeAll(done => {
 		async.waterfall([
 			() => browser.get("http://localhost:3000/#skills"),
-			() => browser.sleep(1500),
 			() => browser.findElements(by.css("#skills .row"))
 		])
-			.then(els => rows = els)
+			.then(_rows => rows = _rows)
 			.then(done);
 	});
 
@@ -23,14 +22,7 @@ describe(`[${browserName}] When the user visit page via hash #skills`, function(
 					.then(value => expect(value).toMatch(/skills/i)),
 
 				rows[1].getInnerHtml()
-					.then(value => expect(value).toMatch(/achievements/i)),
-
-				rows[0].getAttribute("style")
-					.then(value => {
-						value = /max-height:\s(\d+)px/.exec(value)[1];
-						value = parseFloat(value);
-						expect(value).toBeGreaterThan(100);
-					})
+					.then(value => expect(value).toMatch(/achievements/i))
 			]).then(done);
 		});
 	});
@@ -40,7 +32,6 @@ describe(`[${browserName}] When the user visit page via hash #skills`, function(
 		function getRowHeight() {
 			return async.waterfall([
 				() => rows[0].findElement(by.css("h2")).click(),
-				() => browser.sleep(500),
 				() => rows[0].getAttribute("style")
 			])
 				.then(value => /max-height:\s(\d+)px/.exec(value)[1])

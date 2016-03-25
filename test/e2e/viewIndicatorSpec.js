@@ -6,7 +6,6 @@ describe(`[${browserName}] View indicators`, function() {
 	beforeAll(done => {
 		async.waterfall([
 			() => browser.get("http://localhost:3000"),
-			() => browser.sleep(1500),
 			() => browser.findElements(by.css(".view-indicator"))
 		])
 			.then(_items => items = _items)
