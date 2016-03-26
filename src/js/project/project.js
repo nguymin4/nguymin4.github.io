@@ -1,3 +1,5 @@
+/* global marked */
+import markedRenderer from "../shared/config.js";
 import BaseClass from "../shared/base.js";
 import DetailView from "./project_detail.js";
 
@@ -5,6 +7,10 @@ var detailView;
 
 export default class Project extends BaseClass {
 	constructor(model, $container) {
+		model.info = marked(model.info, {
+			renderer: markedRenderer
+		}).replace(/\n/g, "");
+		
 		super({
 			tagName: "div",
 			container: $container,
@@ -30,7 +36,7 @@ export default class Project extends BaseClass {
 			if (detailView.ready) detailView.addContent(this.model);
 		});
 	}
-	static setDetailView() {
-		detailView = new DetailView($("#projects"));
+	static setDetailView($container) {
+		detailView = new DetailView($container);
 	}
 }

@@ -6,8 +6,9 @@ module.exports = function (config) {
 		frameworks: ["jasmine"],
 		basePath: "../",
 		files: [
+			"assets/js/vendor.min.js",
 			"bower_components/jquery/dist/jquery.min.js",
-			"bower_components/es6-shim/es6-shim.min.js",
+			"bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.js",
 			"bower_components/jasmine-jquery/lib/jasmine-jquery.js",
 			"test/unit/**/*Spec.js"
 		],
