@@ -4,13 +4,6 @@ describe(`[${browserName}] In general, when the user visit the page`, function()
 
 	beforeAll(done => browser.get("http://localhost:3000").then(done));
 	
-	xit("should display loading screen", function(done) {
-		browser.findElement(by.css("#overlay"))
-			.getCssValue("z-index")
-			.then(value => expect(value).toEqual("9999"))
-			.then(done);
-	});
-	
 	it("should hide the loading screen after loaded resources", function(done) {
 		async.waterfall([
 			() => browser.sleep(200),

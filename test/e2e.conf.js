@@ -1,7 +1,7 @@
 var SpecReporter = require("jasmine-spec-reporter");
 
 module.exports = {
-	scriptTimeout: 11000,
+	scriptTimeout: 8000,
     spec_dir: "test/e2e", // Relative path from root folder
     spec_files: [
         "*Spec.js"
