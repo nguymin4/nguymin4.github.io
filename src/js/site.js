@@ -19,7 +19,7 @@ var documentLoaded = setInterval(() => {
 		initWhenReady();
 		$(document.body).addClass("loaded");
 	}
-}, 100);
+}, 200);
 
 (function() {
 	var router = Router().preloadViews(() => ready = true);

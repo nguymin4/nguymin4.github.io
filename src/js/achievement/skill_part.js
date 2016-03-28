@@ -1,5 +1,4 @@
 import BaseClass from "../shared/base.js";
-import {animate} from "../shared/ulti.js";
 import app from "../shared/app.js";
 
 export default class SkillPart extends BaseClass {
@@ -13,32 +12,10 @@ export default class SkillPart extends BaseClass {
 	}
 	wiredEvent() {
 		this.toggleActive = toggleActive.bind(this);
-		$(window).on("resize", this.calculateHeight.bind(this));
-
 		this.on("h2 click", this.toggleActive);
-	}
-
-	calculateHeight() {
-		var currentValue = parseFloat(this.$html.css("max-height"));
-		this.maxHeight = this.$html.css("max-height", "initial").outerHeight();
-
-		currentValue = currentValue === this.minHeight ? this.minHeight : this.maxHeight;
-		this.$html.css("max-height", currentValue);
-	}
-
-	// Demo request animation
-	changeHeight() {
-		var initialHeight = this.$html.outerHeight();
-		this.targetHeight = this.$html.css("max-height", "initial").outerHeight();
-		this.$html.outerHeight(initialHeight)
-			.toggleClass("transition");
-
-		animate({
-			render: nextValue => this.$html.outerHeight(nextValue),
-			start: initialHeight,
-			end: this.targetHeight,
-			duration: 400
-		});
+		
+		this.calculateHeight = calculateHeight.bind(this);
+		$(window).on("resize", this.calculateHeight);
 	}
 }
 
@@ -48,8 +25,16 @@ function toggleActive() {
 
 	this.$html.css("max-height", maxHeight).toggleClass("active");
 
-	app.channel.trigger("view:updateScroll", [this.$container.attr("id")]);
+	app.channel.triggerHandler("view:updateScroll", [this.$container.attr("id")]);
 	this.$container.animate({
 		scrollTop: this.$html.offset().top - this.minHeight - 10
 	}, "slow");
+}
+
+function calculateHeight() {
+	var currentValue = parseFloat(this.$html.css("max-height").replace("px", ""));
+	this.maxHeight = this.$html.css("max-height", "none").outerHeight();
+
+	currentValue = currentValue === this.minHeight ? this.minHeight : this.maxHeight;
+	this.$html.css("max-height", currentValue + "px");
 }
