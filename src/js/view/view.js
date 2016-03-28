@@ -27,12 +27,9 @@ export default class View extends BaseClass {
 		}).fail((data, status, xhr) => {
 			$html.html("");
 		}).always(() => {
-			if (!isMobile) {
+			isMobile ? 
+				$html.css("overflow-y", "scroll") :
 				$html.perfectScrollbar(psOption);
-				$(window).on("resize", () => $html.perfectScrollbar("update"));
-			} else {
-				$html.css("overflow-y", "scroll");
-			}
 		});
 
 		if (content) return req.resolve(content);
@@ -47,13 +44,8 @@ export default class View extends BaseClass {
 		return this;
 	}
 	wiredEvent() {
-		app.channel.on("view:updateScroll", (event, id) => {
-			if (this.model.id === id && !isMobile)
-				this.$html.perfectScrollbar("update");
-		}).on("view:toggleScroll", (event, id, state) => {
-			if (this.model.id === id) 
-				this.toggleScroll(state);
-		});
+		if (isMobile)
+			$(window).on("resize", () => this.$html.perfectScrollbar("update"));
 	}
 	
 	toggleClass(className) {
@@ -63,11 +55,6 @@ export default class View extends BaseClass {
 		if (isMobile)
 			setTimeout(() => $html.css("overflow-y", "scroll"), 1250);
 		return this;
-	}
-	recalibratePerfectScrollbar() {
-		var $html = this.$html;
-		$html.perfectScrollbar(psOption);
-		window.addEventListener("resize", () => $html.perfectScrollbar("update"));
 	}
 	toggleScroll(active) {
 		var overflow = active ? "scroll" : "hidden";

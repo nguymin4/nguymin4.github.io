@@ -1,7 +1,8 @@
 import View from "./view.js";
 import app from "../shared/app.js";
 var hashes = app.config.hashes,
-	routes = app.config.routes;
+	routes = app.config.routes,
+	isMobile = app.env.isMobile;
 
 function initViews() {
 	var $container = $("#content");
@@ -13,12 +14,12 @@ function initViews() {
 
 function getViewState() {
 	var state = {};
-	var rootHash = location.hash ? /(#[\w-]+)/.exec(location.hash)[1] : "#"; 
-		
+	var rootHash = location.hash ? /(#[\w-]+)/.exec(location.hash)[1] : "#";
+
 	// root state - index based on hashes array
 	var active = hashes.indexOf(rootHash);
 	state.activeViewIndex = active === -1 ? 0 : active;
-		
+
 	// sub state
 	var args = location.hash.replace(rootHash, "").split("/").slice(1);
 	for (var i = 0; i < args.length; i++)
@@ -28,23 +29,35 @@ function getViewState() {
 	return state;
 }
 
-export default function () {
+export default function() {
 	var active = 0;
 	var views = initViews();
+	var findViewIndex = id => views.findIndex(view => view.model.id === id);
 
 	$(window).on("hashchange", () => {
 		var index = getViewState().activeViewIndex;
 		views[active].toggleClass("active");
 		views[index].toggleClass("active");
 		active = index;
-		app.channel.trigger("viewIndicator:viewIndexChanged", [active]);
+		app.channel.triggerHandler("viewIndicator:viewIndexChanged", [active]);
 	});
-	
+
+	app.channel.on("view:updateScroll", (event, id) => {
+		var index = findViewIndex(id);
+		if (!isMobile)
+			views[index].$html.perfectScrollbar("update");
+	}).on("view:toggleScroll", (event, id, state) => {
+		var index = findViewIndex(id);
+		views[index].toggleScroll(state);
+	});
+
+
+
 	var router = {
-		preloadViews: function (callback) {
-			callback = typeof callback === "function" ? callback : function () { };
+		preloadViews: function(callback) {
+			callback = typeof callback === "function" ? callback : function() { };
 			var deferreds = views.map(view => view.load());
-			$.when(deferreds).always(() => {
+			$.when(deferreds).done(() => {
 				active = getViewState().activeViewIndex;
 				views[active].toggleClass("active");
 				callback();

@@ -38,7 +38,7 @@ export default class ProjectDetail extends BaseClass {
 			this.$html.removeClass("active");
 			setTimeout(() => {
 				this.$html.css("top", 0);
-				app.channel.trigger("view:toggleScroll", ["projects", true]);
+				app.channel.triggerHandler("view:toggleScroll", ["projects", true]);
 				this.ready = true;
 			}, 500);
 		});
@@ -52,7 +52,7 @@ export default class ProjectDetail extends BaseClass {
 		
 		this.$detailBody.scrollTop(0);
 		if (!isMobile) this.$detailBody.perfectScrollbar("update");
-		app.channel.trigger("view:toggleScroll", ["projects", false]);
+		app.channel.triggerHandler("view:toggleScroll", ["projects", false]);
 
 		this.$html.css({
 			top: this.$container.scrollTop()
