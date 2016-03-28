@@ -4,3 +4,5 @@ assets/js/*.js
 lib/selenium-jasmine/bin
 **/typings/**/*
 !selenium-jasmine.d.ts
+/test/e2e/screenshot/*
+!/test/e2e/screenshot/

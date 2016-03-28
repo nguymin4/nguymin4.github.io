@@ -20,7 +20,7 @@ module.exports = {
 		},
 		{
 			"browserName": "phantomjs",
-			"phantomjs.cli.args": ["--load-images=false", "--webdriver-loglevel=ERROR"]
+			"phantomjs.cli.args": ["--webdriver-loglevel=ERROR"]
 		}
 	],
 	// Port of selenium grid hub 

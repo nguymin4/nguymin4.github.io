@@ -28,7 +28,8 @@
 	},
 	"globals": {
 		"forkBrowserInstance": true,
-		"browserName": true
+		"browserName": true,
+		"webdriver": true
 	},
 	"ignore": [
 		"assets/js/**/*"

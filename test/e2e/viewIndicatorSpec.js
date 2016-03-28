@@ -18,10 +18,10 @@ describe(`[${browserName}] View indicators`, function() {
 			.then(done);
 	});
 
-	describe("when an item is clicked, ", () => {
+	describe("when 'About' is clicked, ", () => {
 		beforeAll(done => items[1].click().then(done));
 
-		describe("that item", () => {
+		describe("that indicator", () => {
 			it("should be the only active item", done => {
 				var deffereds = items.map((item, i) =>
 					item.getAttribute("class").then(value => {
@@ -34,9 +34,9 @@ describe(`[${browserName}] View indicators`, function() {
 
 		});
 
-		describe("the corresponding view", () => {
+		describe("the 'About me' view", () => {
 
-			it("should be active", done => {
+			it("should open", done => {
 				async.parallel([
 					browser.findElement(by.css("#about"))
 						.getAttribute("class")
