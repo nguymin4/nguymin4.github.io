@@ -34,22 +34,25 @@ export default function() {
 	var views = initViews();
 	var findViewIndex = id => views.findIndex(view => view.model.id === id);
 
-	$(window).on("hashchange", () => {
-		var index = getViewState().activeViewIndex;
-		views[active].toggleClass("active");
-		views[index].toggleClass("active");
-		active = index;
-		app.channel.triggerHandler("viewIndicator:viewIndexChanged", [active]);
-	});
 
-	app.channel.on("view:updateScroll", (event, id) => {
-		var index = findViewIndex(id);
-		if (!isMobile)
-			views[index].$html.perfectScrollbar("update");
-	}).on("view:toggleScroll", (event, id, state) => {
-		var index = findViewIndex(id);
-		views[index].toggleScroll(state);
-	});
+	function wiredEvent() {
+		$(window).on("hashchange", () => {
+			var index = getViewState().activeViewIndex;
+			views[active].toggleClass("active");
+			views[index].toggleClass("active");
+			active = index;
+			app.channel.triggerHandler("viewIndicator:viewIndexChanged", [active]);
+		});
+
+		app.channel.on("view:updateScroll", (event, id) => {
+			var index = findViewIndex(id);
+			if (!isMobile)
+				views[index].$html.perfectScrollbar("update");
+		}).on("view:toggleScroll", (event, id, state) => {
+			var index = findViewIndex(id);
+			views[index].toggleScroll(state);
+		});
+	}
 
 
 
@@ -57,10 +60,11 @@ export default function() {
 		preloadViews: function(callback) {
 			callback = typeof callback === "function" ? callback : function() { };
 			var deferreds = views.map(view => view.load());
-			$.when(deferreds).done(() => {
+			$.when(deferreds).always(() => {
+				callback();
 				active = getViewState().activeViewIndex;
 				views[active].toggleClass("active");
-				callback();
+				wiredEvent();
 			});
 			return this;
 		},

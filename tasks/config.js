@@ -23,7 +23,7 @@ module.exports = {
 			semicolons: true
 		},
 		compress: {
-			warnings: false
+			warnings: true
 		}
 	}
 };

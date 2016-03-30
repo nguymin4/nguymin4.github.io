@@ -1,5 +1,6 @@
 /* global MobileDetect */
 import * as config from "./config.js";
+import Channel from "./channel.js";
 
 var app = {
 	env: {
@@ -10,7 +11,7 @@ var app = {
 	},
 	config: config,
 	router: {},
-	channel: $({})
+	channel: new Channel()
 };
 
 export default app;

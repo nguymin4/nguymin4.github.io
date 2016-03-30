@@ -9,6 +9,7 @@ import renderSmokeEffect from "./components/smoke.js";
 import renderInterestSection from "./interest/index.js";
 import renderProjectSection from "./project/index.js";
 import renderAchievementSection from "./achievement/index.js";
+import initSkillPart from "./components/skillPart.js";
 
 
 var ready = false;
@@ -16,20 +17,38 @@ var ready = false;
 var documentLoaded = setInterval(() => {
 	if (/loaded|complete/.test(document.readyState) && ready) {
 		clearInterval(documentLoaded);
-		initWhenReady();
+		checkFallback();
 		$(document.body).addClass("loaded");
 	}
-}, 200);
+}, 100);
+
 
 (function() {
-	var router = Router().preloadViews(() => ready = true);
+	var router = Router().preloadViews(() => {
+		initWhenReady();
+		ready = true;
+	});
 	app.router = router;
 	renderSmokeEffect();
 	renderViewIndicator();
 })();
 
+
 function initWhenReady() {
 	renderInterestSection();
 	renderProjectSection();
 	renderAchievementSection();
+	initSkillPart();
+}
+
+
+function checkFallback() {
+	if (!$(".achievement").length) {
+		renderAchievementSection();
+	}
+
+	var skillPartEvents = $._data($("#skills .row").get(0), "events");
+	if (!(skillPartEvents && skillPartEvents.click)) {
+		initSkillPart();
+	}
 }

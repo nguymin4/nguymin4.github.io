@@ -3,7 +3,8 @@ var logos = {
 	"MongoDB": "https://media.licdn.com/media/AAEAAQAAAAAAAATFAAAAJDBlYjQ4YjBhLWEyNDAtNDA4ZC05OWJkLTRkYTFhN2Q2YmE2Yw.png",
 	"edX": "https://media.licdn.com/media/AAEAAQAAAAAAAAOqAAAAJDQ5YmUzOGFlLWIwYWMtNDdjYy04ZTY5LThhODFiMWQ5NTc5MQ.png"
 };
-export default [
+
+var achievementList = [
 	{
 		"name": "MongoDB for Java Developers",
 		"authority": "MongoDB, Inc.",
@@ -35,3 +36,5 @@ export default [
 		"logo": logos["Codility"]
 	}
 ];
+
+export default achievementList;
