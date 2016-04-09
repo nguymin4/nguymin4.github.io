@@ -1,9 +1,10 @@
 var eulerImg = "https://upload.wikimedia.org/wikipedia/commons/8/85/Leonhard_Euler_by_Darbes.jpg";
 
 export default {
+	id: "python-euler-project",
 	title: "Project Euler - Python",
 	thumbnail: eulerImg,
-	github: "python-euler-project",
+	onGitHub: true,
 	info: `
 <img align="right" src="${eulerImg}"  alt =" " width="200" />
 Project Euler is a series of challenging mathematical/computer programming problems that will require more than just mathematical insights to solve. 

@@ -1,6 +1,8 @@
 export default {
+	id: "productionsoftware",
 	title: "Production Software Oy - Website",
 	thumbnail: "assets/img/production_software_oy.jpg",
+	onGitHub: false,
 	info: `
 <img align="right" src="assets/img/production_software_oy.jpg"  alt =" " width="300" />
 This project is a part of the course Content Managment System at my school. 

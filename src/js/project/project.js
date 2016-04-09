@@ -1,5 +1,5 @@
 /* global marked */
-import markedRenderer from "../shared/config.js";
+import {markedRenderer} from "../shared/config.js";
 import BaseClass from "../shared/base.js";
 import DetailView from "./project_detail.js";
 
@@ -12,7 +12,7 @@ export default class Project extends BaseClass {
 		}).replace(/\n/g, "");
 		
 		super({
-			tagName: "div",
+			tagName: "a",
 			container: $container,
 			model: model
 		});
@@ -20,7 +20,8 @@ export default class Project extends BaseClass {
 	render() {
 		var model = this.model;
 		this.$html.attr({
-			class: "col-lg-4 col-sm-6"
+			class: "col-lg-4 col-sm-6",
+			href: `#projects/detail/${model.id}`
 		}).html(`
 			<div class="project">
 				<div class="title">${model.title}</div>
@@ -31,10 +32,8 @@ export default class Project extends BaseClass {
 
 		return this;
 	}
-	wiredEvent() {
-		this.on(".project click", () => {
-			if (detailView.ready) detailView.addContent(this.model);
-		});
+	openDetailView() {
+		if (detailView.ready) detailView.addContent(this.model);
 	}
 	static setDetailView($container) {
 		detailView = new DetailView($container);

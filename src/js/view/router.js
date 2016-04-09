@@ -37,11 +37,13 @@ export default function() {
 
 	function wiredEvent() {
 		$(window).on("hashchange", () => {
-			var index = getViewState().activeViewIndex;
+			var state = getViewState();
+			var index = state.activeViewIndex;
 			views[active].toggleClass("active");
 			views[index].toggleClass("active");
 			active = index;
 			app.channel.triggerHandler("viewIndicator:viewIndexChanged", [active]);
+			app.channel.triggerHandler("view:subState", [state]);
 		});
 
 		app.channel.on("view:updateScroll", (event, id) => {
@@ -54,17 +56,17 @@ export default function() {
 		});
 	}
 
-
-
 	var router = {
 		preloadViews: function(callback) {
 			callback = typeof callback === "function" ? callback : function() { };
 			var deferreds = views.map(view => view.load());
 			$.when(deferreds).always(() => {
 				callback();
-				active = getViewState().activeViewIndex;
-				views[active].toggleClass("active");
 				wiredEvent();
+				var state = getViewState();
+				active = state.activeViewIndex;
+				views[active].toggleClass("active");
+				app.channel.triggerHandler("view:subState", [state]);
 			});
 			return this;
 		},

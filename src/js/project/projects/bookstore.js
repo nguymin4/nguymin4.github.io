@@ -1,7 +1,8 @@
 export default {
+	id: "aspnet-bookstore",
 	title: "BookStore",
 	thumbnail: "https://raw.githubusercontent.com/nguymin4/aspnet-bookstore/master/docs/img/ss1.jpg",
-	github: "aspnet-bookstore",
+	onGitHub: true,
 	info: `
 ### Book Store
 <img align="right" src="https://github.com/nguymin4/aspnet-bookstore/raw/master/docs/img/ss3.jpg" alt=" " height="375" />
@@ -28,6 +29,7 @@ export default {
 #### Back-end
 - ASP.NET 5
 	- Restful API support both web app and hybrid app
+	- Google Authentication
 	- DI to make code loosely couple
 - MongoDB with its C# driver. Use convention pack to convert CamelCase property between C# code convention and MongoDB convention
 - Deploy to Heroku with custom .NET buildpack
@@ -39,6 +41,5 @@ https://github.com/nguymin4/flask-bookstore
 
 #### What's next
 - Redis
-- Google/Facebook authentication
 `
 };

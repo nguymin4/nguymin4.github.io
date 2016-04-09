@@ -1,7 +1,8 @@
 export default {
+	id: "Lanban",
 	title: "Lanban - Kanban web application",
 	thumbnail: "assets/img/lanban_board.jpg",
-	github: "Lanban",
+	onGitHub: true,
 	info: `
 ### Kanban board web application for Lahti University of Applied Sciences (LAMK)</h3>
 This web application development is a visual management tool which was developed as OSS and dedicated to LAMK. It can be used to control the flow of teamwork.

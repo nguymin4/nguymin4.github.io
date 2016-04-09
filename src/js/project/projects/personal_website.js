@@ -1,7 +1,8 @@
 export default {
+	id: "nguymin4.github.io",
 	title: "Personal website",
 	thumbnail: "assets/img/personal_website.jpg",
-	github: "nguymin4.github.io",
+	onGitHub: true,
 	info: `
 <img align="right" src="assets/img/personal_website.jpg"  alt =" " width="300" />
 This is project is my personal website (this website). Source code is available on github.

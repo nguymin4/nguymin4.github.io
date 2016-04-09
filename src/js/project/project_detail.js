@@ -36,6 +36,7 @@ export default class ProjectDetail extends BaseClass {
 		this.on(".btn-close click", () => {
 			this.ready = false;
 			this.$html.removeClass("active");
+			location.hash = "#projects";
 			setTimeout(() => {
 				this.$html.css("top", 0);
 				app.channel.triggerHandler("view:toggleScroll", ["projects", true]);

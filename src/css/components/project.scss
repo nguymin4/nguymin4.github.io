@@ -37,7 +37,11 @@
 		@include transform(scale(0.975));
 	}
 }
-	
+
+.project-list > a {
+	text-decoration: none;
+}
+
 .project-detail {
 	position: absolute;
 	top: $project-detail-top;
