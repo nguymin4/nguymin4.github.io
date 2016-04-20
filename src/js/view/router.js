@@ -14,7 +14,9 @@ function initViews() {
 
 function getViewState() {
 	var state = {};
-	var rootHash = location.hash ? /(#[\w-]+)/.exec(location.hash)[1] : "#";
+	var rootHash = location.hash;
+	rootHash = rootHash && rootHash !== "#/" ?
+		/(#[\w-]+)/.exec(rootHash)[1] : "#";
 
 	// root state - index based on hashes array
 	var active = hashes.indexOf(rootHash);
@@ -29,7 +31,7 @@ function getViewState() {
 	return state;
 }
 
-export default function() {
+export default function () {
 	var active = 0;
 	var views = initViews();
 	var findViewIndex = id => views.findIndex(view => view.model.id === id);
@@ -57,8 +59,8 @@ export default function() {
 	}
 
 	var router = {
-		preloadViews: function(callback) {
-			callback = typeof callback === "function" ? callback : function() { };
+		preloadViews: function (callback) {
+			callback = typeof callback === "function" ? callback : function () { };
 			var deferreds = views.map(view => view.load());
 			$.when(deferreds).always(() => {
 				callback();
