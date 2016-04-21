@@ -10,7 +10,7 @@ export default {
 #### Front-end
 - AngularJS: Angular way
 	- manipulate dom with jquery only in directive
-	- communication via service
+	- communication via services
 	- keep controller thin and avoid scope with *controllerAs* syntax
 	- ultilize httpInterceptor for routing host depend on config
 	- folder structure based on module functionality instead of of module type
@@ -32,14 +32,12 @@ export default {
 	- Google Authentication
 	- DI to make code loosely couple
 - MongoDB with its C# driver. Use convention pack to convert CamelCase property between C# code convention and MongoDB convention
+- Store session data to Redis
 - Deploy to Heroku with custom .NET buildpack
 <br /><br />
 
 After this project, I used Python (Flask) instead of ASP.NET in the back-end while still keep the front-end. It's also deployed to Heroku. 
 https://github.com/nguymin4/flask-bookstore
 <br /><br />
-
-#### What's next
-- Redis
 `
 };
