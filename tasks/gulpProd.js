@@ -4,20 +4,12 @@ var gulp = require("gulp"),
 	rename = require("gulp-rename"),
 	replace = require("gulp-replace"),
 	util = require("gulp-util"),
-	exec = require("child_process").exec,
-	metaData = require("../src/meta.js");
+	exec = require("child_process").exec;
 
 module.exports = function(env, config) {
 	var input = config.input,
-		output = config.output;
-
-	var pipeMetaTag = function(src, keyword) {
-		var meta = metaData[keyword];
-		if (typeof meta !== "string")
-			meta = env.isProduction ? meta["build"] : meta["dev"];
-		meta = meta.replace(/[\n\t]/g, "");
-		src = src.pipe(replace.call(this, "${" + keyword + "}", meta));
-	};
+		output = config.output,
+		metaData = require(input.html.meta);
 
 	gulp.task("build", ["build:env", "html", "sass:build", "webpack:build"]);
 
@@ -29,8 +21,13 @@ module.exports = function(env, config) {
 		var src = gulp.src(input.html.target);
 
 		// Add meta data
-		for (var key in metaData)
-			pipeMetaTag(src, key);
+		for (var keyword in metaData) {
+			var meta = metaData[keyword];
+			if (typeof meta !== "string")
+				meta = env.isProduction ? meta["build"] : meta["dev"];
+			meta = meta.replace(/[\n\t]/g, "");
+			src = src.pipe(replace.call(this, "${" + keyword + "}", meta));
+		}
 
 		src.pipe(replace("${no-animation}", util.env["test"] ? "no-animation" : ""));
 

@@ -1,8 +1,9 @@
 module.exports = {
 	input: {
 		html: {
-			target: "src/index.html",
-			views: "assets/views/**/*.html"
+			target: "src/html/index.html",
+			views: "assets/views/**/*.html",
+			meta: "../src/html/meta.js"
 		},
 		scss: {
 			target: "src/css/site.scss",
