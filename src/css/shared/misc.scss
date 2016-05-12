@@ -13,5 +13,4 @@
 .ps-scrollbar-y, .ps-scrollbar-y-rail {
 	@include border-radius(0px "!important");
 	width: 6px !important;
-	// @include forceGpu();
 }
