@@ -3,9 +3,8 @@ var async = require("../helper/async.js");
 describe(`[${browserName}] Projects section,`, function() {
 	var items = [];
 	var detail = {
-		content: `<p><img align="right" src="assets/img/personal_website.jpg" alt=" " width="300">` +
-		"This is project is my personal website (this website). Source code is available on github.</p>",
-		github: "https://github.com/nguymin4/nguymin4.github.io"
+		content: `<h4>Mimic Skype Web UI using React</h4>`,
+		github: "https://github.com/nguymin4/react-skype-ui"
 	};
 
 	beforeAll(done => {
@@ -22,7 +21,7 @@ describe(`[${browserName}] Projects section,`, function() {
 		expect(items.length).toBeGreaterThan(1);
 	});
 
-	describe("and the project detail view, ", () => {
+	describe("the project detail view, ", () => {
 		var projectDetail;
 		var btnClose;
 		var btnGithub;

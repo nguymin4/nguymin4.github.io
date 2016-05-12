@@ -1,7 +1,7 @@
 /* global marked */
 
-export var hashes = ["#", "#about-me", "#skills", "#projects", "#interests"];
-export var routes = (function () {
+var hashes = ["#", "#about-me", "#skills", "#projects", "#interests"];
+var routes = (function () {
 	let routes = {};
 	let templates = ["home", "about", "skills", "projects", "interests"]
 		.map(template => `assets/views/${template}.html`);
@@ -9,13 +9,18 @@ export var routes = (function () {
 	return routes;
 } ());
 
-export var psOption = {
-	suppressScrollX: true,
-	scrollYMarginOffset: 25
-};
-
-export var markedRenderer = (function () {
+var markedRenderer = (function () {
 	let renderer = new marked.Renderer();
 	renderer.heading = (text, level) => `<h${level}>${text}</h${level}>`;
 	return renderer;
-}());
+} ());
+
+export default {
+	hashes: hashes,
+	routes: routes,
+	psOption: {
+		suppressScrollX: true,
+		scrollYMarginOffset: 25
+	},
+	markedRenderer: markedRenderer
+};

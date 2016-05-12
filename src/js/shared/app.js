@@ -1,5 +1,5 @@
 /* global MobileDetect */
-import * as config from "./config.js";
+import config from "./config.js";
 import Channel from "./channel.js";
 
 var app = {

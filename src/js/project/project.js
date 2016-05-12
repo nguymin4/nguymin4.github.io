@@ -1,5 +1,5 @@
 /* global marked */
-import {markedRenderer} from "../shared/config.js";
+import app from "../shared/app.js";
 import BaseClass from "../shared/base.js";
 import DetailView from "./project_detail.js";
 
@@ -8,7 +8,7 @@ var detailView;
 export default class Project extends BaseClass {
 	constructor(model, $container) {
 		model.info = marked(model.info, {
-			renderer: markedRenderer
+			renderer: app.config.markedRenderer
 		}).replace(/\n/g, "");
 		
 		super({

@@ -19,7 +19,7 @@ describe("Projects section", function() {
 	});
 
 	it("should display projects", function() {
-		expect($("> div", $container).length).toEqual(models.length);
+		expect($("> a", $container).length).toEqual(models.length);
 	});
 
 	describe("projects", function() {
