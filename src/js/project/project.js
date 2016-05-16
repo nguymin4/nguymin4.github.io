@@ -23,7 +23,7 @@ export default class Project extends BaseClass {
 			class: "col-lg-4 col-sm-6",
 			href: `#projects/detail/${model.id}`
 		}).html(`
-			<div class="project">
+			<div class="project" title="${model.title}">
 				<div class="title">${model.title}</div>
 				<div class="text-center">
 					<img src="${model.thumbnail}" alt=" " />
