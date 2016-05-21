@@ -3,6 +3,7 @@ export default {
 	title: "Personal website",
 	thumbnail: "assets/img/personal_website.jpg",
 	onGitHub: true,
+	createdOn: "2016-02-01",
 	info: `
 <img align="right" src="assets/img/personal_website.jpg"  alt =" " width="300" />
 This is project is my personal website (this website). Source code is available on github.

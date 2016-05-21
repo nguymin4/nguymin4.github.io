@@ -3,6 +3,7 @@ export default {
 	title: "BookStore",
 	thumbnail: "https://raw.githubusercontent.com/nguymin4/aspnet-bookstore/master/docs/img/ss1.jpg",
 	onGitHub: true,
+	createdOn: "2016-01-03",
 	info: `
 ### Book Store
 <img align="right" src="https://github.com/nguymin4/aspnet-bookstore/raw/master/docs/img/ss3.jpg" alt=" " height="375" />

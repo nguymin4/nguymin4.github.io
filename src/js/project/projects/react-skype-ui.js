@@ -3,6 +3,7 @@ export default {
 	title: "Mimic Skype Web UI using React",
 	thumbnail: "assets/img/react-skype-ui.png",
 	onGitHub: true,
+	createdOn: "2016-05-01",
 	info: `
 #### Mimic Skype Web UI using React
 *Still under development*

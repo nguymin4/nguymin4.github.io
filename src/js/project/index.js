@@ -1,5 +1,5 @@
 import app from "../shared/app.js";
-import projectList from "./content.js";
+import projectList from "./projects";
 import Project from "./project.js";
 
 export default function() {

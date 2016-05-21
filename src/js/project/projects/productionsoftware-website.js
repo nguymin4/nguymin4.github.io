@@ -3,6 +3,7 @@ export default {
 	title: "Production Software Oy - Website",
 	thumbnail: "assets/img/production_software_oy.jpg",
 	onGitHub: false,
+	createdOn: "2014-08-31",
 	info: `
 <img align="right" src="assets/img/production_software_oy.jpg"  alt =" " width="300" />
 This project is a part of the course Content Managment System at my school. 

@@ -3,6 +3,7 @@ export default {
 	title: "React and jQuery Sortable Demo",
 	thumbnail: "assets/img/react-sortable-demo.png",
 	onGitHub: true,
+	createdOn: "2016-04-26",
 	info: `
 #### Using jQuery UI Sortable with React
 <img align="right" src="assets/img/react-sortable-demo.png"  alt =" " width="360" style="border: solid 1px #d4d4d4" />  

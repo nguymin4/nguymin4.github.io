@@ -5,6 +5,7 @@ export default {
 	title: "Project Euler - Python",
 	thumbnail: eulerImg,
 	onGitHub: true,
+	createdOn: "2015-12-21",
 	info: `
 <img align="right" src="${eulerImg}"  alt =" " width="200" />
 Project Euler is a series of challenging mathematical/computer programming problems that will require more than just mathematical insights to solve. 
