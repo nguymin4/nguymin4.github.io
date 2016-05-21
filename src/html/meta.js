@@ -33,12 +33,18 @@ module.exports = {
 	},
 
 	// Assets
-	"site.js": {
-		"dev": "assets/js/site.js",
-		"build": "assets/js/site.min.js"
-	},
-	"site.css": {
-		"dev": "assets/css/site.css",
-		"build": "assets/css/site.min.css"
-	}
+	"site.js": new FilePath("assets/js/site.js"),
+	"site.css": new FilePath("assets/css/site.css")
 };
+
+
+/**
+ * Creates a object generate links to file used in development and production.
+ * @constructor
+ * @param {string} path path to file
+ */
+function FilePath(path) {
+	this.dev = path;
+	var index = path.lastIndexOf(".");
+	this.build = path.substring(0, index) + ".min" + path.substring(index);
+}
