@@ -11,7 +11,7 @@
     "start:e2e": "gulp html --test && npm start",
     "test": "node node_modules/karma/bin/karma start test/karma.conf.js",
     "e2e": "gulp e2e --config test/e2e.conf.js",
-	"pack:vendor": "node node_modules/webpack/bin/webpack --config webpack.vendor.config.js"
+    "pack:vendor": "node node_modules/webpack/bin/webpack --config webpack.vendor.config.js"
   },
   "dependencies": {
     "babel-core": "^6.9.0",
@@ -29,6 +29,7 @@
     "browser-sync": "^2.12.8",
     "bs-html-injector": "^3.0.1",
     "expose-loader": "^0.7.1",
+    "html-loader": "^0.4.3",
     "jasmine": "^2.4.1",
     "jasmine-core": "^2.4.1",
     "jasmine-spec-reporter": "^2.4.0",

@@ -1,7 +1,11 @@
 // Key is view id and value is its innerHTML
+var req = require.context("../../html/views", false, /^.*\.html$/);
 var views = {};
 
 [
+	{ id: "home", external: true },
+	{ id: "about", external: true },
+	{ id: "skills", external: true },
 	{
 		id: "projects",
 		class: "project-list",
@@ -11,8 +15,9 @@ var views = {};
 		title: "Interests"
 	}
 ].forEach(view => {
-	views[view.id] = `
-		<div class="container">
+	views[view.id] = view.external ?
+		req(`./${view.id}.html`) :
+		`<div class="container">
 			<div class="row ${view.class || ""}">
 				<h2>${view.title}</h2>
 			</div>

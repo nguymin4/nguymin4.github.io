@@ -63,8 +63,8 @@ export default function () {
 			callback = typeof callback === "function" ? callback : function () { };
 			var deferreds = views.map(view => view.load());
 			$.when(deferreds).always(() => {
-				callback();
 				wiredEvent();
+				callback();
 				var state = getViewState();
 				active = state.activeViewIndex;
 				views[active].toggleClass("active");

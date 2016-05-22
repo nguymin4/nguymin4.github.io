@@ -1,4 +1,4 @@
-var req = require.context("./", false, /^((?!index))\.\/.*\.js$/);
+var req = require.context("./", false, /^.*\.js$/);
 var excludes = ["index"];
 
 export default req.keys()

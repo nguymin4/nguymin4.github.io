@@ -24,6 +24,10 @@ module.exports = {
 					presets: ["es2015"],
 					cacheDirectory: true
 				}
+			},
+			{
+				test: /\.html$/,
+				loader: "html?attrs=false"
 			}
 		]
 	}
