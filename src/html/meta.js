@@ -7,13 +7,13 @@ module.exports = {
 	"keyword": "Minh Son Nguyen, nguymin4, software engineer, full-stack developer, biography, projects, portfolio, interests",
 
 	"content-security-policy": {
-		"dev": "default-src * 'unsafe-inline' 'unsafe-eval'",
+		"dev": "default-src * 'unsafe-inline' 'unsafe-eval'; img-src * data:",
 		"build": [
 			"default-src 'self'",
 			"script-src 'self' cdnjs.cloudflare.com www.google-analytics.com 'unsafe-inline'",
 			"style-src 'self' cdnjs.cloudflare.com fonts.googleapis.com 'unsafe-inline'",
 			"font-src *",
-			"img-src *"
+			"img-src * data:"
 		].join("; ")
 	},
 	

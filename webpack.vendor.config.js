@@ -28,8 +28,12 @@ module.exports = {
             es6shim: resolveModule("es6-shim/es6-shim.js"),
 			jquery: resolveModule("jquery/dist/jquery.js"),
             marked: resolveModule("marked/lib/marked.js"),
-			mobile_detect: resolveModule("mobile-detect/mobile-detect.js")
+			mobile_detect: resolveModule("mobile-detect/mobile-detect.js"),
+			perfect_scrollbar: resolveModule("perfect-scrollbar/js/min/perfect-scrollbar.jquery.min.js")
         }
+    },
+	externals: {
+		"jquery": "$"
     },
 	plugins: plugins
 };
