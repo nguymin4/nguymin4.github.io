@@ -22,7 +22,7 @@ The gulp task accept parameters `--parallel` which run parallel tests using Sele
 `phantomjs` (installed via package phantomjs-prebuilt), firefox is supported by selenium out of the box.
 Set up webdriver either in `PATH`, in config file or download and place it in `bin` folder inside `lib/selenium-jasmine`.  
 
-	Limitation: Work stable on Linux. On Windows, there are performance issues and errors with firefox and phantomjs. Those issues are addressed on 
+	E2E testing works stable on Linux. On Windows, there are performance issues and errors with firefox and phantomjs. Those issues are addressed on 
 https://github.com/seleniumhq/selenium-google-code-issue-archive/issues  
  
   

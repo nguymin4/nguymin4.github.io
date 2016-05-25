@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.6",
+    "es6-shim": "^0.35.0",
     "font-awesome": "^4.6.1",
     "jquery": "^2.2.3",
     "marked": "^0.3.5",
@@ -10,7 +11,6 @@
     "perfect-scrollbar": "^0.6.10"
   },
   "devDependencies": {
-    "jasmine-jquery": "^2.1.1",
-    "es6-shim": "^0.35.0"
+    "jasmine-jquery": "^2.1.1"
   }
 }
