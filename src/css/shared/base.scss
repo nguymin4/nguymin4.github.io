@@ -1,9 +1,9 @@
 @import "mixin";
 
 html, body {
-	height:100%;
-	background-color:$main-color;
-	color:$main-color;
+	height: 100%;
+	background-color: transparent;
+	color: $main-color;
 	font-size: $main-font-size;
 	font-family: "Open Sans", "Ubuntu", sans-serif;
 	letter-spacing: 0.5px;

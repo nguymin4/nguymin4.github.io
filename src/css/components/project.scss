@@ -1,5 +1,6 @@
 #projects {
 	.container .row {
+		padding-bottom: 0px;
 		@include transition(all 0.5s ease);
 	}
 }
@@ -109,7 +110,7 @@
 	
 	.detail-body {
 		position: relative;
-		height: calc(100% - 75px);
+		height: calc(100% - 110px);
 		text-align: left;
 		margin: 10px 0px;
 		padding: 10px 20px;

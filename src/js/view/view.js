@@ -16,6 +16,7 @@ export default class View extends BaseClass {
 				id: /\/(\w+).html/.exec(route)[1]
 			}
 		});
+		this.scroll = true;
 	}
 	load() {
 		var content = htmlViews[this.model.id];
@@ -27,7 +28,7 @@ export default class View extends BaseClass {
 		}).fail((data, status, xhr) => {
 			$html.html("");
 		}).always(() => {
-			isMobile ? 
+			isMobile ?
 				$html.css("overflow-y", "scroll") :
 				$html.perfectScrollbar(psOption);
 		});
@@ -47,19 +48,25 @@ export default class View extends BaseClass {
 		if (isMobile)
 			$(window).on("resize", () => this.$html.perfectScrollbar("update"));
 	}
-	
+
 	toggleClass(className) {
 		var $html = this.$html;
-		// Temporarily disable scrollbar when change view
+		// Temporarily disable scrollbar when change view on mobile
 		$html.css("overflow-y", "hidden").toggleClass(className);
-		if (isMobile)
-			setTimeout(() => $html.css("overflow-y", "scroll"), 1000);
+		if (isMobile) setTimeout(this.setScrollConfig.bind(this), 1000);
 		return this;
 	}
 	toggleScroll(active) {
-		var overflow = active ? "scroll" : "hidden";
 		var option = active ? psOption : "destroy";
 		if (!isMobile) this.$html.perfectScrollbar(option);
-		else this.$html.css("overflow-y", overflow);
+		else {
+			this.scroll = active;
+			this.setScrollConfig();
+		}
+	}
+	setScrollConfig() {
+		var overflow = this.scroll ? "scroll" : "hidden";
+		this.$html.css("overflow-y", overflow);
+		return this;
 	}
 }

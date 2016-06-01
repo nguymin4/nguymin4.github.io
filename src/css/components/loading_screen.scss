@@ -9,7 +9,7 @@ $radius: #{$loading-circle-radius}#{$loading-circle-unit};
     text-align: center;
 	position: absolute;
 	background: $main-color;
-	@include transition(opacity 0.75s ease 0.75s, z-index 0s ease 1s);
+	@include transition(opacity 0.75s ease 0.75s, z-index 0s ease 1.5s);
 }
 
 .loader {

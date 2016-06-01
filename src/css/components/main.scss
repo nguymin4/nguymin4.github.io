@@ -1,8 +1,12 @@
+body {
+	background: url($main-background) top center no-repeat;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+}
+
 .band {
 	height: 100%;
-	background-image: url($main-background);
-	background-size: cover;
-	background-position: top center;
 	position: relative;
 	overflow: hidden;
 }
@@ -11,7 +15,6 @@
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	// @include bg-gradient(right, rgba(255,255,255,0), rgba(255,255,255,0.05));
 }
 
 section.view {

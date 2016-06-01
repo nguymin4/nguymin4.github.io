@@ -15,10 +15,11 @@ var views = {};
 		title: "Interests"
 	}
 ].forEach(view => {
+	var className = view.class ? " " + view.class : "";
 	views[view.id] = view.external ?
 		req(`./${view.id}.html`) :
 		`<div class="container">
-			<div class="row ${view.class || ""}">
+			<div class="row${className}">
 				<h2>${view.title}</h2>
 			</div>
 		</div>`;
