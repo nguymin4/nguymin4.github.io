@@ -17,7 +17,6 @@ var ready = false;
 var documentLoaded = setInterval(() => {
 	if (/loaded|complete/.test(document.readyState) && ready) {
 		clearInterval(documentLoaded);
-		checkFallback();
 		$(document.body).addClass("loaded");
 	}
 }, 100);
@@ -39,16 +38,4 @@ function initWhenReady() {
 	renderProjectSection();
 	renderAchievementSection();
 	initSkillPart();
-}
-
-
-function checkFallback() {
-	if (!$(".achievement").length) {
-		renderAchievementSection();
-	}
-
-	var skillPartEvents = $._data($("#skills .row").get(0), "events");
-	if (!(skillPartEvents && skillPartEvents.click)) {
-		initSkillPart();
-	}
 }

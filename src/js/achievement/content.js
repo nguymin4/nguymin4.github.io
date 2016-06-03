@@ -1,5 +1,5 @@
 var logos = {
-	"Codility": "https://media.licdn.com/media/p/2/000/100/3f7/32cb3ab.png",
+	"Codility": "https://media.licdn.com/media/AAEAAQAAAAAAAAj1AAAAJGJiNTA1MDlkLWJmMGItNDcyZC05NjE2LWM1MmNhNTE5NmI1MQ.png",
 	"MongoDB": "https://media.licdn.com/media/AAEAAQAAAAAAAATFAAAAJDBlYjQ4YjBhLWEyNDAtNDA4ZC05OWJkLTRkYTFhN2Q2YmE2Yw.png",
 	"edX": "https://media.licdn.com/media/AAEAAQAAAAAAAAOqAAAAJDQ5YmUzOGFlLWIwYWMtNDdjYy04ZTY5LThhODFiMWQ5NTc5MQ.png"
 };

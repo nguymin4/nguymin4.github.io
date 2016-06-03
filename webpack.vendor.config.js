@@ -29,7 +29,7 @@ module.exports = {
 			jquery: resolveModule("jquery/dist/jquery.js"),
             marked: resolveModule("marked/lib/marked.js"),
 			mobile_detect: resolveModule("mobile-detect/mobile-detect.js"),
-			perfect_scrollbar: resolveModule("perfect-scrollbar/js/min/perfect-scrollbar.jquery.min.js")
+			perfect_scrollbar: resolveModule("perfect-scrollbar/js/perfect-scrollbar.jquery.min.js")
         }
     },
 	externals: {
