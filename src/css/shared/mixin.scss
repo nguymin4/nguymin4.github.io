@@ -6,35 +6,35 @@
 }
 
 @mixin border-radius($specs) {
-	@include constructor(border-radius, #{$specs})
+	@include constructor(border-radius, #{$specs});
 }
 
 @mixin box-shadow($specs) {
-	@include constructor(box-shadow, $specs)
+	@include constructor(box-shadow, $specs);
 }
 
 @mixin transition($specs...) {
-	@include constructor(transition, $specs)
+	@include constructor(transition, $specs);
 }
 
 @mixin transform($specs) {
-	@include constructor(transform, $specs)
+	@include constructor(transform, $specs);
 }
 
 @mixin transform-style($specs) {
-	@include constructor(transform-style, $specs)
+	@include constructor(transform-style, $specs);
 }
 
 @mixin perspective($specs) {
-	@include constructor(perspective, $specs)
+	@include constructor(perspective, $specs);
 }
 
 @mixin blur($specs) {
-	@include constructor(filter, blur($specs))
+	@include constructor(filter, blur($specs));
 }
 
 @mixin forceGpu() {
-	@include constructor(transform, translateZ(0))
+	@include constructor(transform, translateZ(0));
 }
 
 @mixin bg-gradient($specs...) {
@@ -45,39 +45,42 @@
 }
 
 @mixin animation($animate...) {
-    $max: length($animate);
-    $animations: '';
+	$max: length($animate);
+	$animations: '';
 
-    @for $i from 1 through $max {
-        $animations: #{$animations + nth($animate, $i)};
+	@for $i from 1 through $max {
+		$animations: #{$animations + nth($animate, $i)};
 
-        @if $i < $max {
-            $animations: #{$animations + ", "};
-        }
-    }
-    -webkit-animation: $animations;
-    -moz-animation:    $animations;
-    -o-animation:      $animations;
-    animation:         $animations;
+		@if $i < $max {
+			$animations: #{$animations + ", "};
+		}
+	}
+	-webkit-animation: $animations;
+	-moz-animation: $animations;
+	-o-animation: $animations;
+	animation: $animations;
 }
 
 @mixin keyframes($animationName) {
-    @-webkit-keyframes #{$animationName} {
-        @content;
-    }
-    @-moz-keyframes #{$animationName} {
-        @content;
-    }
-    @-o-keyframes #{$animationName} {
-        @content;
-    }
-    @keyframes #{$animationName} {
-        @content;
-    }
+	@-webkit-keyframes #{$animationName} {
+		@content;
+	}
+
+	@-moz-keyframes #{$animationName} {
+		@content;
+	}
+
+	@-o-keyframes #{$animationName} {
+		@content;
+	}
+
+	@keyframes #{$animationName} {
+		@content;
+	}
 }
 
-$no-duration: "0s !important";
 @mixin no-animation() {
+	$no-duration: "0s !important";
 	@include transition(#{"none !important"});
 	@include animation(#{"none !important"});
 }

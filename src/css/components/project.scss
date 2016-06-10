@@ -1,6 +1,6 @@
 #projects {
 	.container .row {
-		padding-bottom: 0px;
+		padding-bottom: 0;
 		@include transition(all 0.5s ease);
 	}
 }
@@ -12,20 +12,19 @@
 	color: $main-color;
 	@include transition(all 0.25s ease);
 	cursor: pointer;
-		
-	
+
 	.title {
 		// color: lighten(invert($main-color), 20%);
 		text-align: center;
 		margin-bottom: 10px;
 		padding-bottom: 5px;
 		border-bottom: solid 1px darken($main-color, 10%);
-		text-shadow: 0px 0px 8px $main-color;
+		text-shadow: 0 0 8px $main-color;
 		white-space: nowrap;
-  		overflow: hidden; 
+		overflow: hidden;
 		text-overflow: ellipsis;
 	}
-	
+
 	img {
 		display: block;
 		max-width: 100%;
@@ -33,7 +32,7 @@
 		margin: auto;
 		@include border-radius(4px);
 	}
-	
+
 	&:hover {
 		@include transform(scale(0.975));
 	}
@@ -54,12 +53,12 @@
 	opacity: 0;
 	@include transform(translateY(-100%));
 	@include transition(opacity 0.75s, transform 0.75s);
-	
+
 	&.active {
 		opacity: 1;
 		@include transform(translateY($project-detail-top));
 	}
-	
+
 	.detail {
 		height: calc(100% - #{$project-detail-top} - 20px);
 		width: 100%;
@@ -68,14 +67,14 @@
 		background-color: $main-color;
 		text-align: center;
 		overflow: hidden;
-		border: solid 1px #D4D4D4;
+		border: solid 1px #d4d4d4;
 		@include border-radius(5px);
 	}
-	
+
 	.detail-top {
 		padding-top: 25px;
 		position: relative;
-		
+
 		.btn-close {
 			position: absolute;
 			right: 20px;
@@ -83,72 +82,80 @@
 			font-size: 1.75em;
 			cursor: pointer;
 			@include transition(transform 0.25s ease);
-			
+
 			&:hover {
 				@include animation(pulse 1s infinite ease);
 			}
 		}
-		
+
 		.btn-github {
 			margin: auto;
 			font-size: 2.8em;
 			color: $secondary-color;
 			text-decoration: none;
 			@include transition(color 0.25s ease);
-			
-			
+
 			&:hover {
 				color: #337ab7;
 			}
 		}
-	
+
 		hr {
 			margin-top: 15px;
 			margin-bottom: 0;
 		}
 	}
-	
+
 	.detail-body {
 		position: relative;
 		height: calc(100% - 110px);
 		text-align: left;
-		margin: 10px 0px;
+		margin: 10px 0;
 		padding: 10px 20px;
 		overflow-y: scroll;
 		font-size: 0.9em;
-		
+
 		.content-box {
 			padding-bottom: 30px;
 			line-height: 1.6em;
 		}
-		
+
 		img {
-			margin: 5px 0px;
+			margin: 5px 0;
 			@include border-radius(5px);
-			
+
 			&[align="right"] {
 				margin-left: 15px;
 			}
-			
+
 			&[align="left"] {
 				margin-right: 15px;
 			}
 		}
 	}
-	
+
 	@media screen and (max-width: $project-detail-width) {
 		padding: 0;
-		
+
 		.detail {
 			margin: 0;
 			height: calc(100vh - #{$project-detail-top});
-			@include border-radius(5px 5px 0px 0px);
+			@include border-radius(5px 5px 0 0);
 		}
 	}
 }
 
+/* stylelint-disable selector-type-no-unknown  */
 @include keyframes(pulse) {
-	0% {@include transform(scale(1.1))}
-	50% {@include transform(scale(0.9))}
-	100% {@include transform(scale(1.1))}
+	0% {
+		@include transform(scale(1.1));
+	}
+
+	50% {
+		@include transform(scale(0.9));
+	}
+
+	100% {
+		@include transform(scale(1.1));
+	}
 }

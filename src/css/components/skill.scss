@@ -1,46 +1,44 @@
 #skills {
 	padding-top: 100px;
-	
+
 	.row {
 		max-width: 900px;
 		background-color: $main-color;
 		color: $secondary-color;
-		padding: 0px 25px 15px 25px;
+		padding: 0 25px 15px 25px;
 		max-height: 55px;
 		overflow: hidden;
 		@include transition(max-height 0.5s ease);
 		@include border-radius(5px);
 		@include forceGpu();
 	}
-	
+
 	h2 {
 		font-size: 1.4em;
 		line-height: 2.5em;
 		margin-bottom: 15px;
 		cursor: pointer;
 	}
-	
+
 	h2 .fa {
 		margin-right: 20px;
 	}
-	
+
 	.row.active {
-		
 		h2 .fa {
 			@include transform(rotate(180deg));
 		}
-		
 	}
 }
 
 .skill {
 	min-height: 180px;
 	font-size: 0.9em;
-	
+
 	li {
 		margin: 5px auto;
 	}
-	
+
 	@media screen and (max-width: 768px) {
 		min-height: initial;
 	}
@@ -54,22 +52,21 @@
 	clear: both;
 	height: 120px;
 	border-bottom: solid 1px lighten($secondary-color, 40%);
-	padding: 20px 0px;
+	padding: 20px 0;
 	max-width: 900px;
 	margin: auto;
-	
-	
+
 	.text {
 		width: calc(100% - 100px);
-		padding: 0px 10px;
+		padding: 0 10px;
 		text-align: left;
 	}
-	
+
 	.logo {
 		width: 100px;
 		text-align: right;
 	}
-	
+
 	> div {
 		float: right;
 	}
