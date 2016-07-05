@@ -1,5 +1,5 @@
 #skills {
-	padding-top: 100px;
+	padding-top: 80px;
 
 	.row {
 		max-width: 900px;
@@ -27,6 +27,16 @@
 	.row.active {
 		h2 .fa {
 			@include transform(rotate(180deg));
+		}
+	}
+
+	@media screen and (max-width: $mobile-screen) {
+		.row {
+			padding: 0 0 15px 0;
+			
+			ul {
+				padding-left: 35px;
+			}
 		}
 	}
 }

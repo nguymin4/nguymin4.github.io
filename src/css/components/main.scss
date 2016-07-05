@@ -58,6 +58,17 @@ section.view {
 		font-family: Ubuntu;
 	}
 
+	@media screen and (max-width: $mobile-screen) {
+		.container {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		.row {
+			padding: 20px 0;
+		}
+	}
+
 	@media screen and (max-width: 768px) {
 		@include transition(all 0.5s ease 0s);
 

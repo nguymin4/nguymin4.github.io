@@ -16,4 +16,11 @@ body {
 	}
 }
 
+@media screen and (max-width: $mobile-screen) {
+	html,
+	body {
+		font-size: 14px;
+	}
+}
+
 @import "misc";
