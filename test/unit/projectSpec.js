@@ -1,6 +1,6 @@
 /* global setFixtures */
 import Project from "project/project.js";
-import models from "project/content.js";
+import models from "project/projects";
 
 describe("Projects section", function() {
 	var $container;

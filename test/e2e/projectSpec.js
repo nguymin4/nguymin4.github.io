@@ -3,8 +3,8 @@ var async = require("../helper/async.js");
 describe(`[${browserName}] Projects section,`, function() {
 	var items = [];
 	var detail = {
-		content: `<h4>Mimic Skype Web UI using React</h4>`,
-		github: "https://github.com/nguymin4/react-skype-ui"
+		content: `<h4>React-VideoCall</h4>`,
+		github: "https://github.com/nguymin4/react-videocall"
 	};
 
 	beforeAll(done => {
