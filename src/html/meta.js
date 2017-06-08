@@ -36,15 +36,15 @@ module.exports = {
 	"site.js": new FilePath("assets/js/site.js"),
 	"site.css": new FilePath("assets/css/site.css"),
 	"bootstrap.css": {
-		dev: "bower_components/bootstrap/dist/css/bootstrap.css",
+		dev: "node_modules/bootstrap/dist/css/bootstrap.css",
 		build: "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"
 	},
 	"font-awesome.css": {
-		dev: "bower_components/font-awesome/css/font-awesome.css",
+		dev: "node_modules/font-awesome/css/font-awesome.css",
 		build: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"
 	},
 	"perfect-scrollbar.css": {
-		dev: "bower_components/perfect-scrollbar/css/perfect-scrollbar.css",
+		dev: "node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.css",
 		build: "https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.11/css/perfect-scrollbar.min.css"
 	}
 };

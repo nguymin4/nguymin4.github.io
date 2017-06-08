@@ -7,9 +7,9 @@ module.exports = function (config) {
 		basePath: "../",
 		files: [
 			"assets/js/vendor.min.js",
-			"bower_components/jquery/dist/jquery.min.js",
-			"bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.js",
-			"bower_components/jasmine-jquery/lib/jasmine-jquery.js",
+			"node_modules/jquery/dist/jquery.min.js",
+			"node_modules/perfect-scrollbar/js/perfect-scrollbar.jquery.js",
+			"node_modules/jasmine-jquery/lib/jasmine-jquery.js",
 			"test/unit/**/*Spec.js"
 		],
 		preprocessors: {

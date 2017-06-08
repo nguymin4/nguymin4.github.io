@@ -1,5 +1,5 @@
 var webpack = require("webpack");
-var resolveModule = mod => "../../bower_components/" + mod;
+var resolveModule = mod => "../../node_modules/" + mod;
 var isProduction = process.argv.indexOf("--build") !== -1;
 var plugins = [];
 
@@ -29,7 +29,7 @@ module.exports = {
 			jquery: resolveModule("jquery/dist/jquery.js"),
             marked: resolveModule("marked/lib/marked.js"),
 			mobile_detect: resolveModule("mobile-detect/mobile-detect.js"),
-			perfect_scrollbar: resolveModule("perfect-scrollbar/js/perfect-scrollbar.jquery.min.js")
+			perfect_scrollbar: resolveModule("perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js")
         }
     },
 	externals: {
