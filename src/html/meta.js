@@ -2,7 +2,7 @@ module.exports = {
 	// Meta tags
 	"title": "Minh Son Nguyen",
 
-	"description": "Website of Minh Son Nguyen - a developer living in Finland - presenting projects, achievements and interests.",
+	"description": "Website of Minh Son Nguyen - software developer working in Helsinki, Finland",
 
 	"keyword": "Minh Son Nguyen, nguymin4, software engineer, full-stack developer, biography, projects, portfolio, interests",
 

@@ -6,7 +6,7 @@ import renderViewIndicator from "./indicator/index.js";
 import renderSmokeEffect from "./components/smoke.js";
 
 // Contents in each section
-import renderInterestSection from "./interest/index.js";
+// import renderInterestSection from "./interest/index.js";
 import renderProjectSection from "./project/index.js";
 import renderAchievementSection from "./achievement/index.js";
 import initSkillPart from "./components/skillPart.js";
@@ -34,7 +34,7 @@ var documentLoaded = setInterval(() => {
 
 
 function initWhenReady() {
-	renderInterestSection();
+	// renderInterestSection();
 	renderProjectSection();
 	renderAchievementSection();
 	initSkillPart();

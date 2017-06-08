@@ -1,7 +1,7 @@
 export default [
 	{
 		title: "Instrumental music", background: "assets/img/Moonlight_Waltz.jpg",
-		content: `I do like music, especially instrumental music. I love it softness. 
+		content: `I do like music, especially instrumental music. I love it softness.
 		My favourite artists and composers are Kim Yoon, The daydream, S.E.N.S, Yukie Nishimura, Yuhki Kuramoto, etc. to name a few.`
 	},
 	{
@@ -10,7 +10,7 @@ export default [
 		Jules Verne, Victor Hugo, Alexandre Dumas, Hector Malot, Mark Twain, Jack London, Edmondo De Amicis etc. are all my favourite authors.`
 	},
 	{
-		title: "Running and Strolling", background: "assets/img/Launeen_perhepuisto.jpg",
+		title: "Running", background: "assets/img/Launeen_perhepuisto.jpg",
 		content: `When the weather is not too cold, I usually run around the park (Launeen perhepuisto) near my home.
 		Then to cool down, I walk along with leisurely pace to enjoy the weather while listen to music based on my mood.`
 	},

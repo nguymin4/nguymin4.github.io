@@ -5,7 +5,7 @@ var indicators = [
 	{ icon: "fa-user", title: "About" },
 	{ icon: "fa-certificate", title: "Skills" },
 	{ icon: "fa-code-fork", title: "Projects" },
-	{ icon: "fa-gamepad", title: "Interests" }
+	// { icon: "fa-gamepad", title: "Interests" }
 ].map((indicator, i) => {
 	indicator.href = app.config.hashes[i];
 	return indicator;
