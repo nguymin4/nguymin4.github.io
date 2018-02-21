@@ -14,12 +14,12 @@ export default class Achievement extends BaseClass {
 			class: "achievement"
 		}).html(`
 			<div class="logo">
-				<img src="${model.logo}" alt="${model.authority}" 
+				<img src="${model.logo}" alt="${model.authority}"
 					title="${model.authority}" />
 			</div>
 			<div class="text">
 				<div class="name">${model.name}</div>
-				<a href="${model.url}" target="_blank">Link</a>
+				<a href="${model.url}" target="_blank">View</a>
 			</div>
 		`);
 		return this;

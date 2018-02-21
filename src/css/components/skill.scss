@@ -33,7 +33,7 @@
 	@media screen and (max-width: $mobile-screen) {
 		.row {
 			padding: 0 0 15px 0;
-			
+
 			ul {
 				padding-left: 35px;
 			}
@@ -73,8 +73,12 @@
 	}
 
 	.logo {
-		width: 100px;
+		width: 80px;
 		text-align: right;
+
+		img {
+			width: 100%;
+		}
 	}
 
 	> div {
