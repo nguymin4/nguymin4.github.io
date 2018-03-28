@@ -1,5 +1,5 @@
 var width;
-var n = 2;
+var n = 4;
 
 export default function () {
 	var $container = $("#smokes");
