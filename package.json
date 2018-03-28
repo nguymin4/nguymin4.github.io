@@ -9,10 +9,11 @@
   "scripts": {
     "start": "python -m SimpleHTTPServer 3000",
     "start:e2e": "gulp html --test && npm start",
-    "test": "karma start test/karma.conf.js",
+    "test": "karma start test/karma.conf.js --single-run",
     "e2e": "gulp e2e --config test/e2e.conf.js",
     "pack:vendor": "webpack --config webpack.vendor.config.js",
-    "build": "gulp build"
+    "build": "gulp build",
+    "watch": "gulp dev"
   },
   "dependencies": {
     "babel-core": "~6.10.4",
