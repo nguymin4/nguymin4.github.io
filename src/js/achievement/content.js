@@ -1,10 +1,14 @@
 var logos = {
-	"Codility": "https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAmxAAAAJDY0ZGFkMzc5LTA3MGItNDU5Yy05NjE1LTZmNDE3NjI5Mzk0Ng.png",
-	"MongoDB": "https://media.licdn.com/media/AAEAAQAAAAAAAATFAAAAJDBlYjQ4YjBhLWEyNDAtNDA4ZC05OWJkLTRkYTFhN2Q2YmE2Yw.png",
-	"edX": "https://media.licdn.com/media/AAEAAQAAAAAAAAOqAAAAJDQ5YmUzOGFlLWIwYWMtNDdjYy04ZTY5LThhODFiMWQ5NTc5MQ.png"
+	"Codility": "assets/img/Codility.png"
 };
 
 var achievementList = [
+	{
+		"name": "Codility Golden Award for the Future Mobility Challenge",
+		"authority": "Codility",
+		"url": "https://app.codility.com/cert/view/cert87F6AB-XZKFUF95ZJTU3MXS",
+		"logo": logos["Codility"]
+	},
 	{
 		"name": "Codility Golden Award for the Ferrum 2018 Challenge",
 		"authority": "Codility",
