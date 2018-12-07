@@ -4,6 +4,12 @@ var logos = {
 
 var achievementList = [
 	{
+		"name": "Codility Golden Award for the Arsenicum 2018 Challenge",
+		"authority": "Codility",
+		"url": "https://app.codility.com/cert/view/certZ4V53P-NFB3K9XHR3YVV8ZW",
+		"logo": logos["Codility"]
+	},
+	{
 		"name": "Codility Golden Award for the Future Mobility Challenge",
 		"authority": "Codility",
 		"url": "https://app.codility.com/cert/view/cert87F6AB-XZKFUF95ZJTU3MXS",
