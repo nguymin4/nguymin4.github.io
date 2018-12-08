@@ -19,8 +19,8 @@ var views = {};
 	views[view.id] = view.external ?
 		req(view.id) :
 		`<div class="container">
+			<h2>${view.title}</h2>
 			<div class="row${className}">
-				<h2>${view.title}</h2>
 			</div>
 		</div>`;
 });

@@ -1,5 +1,6 @@
 #projects {
-	.container .row {
+	.row {
+		margin-top: 0;
 		padding-bottom: 0;
 		@include transition(all 0.5s ease);
 	}
@@ -53,6 +54,10 @@
 	opacity: 0;
 	@include transform(translateY(-100%));
 	@include transition(opacity 0.75s, transform 0.75s);
+
+	h4 {
+		font-size: 1.2rem;
+	}
 
 	&.active {
 		opacity: 1;

@@ -13,7 +13,7 @@ export default class ProjectDetail extends BaseClass {
 	}
 	render() {
 		this.$html.attr({
-			class: "container project-detail"
+			class: "project-detail"
 		}).html(`<div class="detail">
 					<div class="detail-top">
 						<i class="fa fa-times btn-close"></i>
@@ -32,7 +32,7 @@ export default class ProjectDetail extends BaseClass {
 	}
 	wiredEvent() {
 		if (!isMobile) this.$detailBody.perfectScrollbar(app.config.psOption);
-		
+
 		this.on(".btn-close click", () => {
 			this.ready = false;
 			this.$html.removeClass("active");
@@ -50,7 +50,7 @@ export default class ProjectDetail extends BaseClass {
 		this.$contentBox.html(model.info);
 		this.$github.attr("href", model.github)
 			.css("visibility", model.github ? "visible" : "hidden");
-		
+
 		this.$detailBody.scrollTop(0);
 		if (!isMobile) this.$detailBody.perfectScrollbar("update");
 		app.channel.triggerHandler("view:toggleScroll", ["projects", false]);

@@ -37,7 +37,7 @@ module.exports = {
 	"site.css": new FilePath("assets/css/site.css"),
 	"bootstrap.css": {
 		dev: "node_modules/bootstrap/dist/css/bootstrap.css",
-		build: "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+		build: "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
 	},
 	"font-awesome.css": {
 		dev: "node_modules/font-awesome/css/font-awesome.css",
