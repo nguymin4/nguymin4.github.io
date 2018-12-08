@@ -1,26 +1,20 @@
+var path = require("path");
 var webpack = require("webpack");
+var TerserPlugin = require('terser-webpack-plugin');
 var resolveModule = mod => "../../node_modules/" + mod;
 var isProduction = process.argv.indexOf("--build") !== -1;
 var plugins = [];
 
-if (isProduction)
-	plugins.push(new webpack.optimize.UglifyJsPlugin({
-		mangle: false,
-		output: {
-			semicolons: true
-		},
-		compress: {
-			warnings: true
-		}
-	}));
+const terserPlugin = new TerserPlugin({});
 
 module.exports = {
+	mode: 'production',
 	context: __dirname,
 	entry: {
 		vendor: "./src/js/vendor.js"
 	},
 	output: {
-		path: "./assets/js",
+		path: path.join(__dirname, "./assets/js"),
 		filename: isProduction ? "[name].min.js" : "[name].js"
 	},
 	resolve: {
@@ -34,6 +28,8 @@ module.exports = {
     },
 	externals: {
 		"jquery": "$"
-    },
-	plugins: plugins
+	},
+	optimization: {
+		minimizer: isProduction ? [terserPlugin] : []
+	}
 };

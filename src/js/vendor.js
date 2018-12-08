@@ -1,6 +1,6 @@
 require("es6shim");
-require("expose?$!jquery");
-require("expose?jQuery!jquery");
-require("expose?!perfect_scrollbar");
-require("expose?marked!marked");
-require("expose?MobileDetect!mobile_detect");
+require("expose-loader?$!jquery");
+require("expose-loader?jQuery!jquery");
+require("expose-loader?perfect_scrollbar!perfect_scrollbar");
+require("expose-loader?marked!marked");
+require("expose-loader?MobileDetect!mobile_detect");

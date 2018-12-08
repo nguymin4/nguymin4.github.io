@@ -1,32 +1,39 @@
 var path = require("path");
 
 module.exports = {
+	mode: 'production',
 	context: __dirname,
 	entry: {
 		site: "./src/js/site.js"
 	},
 	output: {
-		path: "./assets/js",
+		path: path.join(__dirname, "./assets/js"),
 		filename: "[name].js"
 	},
-	cache: true,
 	module: {
-		loaders: [
+		rules: [
 			{
 				test: /(\.js)|(\.jsx)$/,
 				include: [
 					path.resolve(__dirname, "src", "js"),
 					path.resolve(__dirname, "test", "unit")
 				],
-				loader: "babel-loader",
-				query: {
-					presets: ["es2015"],
-					cacheDirectory: true
+				exclude: /(node_modules|bower_components)/,
+				use: {
+					loader: "babel-loader",
+					options: {
+						presets: ["env"],
+					}
 				}
 			},
 			{
 				test: /\.html$/,
-				loader: "html?attrs=false"
+				use : {
+					loader: 'html-loader',
+					options: {
+						attrs: false
+					}
+				}
 			}
 		]
 	}
