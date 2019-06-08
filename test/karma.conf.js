@@ -8,7 +8,7 @@ module.exports = function (config) {
 		files: [
 			"assets/js/vendor.min.js",
 			"node_modules/jquery/dist/jquery.min.js",
-			"node_modules/perfect-scrollbar/js/perfect-scrollbar.jquery.js",
+			"node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.js",
 			"node_modules/jasmine-jquery/lib/jasmine-jquery.js",
 			"test/unit/**/*Spec.js"
 		],
@@ -18,10 +18,11 @@ module.exports = function (config) {
 
 		// Webpack
 		webpack: {
-			module: webpackModule,
+			mode: 'development',
 			resolve: {
-				root: [path.resolve("src/js")]
-			}
+				modules: [path.resolve("src/js"), "node_modules"]
+			},
+			module: webpackModule
 		},
 		webpackServer: {
 			noInfo: true

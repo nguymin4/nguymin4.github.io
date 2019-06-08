@@ -22,9 +22,6 @@ module.exports = {
 		mangle: false,
 		output: {
 			semicolons: true
-		},
-		compress: {
-			warnings: true
 		}
 	}
 };

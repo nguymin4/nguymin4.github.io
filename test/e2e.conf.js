@@ -1,4 +1,4 @@
-var SpecReporter = require("jasmine-spec-reporter");
+var { SpecReporter } = require("jasmine-spec-reporter");
 
 module.exports = {
 	scriptTimeout: 8000,
