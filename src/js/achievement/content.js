@@ -4,6 +4,12 @@ var logos = {
 
 var achievementList = [
 	{
+		"name": "Codility Golden Award for the Molybdenum 2019 Challenge",
+		"authority": "Codility",
+		"url": "https://app.codility.com/cert/view/certYN5UR6-7GU3YHT2R6HP226A/",
+		"logo": logos["Codility"]
+	},
+	{
 		"name": "Codility Golden Award for the Rubidium 2018 Challenge",
 		"authority": "Codility",
 		"url": "https://app.codility.com/cert/view/certYSU4B3-8VUZUM2Q55A2ZEV7/",
