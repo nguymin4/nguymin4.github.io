@@ -1,9 +1,9 @@
 /* global marked */
 
-var hashes = ["#", "#about-me", "#skills", "#projects", "#interests"];
+var hashes = ["#", "#about-me", "#skills", "#projects"];
 var routes = (function () {
 	let routes = {};
-	let templates = ["home", "about", "skills", "projects", "interests"]
+	let templates = ["home", "about", "skills", "projects"]
 		.map(template => `assets/views/${template}.html`);
 	hashes.forEach((hash, i) => routes[hash] = templates[i]);
 	return routes;

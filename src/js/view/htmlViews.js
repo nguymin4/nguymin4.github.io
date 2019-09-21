@@ -10,9 +10,6 @@ var views = {};
 		id: "projects",
 		class: "project-list",
 		title: "Projects &amp; Works"
-	}, {
-		id: "interests",
-		title: "Interests"
 	}
 ].forEach(view => {
 	var className = view.class ? " " + view.class : "";
