@@ -5,12 +5,7 @@ var views = {};
 [
 	{ id: "home", external: true },
 	{ id: "about", external: true },
-	{ id: "skills", external: true },
-	{
-		id: "projects",
-		class: "project-list",
-		title: "Projects &amp; Works"
-	}
+	{ id: "skills", external: true }
 ].forEach(view => {
 	var className = view.class ? " " + view.class : "";
 	views[view.id] = view.external ?
