@@ -7,10 +7,10 @@ var env = {
 		"./node_modules/.bin/" + command
 };
 
+// Load production tasks
+require("./tasks/gulpProd.js")(env, config);
+
 // Load development tasks
 if (!env.isProduction) {
 	require("./tasks/gulpDev.js")(env, config);
 }
-
-// Load production tasks
-require("./tasks/gulpProd.js")(env, config);

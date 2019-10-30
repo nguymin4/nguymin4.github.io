@@ -11,12 +11,6 @@ module.exports = function (env, config) {
 		output = config.output,
 		metaData = require(input.html.meta);
 
-	gulp.task("build", ["build:env", "html", "sass:build", "webpack:build"]);
-
-	gulp.task("build:env", function () {
-		env.isProduction = true;
-	});
-
 	gulp.task("html", function () {
 		var src = gulp.src(input.html.target);
 
@@ -34,16 +28,12 @@ module.exports = function (env, config) {
 		return src.pipe(gulp.dest(output.html));
 	});
 
-	gulp.task("html:build", ["build:env", "html"]);
-
 	gulp.task("sass:build", function () {
 		return gulp.src(input.scss.target)
 			.pipe(sass({ outputStyle: "compressed" }).on('error', sass.logError))
 			.pipe(rename((path) => path.basename += ".min"))
 			.pipe(gulp.dest(output.css));
 	});
-
-	gulp.task("webpack:build", ["uglify:js"]);
 
 	gulp.task("webpack", function (cb) {
 		exec(env.cmd("webpack"), function (err) {
@@ -52,10 +42,16 @@ module.exports = function (env, config) {
 		});
 	});
 
-	gulp.task("uglify:js", ["webpack"], function () {
-		gulp.src([output.js + "/site.js"])
+	gulp.task("uglify:js", function (cb) {
+		const stream = gulp.src([output.js + "/site.js"])
 			.pipe(uglify(config.uglifyOptions))
 			.pipe(rename((path) => path.basename += ".min"))
 			.pipe(gulp.dest(output.js));
+		stream.on('end', () => cb());
+		stream.on('error', () => cb(true));
 	});
+
+	gulp.task("webpack:build", gulp.series("webpack", "uglify:js"));
+
+	gulp.task("build", gulp.series("html", "sass:build", "webpack:build"));
 };

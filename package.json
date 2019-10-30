@@ -9,7 +9,7 @@
   "scripts": {
     "start": "python -m SimpleHTTPServer 3000",
     "pack:vendor": "webpack --config webpack.vendor.config.js",
-    "build": "gulp build",
+    "build": "NODE_ENV=production gulp build",
     "watch": "gulp dev"
   },
   "dependencies": {
@@ -19,7 +19,7 @@
     "bootstrap": "4.3.1",
     "es6-shim": "~0.35.4",
     "font-awesome": "~4.7.0",
-    "gulp": "3.9.1",
+    "gulp": "4.0.2",
     "gulp-cli": "^2.2.0",
     "gulp-rename": "~1.4.0",
     "gulp-replace": "~1.0.0",
@@ -35,8 +35,7 @@
     "webpack-cli": "^3.3.9"
   },
   "devDependencies": {
-    "browser-sync": "~2.26.3",
-    "bs-html-injector": "~3.0.1",
+    "browser-sync": "^2.26.7",
     "expose-loader": "~0.7.5",
     "html-loader": "~0.5.5"
   },
