@@ -10,7 +10,6 @@ var env = {
 // Load development tasks
 if (!env.isProduction) {
 	require("./tasks/gulpDev.js")(env, config);
-	require("./tasks/gulpTest.js");
 }
 
 // Load production tasks

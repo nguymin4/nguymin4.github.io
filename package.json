@@ -8,9 +8,6 @@
   },
   "scripts": {
     "start": "python -m SimpleHTTPServer 3000",
-    "start:e2e": "gulp html --test && npm start",
-    "test": "karma start test/karma.conf.js --single-run",
-    "e2e": "gulp e2e --config test/e2e.conf.js",
     "pack:vendor": "webpack --config webpack.vendor.config.js",
     "build": "gulp build",
     "watch": "gulp dev"
@@ -41,19 +38,7 @@
     "browser-sync": "~2.26.3",
     "bs-html-injector": "~3.0.1",
     "expose-loader": "~0.7.5",
-    "html-loader": "~0.5.5",
-    "jasmine": "~3.5.0",
-    "jasmine-core": "~3.5.0",
-    "jasmine-jquery": "~2.1.1",
-    "jasmine-spec-reporter": "~4.2.1",
-    "karma": "^4.4.1",
-    "karma-jasmine": "~2.0.1",
-    "karma-mocha-reporter": "~2.2.5",
-    "karma-ng-html2js-preprocessor": "~1.0.0",
-    "karma-phantomjs-launcher": "~1.0.1",
-    "karma-webpack": "^4.0.2",
-    "phantomjs-prebuilt": "~2.1.16",
-    "selenium-webdriver": "~4.0.0-alpha.1"
+    "html-loader": "~0.5.5"
   },
   "author": {
     "name": "Minh Son Nguyen",
