@@ -1,8 +1,15 @@
 var logos = {
-	"Codility": "assets/img/Codility.png"
+	"Codility": "assets/img/Codility.png",
+	"Coursera": "assets/img/Coursera.jpeg"
 };
 
 var achievementList = [
+	{
+		"name": "Machine Learning",
+		"authority": "Coursera",
+		"url": "https://www.coursera.org/account/accomplishments/verify/GDJA24H8UYQN",
+		"logo": logos["Coursera"]
+	},
 	{
 		"name": "Codility Golden Award for the Molybdenum 2019 Challenge",
 		"authority": "Codility",
