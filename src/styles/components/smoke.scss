@@ -5,17 +5,6 @@
 	overflow: hidden;
 }
 
-.smoke {
-	background-image: url("/assets/img/smoke.png");
-	background-repeat: repeat;
-	width: $smoke-width;
-	height: calc(100% - 80px);
-	position: absolute;
-	bottom: 0;
-	opacity: 0.9;
-	@include animation(smoke-float $smoke-floating-time infinite linear);
-}
-
 @include keyframes(smoke-float) {
 	from {
 		@include transform(translateX(-#{$smoke-width}));
@@ -24,4 +13,15 @@
 	to {
 		@include transform(translateX(0));
 	}
+}
+
+.smoke {
+	background-image: url($smoke-background);
+	background-repeat: repeat;
+	width: $smoke-width;
+	height: calc(100% - 80px);
+	position: absolute;
+	bottom: 0;
+	opacity: 0.9;
+	@include animation(smoke-float $smoke-floating-time infinite linear);
 }

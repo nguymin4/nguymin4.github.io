@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
+import Smokes from './Smokes';
 import '../styles/index.scss';
 
 import Header from './Header';
@@ -20,9 +21,7 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div className="band">
-        <div id="smokes">
-          <div className="smoke" />
-        </div>
+        <Smokes />
         <nav id="view-indicators" />
         <div id="content">{children}</div>
       </div>
