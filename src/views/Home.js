@@ -5,7 +5,7 @@ import profileLogo from '../images/field3.jpg';
 const Home = () => (
   <>
     <SEO title="Home" />
-    <div className="container text-center">
+    <div className="container text-center" style={{ marginTop: '5rem' }}>
       <a href="https://github.com/nguymin4">
         <img alt=" " className="rounded-circle" src={profileLogo} height="100" width="100" />
       </a>

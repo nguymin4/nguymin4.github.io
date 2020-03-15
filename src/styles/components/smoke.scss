@@ -5,13 +5,13 @@
 	overflow: hidden;
 }
 
-@include keyframes(smoke-float) {
+@keyframes smoke-float {
 	from {
-		@include transform(translateX(-#{$smoke-width}));
+		transform: translateX(-#{$smoke-width});
 	}
 
 	to {
-		@include transform(translateX(0));
+		transform: translateX(0);
 	}
 }
 
@@ -23,5 +23,5 @@
 	position: absolute;
 	bottom: 0;
 	opacity: 0.9;
-	@include animation(smoke-float $smoke-floating-time infinite linear);
+	animation: smoke-float $smoke-floating-time infinite linear;
 }

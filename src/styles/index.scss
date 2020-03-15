@@ -1,5 +1,48 @@
 @import "~bootstrap/scss/bootstrap";
-
 @import "variables";
-@import "shared/base";
+
+html,
+body {
+	height: 100%;
+	background-color: transparent;
+	color: $main-color;
+	font-size: $main-font-size;
+	font-family: "Open Sans", "Ubuntu", sans-serif;
+	letter-spacing: 0.5px;
+
+  .no-animation {
+    * {
+      $no-duration: "0s !important";
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-screen) {
+  html,
+  body {
+    font-size: 14px;
+  }
+}
+
+
+// Anti ad-block
+.fa {
+  &.fa-lkin-square::before {
+    content: "\f08c";
+  }
+
+  &.fa-lkin::before {
+    content: "\f0e1";
+  }
+}
+
+// Customize perfect scrollbar
+.ps-scrollbar-y,
+.ps-scrollbar-y-rail {
+  border-radius: 0 !important;
+  width: 5px !important;
+}
+
 @import "components/index";

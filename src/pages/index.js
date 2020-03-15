@@ -18,13 +18,13 @@ const App = ({ location: { hash } }) => {
       <Smokes />
       <Nav />
       <div id="content">
-        <section className={getClassName('')}>
+        <section id="home" className={getClassName('')}>
           <Home />
         </section>
-        <section className={getClassName('#about')}>
+        <section id="about" className={getClassName('#about')}>
           <About />
         </section>
-        <section className={getClassName('#skills')}>
+        <section id="skills" className={getClassName('#skills')}>
           <Skills />
         </section>
       </div>

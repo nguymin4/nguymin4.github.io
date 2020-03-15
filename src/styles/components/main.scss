@@ -21,8 +21,8 @@ section.view {
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	@include transform(translateX(-50vw));
-	@include transition(all 0.75s ease 0s);
+	transform: translateX(-50vw);
+	transition: all 0.75s ease 0s;
 	color: $main-color;
 	opacity: 0;
 	z-index: -1;
@@ -30,8 +30,8 @@ section.view {
 	padding-top: 55px;
 
 	&.active {
-		@include transform(translateX(0));
-		@include transition(all 0.75s ease 0s);
+		transform: translateX(0);
+		transition: all 0.75s ease 0s;
 		opacity: 1;
 		z-index: 98;
 	}
@@ -79,18 +79,18 @@ section.view {
 	}
 
 	@media screen and (max-width: 768px) {
-		@include transition(all 0.5s ease 0s);
+		transition: all 0.5s ease 0s;
 
 		&:active {
-			@include transition(all 0.5s ease 0s);
+			transition: all 0.5s ease 0s;
 		}
 	}
 
 	@media screen and (min-width: 1600px) {
-		@include transition(all 1s ease 0s);
+			transition: all 1s ease 0s;
 
 		&:active {
-			@include transition(all 1s ease 0s);
+			transition: all 1s ease 0s;
 		}
 	}
 }
