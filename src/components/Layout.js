@@ -1,33 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+import Nav from './Nav';
 import Smokes from './Smokes';
 import '../styles/index.scss';
 
-import Header from './Header';
-
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div className="band">
-        <Smokes />
-        <nav id="view-indicators" />
-        <div id="content">{children}</div>
-      </div>
-    </>
-  );
-};
+const Layout = ({ children }) => (
+  <div className="band">
+    <Smokes />
+    <Nav />
+    <div id="content">{children}</div>
+  </div>
+);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired
