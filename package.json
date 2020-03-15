@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "nguymin4.github.io",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "My personal website",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Minh Son Nguyen <minh.son.nguyen.1209@gmail.com>",
   "dependencies": {
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
@@ -19,7 +19,13 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "gh-pages": "^2.2.0"
   },
   "keywords": [
     "gatsby"
@@ -28,17 +34,12 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
+    "deploy": "gatsby build && gh-pages -d public -b master",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "clean": "gatsby clean"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/nguymin4/nguymin4.github.io"
   }
 }
