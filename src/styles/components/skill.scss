@@ -1,0 +1,89 @@
+#skills {
+	padding-top: 80px;
+
+	.row {
+		max-width: 900px;
+		background-color: $main-color;
+		color: $secondary-color;
+		padding: 0 25px 15px 25px;
+		max-height: 55px;
+		overflow: hidden;
+		@include transition(max-height 0.5s ease);
+		@include border-radius(5px);
+		@include forceGpu();
+	}
+
+	h2 {
+		width: 100%;
+		margin-top: 0;
+		font-size: 1.4em;
+		line-height: 2.5em;
+		margin-bottom: 15px;
+		cursor: pointer;
+	}
+
+	h2 .fa {
+		margin-right: 20px;
+	}
+
+	.row.active {
+		h2 .fa {
+			@include transform(rotate(180deg));
+		}
+	}
+
+	@media screen and (max-width: $mobile-screen) {
+		.row {
+			padding: 0 0 15px 0;
+
+			ul {
+				padding-left: 35px;
+			}
+		}
+	}
+}
+
+.skill {
+	min-height: 180px;
+	font-size: 0.9em;
+
+	li {
+		margin: 5px auto;
+	}
+
+	@media screen and (max-width: 768px) {
+		min-height: initial;
+	}
+}
+
+.achievement-list {
+	text-align: center;
+}
+
+.achievement {
+	clear: both;
+	height: 120px;
+	border-bottom: solid 1px lighten($secondary-color, 40%);
+	padding: 20px 0;
+	max-width: 900px;
+	margin: auto;
+
+	.text {
+		width: calc(100% - 100px);
+		padding: 0 10px;
+		text-align: left;
+	}
+
+	.logo {
+		width: 80px;
+		text-align: right;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	> div {
+		float: right;
+	}
+}

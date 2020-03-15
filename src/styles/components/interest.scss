@@ -1,0 +1,72 @@
+.interest-card {
+	margin: 25px auto;
+	overflow: hidden;
+	text-align: center;
+	@include perspective(1000);
+
+	.flipper {
+		@include transition(0.6s);
+		@include transform-style(preserve-3d);
+	}
+
+	&:hover .flipper,
+	&.hover .flipper {
+		@include transform(rotateX(180deg));
+	}
+
+	.front,
+	.back {
+		backface-visibility: hidden;
+		top: 0;
+		left: 0;
+		width: 100%;
+		max-width: 320px;
+		height: 100%;
+		min-height: 220px;
+		border: solid 1px $main-color;
+		@include border-radius(5px);
+	}
+
+	.front {
+		position: relative;
+		z-index: 2;
+		@include transform(rotateX(0deg));
+		background-size: cover;
+		font-family: Helvetica, Arial, sans-serif;
+
+		div {
+			width: 100%;
+			position: absolute;
+			top: calc(50% - 35px);
+			background-color: rgba(60, 60, 60, 0.6);
+			cursor: pointer;
+		}
+
+		h4 {
+			font-size: 1em;
+		}
+
+		.fa {
+			font-size: 0.8em;
+			margin: auto 3px;
+		}
+	}
+
+	.back {
+		position: absolute;
+		background-color: rgba(255, 255, 255, 1);
+		color: $secondary-color;
+		padding: 20px 15px;
+		text-align: left;
+		line-height: 1.4em;
+		font-size: 0.9em;
+		@include transform(rotateX(180deg));
+	}
+
+	@media screen and (max-width: 768px) {
+		.front,
+		.back {
+			left: calc(50% - 160px);
+		}
+	}
+}
