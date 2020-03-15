@@ -6,6 +6,7 @@ module.exports = {
     author: '@nguymin4'
   },
   plugins: [
+    'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
