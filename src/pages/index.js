@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Nav from '../components/Nav';
 import Smokes from '../components/Smokes';
+import SEO from '../components/SEO';
 import Home from '../views/Home';
 import About from '../views/About';
 import Skills from '../views/Skills';
@@ -24,6 +25,7 @@ const App = ({ location: { hash } }) => {
 
   return (
     <>
+      <SEO title="Home" />
       <div id="overlay" className={classnames({ loaded: isLoaded })}>
         <div className="loader" />
       </div>

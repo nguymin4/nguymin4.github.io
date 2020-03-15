@@ -2,7 +2,6 @@ import React from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faCertificate } from '@fortawesome/free-solid-svg-icons';
-import SEO from '../../components/SEO';
 import achievements from './achievements';
 
 const Skills = () => (
@@ -11,7 +10,6 @@ const Skills = () => (
     scrollYMarginOffset: 25
   }}
   >
-    <SEO title="Skills" />
     <div className="container">
       <div className="row">
         <h2>
@@ -34,7 +32,7 @@ const Skills = () => (
         </h2>
         <div className="col-md-12 achievement-list">
           {achievements.map(({ authority, logo, name, url }) => (
-            <div className="achievement">
+            <div key={url} className="achievement">
               <div className="logo">
                 <img src={logo} alt={authority} title={authority} />
               </div>
