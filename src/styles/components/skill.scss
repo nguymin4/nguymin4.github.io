@@ -12,19 +12,14 @@
 
 	h2 {
 		width: 100%;
-		margin-top: 0;
+		margin-top: 10px;
 		font-size: 1.4em;
 		line-height: 2.5em;
-		margin-bottom: 15px;
 		cursor: pointer;
 	}
 
-	h2 .fa {
-		margin-right: 20px;
-	}
-
 	.row.active {
-		h2 .fa {
+		h2 .fa-chevron-circle-down {
 			transform: rotate(180deg);
 		}
 	}

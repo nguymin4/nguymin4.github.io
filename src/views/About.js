@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import SEO from '../components/SEO';
 
 const About = () => (
@@ -10,19 +12,14 @@ const About = () => (
         <div className="col-sm-3">
           <h3>Minh Son Nguyen</h3>
           <h4>Helsinki - Finland</h4>
-          <ul id="contact">
-            <li>
-              <a href="https://github.com/nguymin4">
-                <i className="fa fa-github-square" />
-              </a>
-              <a href="https://www.linkedin.com/in/minhsonnguyen1209">
-                <i className="fa fa-lkin-square" />
-              </a>
-              <a href="mailto:%6d%69%6e%68.%73%6f%6e.%6e%67%75%79%65%6e.%31%32%30%39@%67%6d%61%69%6c.%63%6f%6d">
-                <i className="fa fa-paper-plane" />
-              </a>
-            </li>
-          </ul>
+          <div id="contact">
+            <a className="mr-3" href="https://github.com/nguymin4">
+              <FontAwesomeIcon size="2x" icon={faGithubSquare} />
+            </a>
+            <a className="mr-3" href="https://www.linkedin.com/in/minhsonnguyen1209">
+              <FontAwesomeIcon size="2x" icon={faLinkedin} />
+            </a>
+          </div>
         </div>
         <div className="col-sm-9">
           <p>

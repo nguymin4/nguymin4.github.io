@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronCircleDown } from '@fortawesome/free-solid-svg-icons';
 import SEO from '../components/SEO';
 
 const Skills = () => (
@@ -7,7 +9,7 @@ const Skills = () => (
     <div className="container">
       <div className="row">
         <h2>
-          <i className="fa fa-chevron-circle-down" />
+          <FontAwesomeIcon className="mr-3" icon={faChevronCircleDown} />
           Skills
         </h2>
         <div className="skill">
@@ -21,7 +23,7 @@ const Skills = () => (
       </div>
       <div className="row">
         <h2>
-          <i className="fa fa-chevron-circle-down" />
+          <FontAwesomeIcon className="mr-3" icon={faChevronCircleDown} />
           Achievements
         </h2>
         <div className="col-md-12 achievement-list" />

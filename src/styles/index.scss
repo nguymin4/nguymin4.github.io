@@ -29,11 +29,11 @@ body {
 
 // Anti ad-block
 .fa {
-  &.fa-lkin-square::before {
+  &.fa-linkedin::before {
     content: "\f08c";
   }
 
-  &.fa-lkin::before {
+  &.fa-linkedin::before {
     content: "\f0e1";
   }
 }
