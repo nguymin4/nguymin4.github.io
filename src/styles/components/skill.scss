@@ -1,80 +1,80 @@
 #skills {
-	padding-top: 80px;
+  padding-top: 80px;
 
-	.row {
-		max-width: 900px;
-		background-color: $main-color;
-		color: $secondary-color;
-		padding: 0 25px 15px 25px;
-		overflow: hidden;
-		border-radius: 5px;
-	}
+  .row {
+    max-width: 900px;
+    background-color: $main-color;
+    color: $secondary-color;
+    padding: 0 25px 15px 25px;
+    overflow: hidden;
+    border-radius: 5px;
+  }
 
-	h2 {
-		width: 100%;
-		margin-top: 10px;
-		font-size: 1.4em;
-		line-height: 2.5em;
-		cursor: pointer;
-	}
+  h2 {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1.4em;
+    line-height: 2.5em;
+    cursor: pointer;
+  }
 
-	.row.active {
-		h2 .fa-chevron-circle-down {
-			transform: rotate(180deg);
-		}
-	}
+  .row.active {
+    h2 .fa-chevron-circle-down {
+      transform: rotate(180deg);
+    }
+  }
 
-	@media screen and (max-width: $mobile-screen) {
-		.row {
-			padding: 0 0 15px 0;
+  @media screen and (max-width: $mobile-screen) {
+    .row {
+      padding: 0 0 15px 0;
 
-			ul {
-				padding-left: 35px;
-			}
-		}
-	}
+      ul {
+        padding-left: 35px;
+      }
+    }
+  }
 }
 
 .skill {
-	font-size: 0.9em;
+  font-size: 0.9em;
 
-	li {
-		margin: 5px auto;
-	}
+  li {
+    margin: 5px auto;
+  }
 
-	@media screen and (max-width: 768px) {
-		min-height: initial;
-	}
+  @media screen and (max-width: 768px) {
+    min-height: initial;
+  }
 }
 
 .achievement-list {
-	text-align: center;
+  text-align: center;
 }
 
 .achievement {
-	clear: both;
-	height: 120px;
-	border-bottom: solid 1px lighten($secondary-color, 40%);
-	padding: 20px 0;
-	max-width: 900px;
-	margin: auto;
+  clear: both;
+  height: 120px;
+  border-bottom: solid 1px lighten($secondary-color, 40%);
+  padding: 20px 0;
+  max-width: 900px;
+  margin: auto;
 
-	.text {
-		width: calc(100% - 100px);
-		padding: 0 10px;
-		text-align: left;
-	}
+  .text {
+    width: calc(100% - 100px);
+    padding: 0 10px;
+    text-align: left;
+  }
 
-	.logo {
-		width: 80px;
-		text-align: right;
+  .logo {
+    width: 80px;
+    text-align: right;
 
-		img {
-			width: 100%;
-		}
-	}
+    img {
+      width: 100%;
+    }
+  }
 
-	> div {
-		float: right;
-	}
+  > div {
+    float: right;
+  }
 }

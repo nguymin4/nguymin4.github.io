@@ -1,27 +1,27 @@
 #smokes {
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 @keyframes smoke-float {
-	from {
-		transform: translateX(-#{$smoke-width});
-	}
+  from {
+    transform: translateX(-#{$smoke-width});
+  }
 
-	to {
-		transform: translateX(0);
-	}
+  to {
+    transform: translateX(0);
+  }
 }
 
 .smoke {
-	background-image: url($smoke-background);
-	background-repeat: repeat;
-	width: $smoke-width;
-	height: calc(100% - 80px);
-	position: absolute;
-	bottom: 0;
-	opacity: 0.9;
-	animation: smoke-float $smoke-floating-time infinite linear;
+  background-image: url($smoke-background);
+  background-repeat: repeat;
+  width: $smoke-width;
+  height: calc(100% - 80px);
+  position: absolute;
+  bottom: 0;
+  opacity: 0.9;
+  animation: smoke-float $smoke-floating-time infinite linear;
 }
