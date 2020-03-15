@@ -1,7 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleDown } from '@fortawesome/free-solid-svg-icons';
-import SEO from '../components/SEO';
+import SEO from '../../components/SEO';
+import achievements from './achievements';
 
 const Skills = () => (
   <>
@@ -26,7 +27,19 @@ const Skills = () => (
           <FontAwesomeIcon className="mr-3" icon={faChevronCircleDown} />
           Achievements
         </h2>
-        <div className="col-md-12 achievement-list" />
+        <div className="col-md-12 achievement-list">
+          {achievements.map(({ authority, logo, name, url }) => (
+            <div className="achievement">
+              <div className="logo">
+                <img src={logo} alt={authority} title={authority} />
+              </div>
+              <div className="text">
+                <div className="name">{name}</div>
+                <a href={url}>View</a>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </>
