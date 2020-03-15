@@ -28,18 +28,16 @@ const Skills = () => (
       <div className="row">
         <h2>
           <FontAwesomeIcon className="mr-3" icon={faCertificate} />
-          Cerfications
+          Certifications
         </h2>
         <div className="col-md-12 certification-list">
           {certifications.map(({ authority, logo, name, url }) => (
-            <div key={url} className="certification">
-              <div className="logo">
-                <img src={logo} alt={authority} title={authority} />
-              </div>
+            <div key={url} className="certification d-flex justify-content-between">
               <div className="text">
                 <div className="name">{name}</div>
                 <a href={url}>View</a>
               </div>
+              <img className="logo" src={logo} alt={authority} title={authority} />
             </div>
           ))}
         </div>
