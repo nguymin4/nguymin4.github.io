@@ -1,7 +1,7 @@
 import logoCodility from '../../images/Codility.png';
 import logoCoursera from '../../images/Coursera.jpeg';
 
-const achievements = [
+const certifications = [
   {
     name: 'Machine Learning',
     authority: 'Coursera',
@@ -52,4 +52,4 @@ const achievements = [
   }
 ];
 
-export default achievements;
+export default certifications;

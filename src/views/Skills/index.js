@@ -2,7 +2,7 @@ import React from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faCertificate } from '@fortawesome/free-solid-svg-icons';
-import achievements from './achievements';
+import certifications from './certifications';
 
 const Skills = () => (
   <PerfectScrollbar options={{
@@ -28,11 +28,11 @@ const Skills = () => (
       <div className="row">
         <h2>
           <FontAwesomeIcon className="mr-3" icon={faCertificate} />
-          Achievements
+          Cerfications
         </h2>
-        <div className="col-md-12 achievement-list">
-          {achievements.map(({ authority, logo, name, url }) => (
-            <div key={url} className="achievement">
+        <div className="col-md-12 certification-list">
+          {certifications.map(({ authority, logo, name, url }) => (
+            <div key={url} className="certification">
               <div className="logo">
                 <img src={logo} alt={authority} title={authority} />
               </div>
