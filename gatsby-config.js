@@ -28,6 +28,19 @@ module.exports = {
         display: 'minimal-ui',
         icon: 'src/images/zen_circle.png'
       }
+    },
+    {
+      resolve: 'gatsby-plugin-webfonts',
+      options: {
+        fonts: {
+          google: [
+            {
+              family: 'Open Sans',
+              variants: ['300', '400']
+            }
+          ]
+        }
+      }
     }
   ]
 };
