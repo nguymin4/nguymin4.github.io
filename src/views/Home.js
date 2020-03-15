@@ -3,7 +3,7 @@ import SEO from '../components/SEO';
 import profileLogo from '../images/field3.jpg';
 
 const Home = () => (
-  <section className="view">
+  <>
     <SEO title="Home" />
     <div className="container text-center">
       <a href="https://github.com/nguymin4">
@@ -15,7 +15,7 @@ const Home = () => (
         <p>-Richard Hamming-</p>
       </div>
     </div>
-  </section>
+  </>
 );
 
 export default Home;

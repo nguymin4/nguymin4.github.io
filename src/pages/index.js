@@ -1,17 +1,41 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import Nav from '../components/Nav';
 import Smokes from '../components/Smokes';
 import Home from '../views/Home';
+import About from '../views/About';
+import Skills from '../views/Skills';
 import '../styles/index.scss';
 
-const App = () => (
-  <div className="band">
-    <Smokes />
-    <Nav />
-    <div id="content">
-      <Home />
+const App = ({ location: { hash } }) => {
+  const getClassName = (href) => (
+    classnames('view', { active: href === hash })
+  );
+
+  return (
+    <div className="band">
+      <Smokes />
+      <Nav />
+      <div id="content">
+        <section className={getClassName('')}>
+          <Home />
+        </section>
+        <section className={getClassName('#about')}>
+          <About />
+        </section>
+        <section className={getClassName('#skills')}>
+          <Skills />
+        </section>
+      </div>
     </div>
-  </div>
-);
+  );
+};
+
+App.propTypes = {
+  location: PropTypes.shape({
+    hash: PropTypes.string.isRequired
+  }).isRequired
+};
 
 export default App;

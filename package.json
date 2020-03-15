@@ -6,6 +6,7 @@
   "author": "Minh Son Nguyen <minh.son.nguyen.1209@gmail.com>",
   "dependencies": {
     "bootstrap": "^4.4.1",
+    "classnames": "^2.2.6",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-manifest": "^2.2.39",

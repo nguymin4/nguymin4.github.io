@@ -2,7 +2,7 @@ import React from 'react';
 import SEO from '../components/SEO';
 
 const Skills = () => (
-  <section className="view">
+  <>
     <SEO title="Skills" />
     <div className="container">
       <div className="row">
@@ -27,7 +27,7 @@ const Skills = () => (
         <div className="col-md-12 achievement-list" />
       </div>
     </div>
-  </section>
+  </>
 );
 
 export default Skills;

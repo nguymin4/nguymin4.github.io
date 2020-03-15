@@ -2,7 +2,7 @@ import React from 'react';
 import SEO from '../components/SEO';
 
 const About = () => (
-  <section className="view">
+  <>
     <SEO title="About" />
     <div className="container">
       <h2>About me</h2>
@@ -30,9 +30,9 @@ const About = () => (
           </p>
           <p>
             {'My name is Son. I am a software developer at '}
-            <a href="https://dearlucy.co" style={{ color: '#e12a67', 'font-weight': 'bold' }}>DearLucy</a>
+            <a href="https://dearlucy.co" style={{ color: '#e12a67', fontWeight: 'bold' }}>DearLucy</a>
             {' - located in Helsinki, Finland. We build '}
-            <b style={{ color: '#e12a67' }}>Business Intelligence dashboards</b>
+            <b style={{ color: '#e12a67' }}>Business Intelligence dashboards </b>
             which provide accurate key performance indicator (KPI) data
             in real time and in transpent manner.  This helps leaders to
             monitor business performance and communicate easily with
@@ -45,7 +45,7 @@ const About = () => (
         </div>
       </div>
     </div>
-  </section>
+  </>
 );
 
 export default About;
