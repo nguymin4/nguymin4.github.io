@@ -10,7 +10,7 @@ const indicators = [
 const Header = () => (
   <nav id="view-indicators">
     {indicators.map(({ title, href }) => (
-      <Link to={href} className="view-indicator" activeClassName="active">
+      <Link key={href} to={href} className="view-indicator" activeClassName="active">
         <i>{title}</i>
         <span />
       </Link>
