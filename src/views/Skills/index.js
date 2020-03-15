@@ -1,16 +1,21 @@
 import React from 'react';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronCircleDown } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faCertificate } from '@fortawesome/free-solid-svg-icons';
 import SEO from '../../components/SEO';
 import achievements from './achievements';
 
 const Skills = () => (
-  <>
+  <PerfectScrollbar options={{
+    suppressScrollX: true,
+    scrollYMarginOffset: 25
+  }}
+  >
     <SEO title="Skills" />
     <div className="container">
       <div className="row">
         <h2>
-          <FontAwesomeIcon className="mr-3" icon={faChevronCircleDown} />
+          <FontAwesomeIcon className="mr-3" icon={faStar} />
           Skills
         </h2>
         <div className="skill">
@@ -24,7 +29,7 @@ const Skills = () => (
       </div>
       <div className="row">
         <h2>
-          <FontAwesomeIcon className="mr-3" icon={faChevronCircleDown} />
+          <FontAwesomeIcon className="mr-3" icon={faCertificate} />
           Achievements
         </h2>
         <div className="col-md-12 achievement-list">
@@ -42,7 +47,7 @@ const Skills = () => (
         </div>
       </div>
     </div>
-  </>
+  </PerfectScrollbar>
 );
 
 export default Skills;
