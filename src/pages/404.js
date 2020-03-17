@@ -1,5 +1,6 @@
 import React from 'react';
 import { Alert } from 'reactstrap';
+import '../styles/index.scss';
 
 export default () => (
   <div className="d-flex justify-content-center view active">
