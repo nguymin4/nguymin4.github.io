@@ -20,8 +20,9 @@ const Smokes = () => {
   return (
     <div id="smokes">
       {_.range(numberOfSmokes).map((i) => {
+        const key = `${numberOfSmokes}_${i}`;
         const left = `${i * SMOKE_WIDTH * 2}px`;
-        return (<div key={_.uniqueId()} className="smoke" style={{ left }} />);
+        return (<div key={key} className="smoke" style={{ left }} />);
       })}
     </div>
   );
