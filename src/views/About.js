@@ -23,21 +23,17 @@ const About = () => (
           Hello!
         </p>
         <p>
-          {'My name is Son. I am a software developer at '}
-          <a href="https://dearlucy.co" style={{ color: '#e12a67', fontWeight: 'bold' }}>Dear Lucy</a>
-          {' - located in Helsinki, Finland.'}
+          {'My name is Son. I am a backend engineer at '}
+          <a href="https://ultimate.ai" style={{ color: '#284d68', fontWeight: 'bold' }}>Ultimate.ai</a>
+          {' - in Helsinki, Finland.'}
         </p>
         <p>
-          {'At Dear Lucy, We build '}
-          <b style={{ color: '#e12a67' }}>Business Intelligence dashboards </b>
-          which provide accurate key performance indicator (KPI) data
-          in real time and in transpent manner.  This helps leaders to
-          monitor business performance and communicate easily with
-          organization and interest groups.
+          At Ultimate.ai, we build customer service automation platform with deep learning technology
+          which helps businesses scale their customer service.
         </p>
         <p>
           I am a supporter of the open-source movement.
-          My favourite development stack is Linux, vim, git, tmux, zsh, i3wm.
+          My development stack is Linux, vim, tmux, zsh, git, i3wm.
         </p>
       </div>
     </div>

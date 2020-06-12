@@ -19,7 +19,7 @@ const Skills = () => (
         <div className="skill">
           <ul>
             <li>Building data pipeline and data visualization</li>
-            <li>Javascript (NodeJS, React), Python (Flask, Numpy, Pandas)</li>
+            <li>Javascript (NodeJS, React), Python (Numpy, Pandas)</li>
             <li>PostgresSQL, MongoDB, Redis</li>
             <li>Linux, Docker, Heroku</li>
           </ul>
