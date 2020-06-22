@@ -19,7 +19,7 @@
   background-image: url($smoke-background);
   background-repeat: repeat;
   width: $smoke-width;
-  height: calc(100% - 80px);
+  height: calc(100% - 160px);
   position: absolute;
   bottom: 0;
   animation: smoke-float $smoke-floating-time infinite linear;
