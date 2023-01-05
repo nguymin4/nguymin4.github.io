@@ -1,26 +1,12 @@
 import logoCodility from '../../images/Codility.jpeg';
 import logoCoursera from '../../images/Coursera.jpeg';
-import logoDeepLearningAI from '../../images/DeepLearningAI.png';
-import logoStanfordOnline from '../../images/StanfordOnline.jpeg';
 
 const certifications = [
   {
-    name: 'Codility Golden Award for the Matrix 2021 Challenge',
-    authority: 'Codility',
-    url: 'https://app.codility.com/cert/view/certJNV2GV-UEERPXSA8Q3CD42N/',
-    logo: logoCodility
-  },
-  {
-    name: 'AI for Medical Diagnosis, Prognosis and Treatment',
-    authority: 'Stanford Online',
-    url: 'https://www.coursera.org/account/accomplishments/specialization/certificate/4XBEGCLKQK38',
-    logo: logoDeepLearningAI
-  },
-  {
-    name: 'AI in Healthcare',
-    authority: 'Stanford Online',
-    url: 'https://www.coursera.org/account/accomplishments/specialization/certificate/THLR9QSK4GCT',
-    logo: logoStanfordOnline
+    name: 'Probabilistic Graphical Model',
+    authority: 'Coursera',
+    url: 'https://www.coursera.org/account/accomplishments/specialization/GV23R48PMKV2',
+    logo: logoCoursera
   },
   {
     name: 'Machine Learning',
