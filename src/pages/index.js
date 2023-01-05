@@ -17,11 +17,12 @@ const useLoader = () => {
   return isLoaded;
 };
 
-function App({ location: { hash } }) {
+function App({ location }) {
   const isLoaded = useLoader();
-  const getClassName = (href) => (
-    classnames('view', { active: href === hash })
-  );
+  const getClassName = (href) => {
+    const hash = location.hash || '#home';
+    return classnames('view', { active: href === hash });
+  };
 
   return (
     <>
@@ -33,7 +34,7 @@ function App({ location: { hash } }) {
           <Smokes />
           <Nav />
           <div id="content">
-            <section id="home" className={getClassName('')}>
+            <section id="home" className={getClassName('#home')}>
               <Home />
             </section>
             <section id="about" className={getClassName('#about')}>

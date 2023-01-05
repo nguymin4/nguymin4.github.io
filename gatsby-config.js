@@ -36,7 +36,7 @@ module.exports = {
         preconnect: ['https://fonts.gstatic.com'],
         web: [{
           name: 'Open Sans',
-          file: 'https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'
+          file: 'https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap'
         }]
       }
     }
