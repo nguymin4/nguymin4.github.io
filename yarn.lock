@@ -6057,13 +6057,6 @@ gatsby-plugin-page-creator@^5.3.1:
     globby "^11.1.0"
     lodash "^4.17.21"
 
-gatsby-plugin-react-helmet@^6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-6.3.0.tgz#9be2e9da8da1271e0a821d360ce26b4a6d3c3005"
-  integrity sha512-/57kOlsCJEkJ13Qccdkk5GRNlE/doeC+SC6oxwwOfBq3WYzS+IBzhX6HruqSJQJdD3igo5t+kcGTiH0j+E4dvg==
-  dependencies:
-    "@babel/runtime" "^7.15.4"
-
 gatsby-plugin-sass@^6.3.1:
   version "6.3.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sass/-/gatsby-plugin-sass-6.3.1.tgz#52180e9658fd0f4ff38777cfbcdf772cc7ebc807"
@@ -9738,9 +9731,9 @@ react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825:
     neo-async "^2.6.1"
 
 react-side-effect@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-2.1.0.tgz#1ce4a8b4445168c487ed24dab886421f74d380d3"
-  integrity sha512-IgmcegOSi5SNX+2Snh1vqmF0Vg/CbkycU9XZbOHJlZ6kMzTmi3yc254oB1WCkgA7OQtIAoLmcSFuHTc/tlcqXg==
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-2.1.2.tgz#dc6345b9e8f9906dc2eeb68700b615e0b4fe752a"
+  integrity sha512-PVjOcvVOyIILrYoyGEpDN3vmYNLdy1CajSFNt4TDsVQC5KpTijDvWVoR+/7Rz2xT978D8/ZtFceXxzsPwZEDvw==
 
 react-transition-group@^4.4.2:
   version "4.4.5"
