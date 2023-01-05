@@ -30,16 +30,15 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-webfonts',
+      resolve: 'gatsby-omni-font-loader',
       options: {
-        fonts: {
-          google: [
-            {
-              family: 'Open Sans',
-              variants: ['400', '400italic']
-            }
-          ]
-        }
+        mode: 'async',
+        enableListener: true,
+        preconnect: ['https://fonts.gstatic.com'],
+        web: [{
+          name: 'Open Sans',
+          file: 'https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'
+        }]
       }
     }
   ]
