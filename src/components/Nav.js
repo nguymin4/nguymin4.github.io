@@ -13,20 +13,22 @@ const isPartiallyActive = (href) => ({ location: { hash } }) => {
   return { className };
 };
 
-const Nav = () => (
-  <nav id="view-indicators">
-    {indicators.map(({ title, href }) => (
-      <Link
-        key={href}
-        to={href}
-        getProps={isPartiallyActive(href)}
-        className="view-indicator"
-      >
-        <i>{title}</i>
-        <span />
-      </Link>
-    ))}
-  </nav>
-);
+function Nav() {
+  return (
+    <nav id="view-indicators">
+      {indicators.map(({ title, href }) => (
+        <Link
+          key={href}
+          to={href}
+          getProps={isPartiallyActive(href)}
+          className="view-indicator"
+        >
+          <i>{title}</i>
+          <span />
+        </Link>
+      ))}
+    </nav>
+  );
+}
 
 export default Nav;

@@ -45,7 +45,8 @@
     "develop": "gatsby develop",
     "deploy": "gatsby clean && gatsby build && gh-pages -d public -b master",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lint": "eslint src"
   },
   "repository": {
     "type": "git",

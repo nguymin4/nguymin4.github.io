@@ -17,7 +17,7 @@ const useLoader = () => {
   return isLoaded;
 };
 
-const App = ({ location: { hash } }) => {
+function App({ location: { hash } }) {
   const isLoaded = useLoader();
   const getClassName = (href) => (
     classnames('view', { active: href === hash })
@@ -48,7 +48,7 @@ const App = ({ location: { hash } }) => {
       )}
     </>
   );
-};
+}
 
 App.propTypes = {
   location: PropTypes.shape({

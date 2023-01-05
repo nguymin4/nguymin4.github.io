@@ -3,7 +3,7 @@ import _ from 'lodash';
 
 const SMOKE_WIDTH = 574;
 
-const Smokes = () => {
+function Smokes() {
   const [numberOfSmokes, setNumberOfSmokes] = useState(0);
   const update = _.debounce(() => {
     const { innerWidth } = window;
@@ -26,6 +26,6 @@ const Smokes = () => {
       })}
     </div>
   );
-};
+}
 
 export default Smokes;
