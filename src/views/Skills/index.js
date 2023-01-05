@@ -14,21 +14,21 @@ function Skills() {
       <div className="container">
         <div className="row">
           <h2>
-            <FontAwesomeIcon className="mr-3" icon={faStar} />
+            <FontAwesomeIcon className="me-3" icon={faStar} />
             Skills
           </h2>
           <div className="skill">
             <ul>
-              <li>Building data pipeline and data visualization</li>
-              <li>Javascript (NodeJS, React), Python (Numpy, Pandas)</li>
+              <li>Python, Typescript (NodeJS, React, React Native, GraphQL)</li>
               <li>PostgresSQL, MongoDB, Redis</li>
-              <li>Linux, Docker, Heroku</li>
+              <li>Google Cloud Platform: Composer (Airflow), BigQuery, Cloud Function etc.</li>
+              <li>Terraform, Docker, Linux, Heroku</li>
             </ul>
           </div>
         </div>
         <div className="row">
           <h2>
-            <FontAwesomeIcon className="mr-3" icon={faCertificate} />
+            <FontAwesomeIcon className="me-3" icon={faCertificate} />
             Certifications
           </h2>
           <div className="col-md-12 certification-list">

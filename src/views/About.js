@@ -11,15 +11,15 @@ function About() {
           <h3>Minh Son Nguyen</h3>
           <h4>Helsinki - Finland</h4>
           <div id="contact">
-            <a className="mr-3" href="https://github.com/nguymin4">
+            <a className="me-3" href="https://github.com/nguymin4">
               <FontAwesomeIcon size="2x" icon={faGithubSquare} />
             </a>
-            <a className="mr-3" href="https://www.linkedin.com/in/minhsonnguyen1209">
+            <a className="me-3" href="https://www.linkedin.com/in/minhsonnguyen1209">
               <FontAwesomeIcon size="2x" icon={faLinkedin} />
             </a>
           </div>
         </div>
-        <div className="col-sm-9">
+        <div className="col-sm-9 px-5 py-4">
           <p>
             Hello!
           </p>
@@ -31,9 +31,10 @@ function About() {
           <p>
             Meru Health is an online mental healthcare provider with the goal to help people
             to improve their mental health long-term by treating anxiety, depression and burnout.
+            I work with both product and data science teams.
           </p>
           <p>
-            My development stack is Linux, vim, tmux, zsh, git, i3wm.
+            My main development stack is Linux, vim, tmux, zsh, git and i3wm.
           </p>
         </div>
       </div>

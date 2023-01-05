@@ -12,7 +12,8 @@
 
   h2 {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 15px;
+    padding: 0px;
     font-size: 1.4em;
     line-height: 2.5em;
     cursor: pointer;
@@ -52,5 +53,15 @@
   .logo {
     display: block;
     height: 5rem;
+  }
+
+  .name {
+    margin-bottom: 10px;
+  }
+
+  a {
+    color: $color-green;
+    font-weight: bold;
+    text-decoration: none;
   }
 }
