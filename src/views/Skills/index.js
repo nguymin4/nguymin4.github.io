@@ -19,10 +19,13 @@ function Skills() {
           </h2>
           <div className="skill">
             <ul>
+              <li>Building, operating and monitoring data/ML systems</li>
               <li>Python, Typescript (NodeJS, React, React Native, GraphQL)</li>
               <li>PostgresSQL, MongoDB, Redis</li>
-              <li>Google Cloud Platform: Composer (Airflow), BigQuery, Cloud Function etc.</li>
-              <li>Terraform, Docker, Linux, Heroku</li>
+              <li>
+                Terraform, Google Cloud Platform: Composer (Airflow), BigQuery, Cloud Function etc.
+              </li>
+              <li>CI/CD, Linux, Docker</li>
             </ul>
           </div>
         </div>
