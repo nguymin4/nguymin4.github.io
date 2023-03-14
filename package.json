@@ -42,7 +42,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "deploy": "gatsby clean && gatsby build && gh-pages -d public -b master",
+    "deploy": "gatsby clean && gatsby build && gh-pages -d public -b main",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint src"
