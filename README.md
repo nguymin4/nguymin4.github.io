@@ -1,5 +1,13 @@
 ## My personal website
-This is the source code of my personal website.
 
-Author: Minh Son Nguyen  
-E-mail: minh.son.nguyen.1209@gmail.com
+### Local development
+```bash
+yarn develop
+```
+
+### Deploy using GitHub page
+```bash
+yarn deploy
+```
+
+Author: Minh Son Nguyen (minh.son.nguyen.1209@gmail.com)
