@@ -25,16 +25,11 @@ function About() {
           </p>
           <p>
             {'My name is Son. I am a data engineer at '}
-            <a href="https://meruhealth.com" style={{ color: '#5baf73', fontWeight: 'bold' }}>Meru Health</a>
+            <a href="https://elisa.com" style={{ color: '#00239d', fontWeight: 'bold', textDecoration: 'none' }}>Elisa Oyj</a>
             {' - in Helsinki, Finland.'}
           </p>
           <p>
-            Meru Health is an online mental healthcare provider with the goal to help people
-            to improve their mental health long-term by treating anxiety, depression and burnout.
-            I work with both product and data science teams.
-          </p>
-          <p>
-            My main development stack is Linux, vim, tmux, zsh, git and i3wm.
+            My main development stack is vim, tmux, zsh on Linux with i3wm or MacOS with yabai.
           </p>
         </div>
       </div>
