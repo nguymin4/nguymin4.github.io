@@ -11,10 +11,10 @@ function About() {
           <h3>Minh Son Nguyen</h3>
           <h4>Helsinki - Finland</h4>
           <div id="contact">
-            <a className="me-3" href="https://github.com/nguymin4">
+            <a className="me-3" href="https://github.com/nguymin4" aria-label="github">
               <FontAwesomeIcon size="2x" icon={faGithubSquare} />
             </a>
-            <a className="me-3" href="https://www.linkedin.com/in/minhsonnguyen1209">
+            <a className="me-3" href="https://www.linkedin.com/in/minhsonnguyen1209" aria-label="linkedin">
               <FontAwesomeIcon size="2x" icon={faLinkedin} />
             </a>
           </div>
@@ -26,10 +26,7 @@ function About() {
           <p>
             {'My name is Son. I am a data engineer at '}
             <a href="https://elisa.com" style={{ color: '#00239d', fontWeight: 'bold', textDecoration: 'none' }}>Elisa Oyj</a>
-            {' - in Helsinki, Finland.'}
-          </p>
-          <p>
-            My main development stack is vim, tmux, zsh on Linux with i3wm or MacOS with yabai.
+            {' in Helsinki, Finland.'}
           </p>
         </div>
       </div>
