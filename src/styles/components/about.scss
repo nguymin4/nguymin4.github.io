@@ -6,6 +6,12 @@
     color: $secondary-color;
     border-radius: 5px;
   }
+
+  a {
+    color: $color-green;
+    font-weight: bold;
+    text-decoration: none;
+  }
 }
 
 #contact {

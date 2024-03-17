@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Minh Son Nguyen',
 
-    description: 'Website of Minh Son Nguyen - software developer working in Helsinki, Finland',
+    description: 'Minh Son Nguyen - Data Engineer - Helsinki, Finland',
     author: '@nguymin4'
   },
   plugins: [

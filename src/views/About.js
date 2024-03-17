@@ -24,9 +24,9 @@ function About() {
             Hello!
           </p>
           <p>
-            {'My name is Son. I am a data engineer at '}
-            <a href="https://elisa.com" style={{ color: '#00239d', fontWeight: 'bold', textDecoration: 'none' }}>Elisa Oyj</a>
-            {' in Helsinki, Finland.'}
+            {'My name is Son. I am a data engineer working on Big Data and MLOps at '}
+            <a href="https://elisa.com">Elisa Oyj</a>
+            {' in Helsinki, Finland'}
           </p>
         </div>
       </div>
