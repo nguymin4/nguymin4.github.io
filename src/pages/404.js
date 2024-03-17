@@ -4,10 +4,10 @@ import '../styles/index.scss';
 
 export default function Page404() {
   return (
-    <div className="d-flex justify-content-center view active">
+    <div id="page_404" className="d-flex justify-content-center view active">
       <Alert className="mt-5 p-5" color="light">
-        <h3>Page Not Found</h3>
-        <p>Oops, we could not find this page!</p>
+        <h3>Oops 404! We could not find this page.</h3>
+        <a href="/">Go to main page</a>
       </Alert>
     </div>
   );

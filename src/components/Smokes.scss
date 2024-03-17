@@ -1,3 +1,7 @@
+$smoke-width: #{574 * 2}px;
+$smoke-floating-time: 15s;
+$smoke-background: "../images/smoke.png";
+
 #smokes {
   position: absolute;
   height: 100%;

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import Nav from '../components/Nav';
-import Smokes from '../components/Smokes';
-import SEO from '../components/SEO';
-import Home from '../views/Home';
 import About from '../views/About';
+import Home from '../views/Home';
+import LoadingScreen from '../components/LoadingScreen';
+import Nav from '../components/Nav';
+import SEO from '../components/SEO';
 import Skills from '../views/Skills';
+import Smokes from '../components/Smokes';
 import '../styles/index.scss';
 
 const useLoader = () => {
@@ -26,9 +27,7 @@ function App({ location }) {
 
   return (
     <>
-      <div id="overlay" className={classnames({ loaded: isLoaded })}>
-        <div className="loader" />
-      </div>
+      <LoadingScreen isLoaded={isLoaded} />
       {isLoaded && (
         <div className="band">
           <Smokes />

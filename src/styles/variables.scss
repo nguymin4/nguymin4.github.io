@@ -1,13 +1,8 @@
-// Variables
 $main-background: "../images/jonatan-pie-EvKBHBGgaUo-unsplash.jpg";
+$main-font-size: 16px;
+$mobile-screen: 560px;
+
+// Colors
 $main-color: #ffffff;
 $secondary-color: darken(#888888, 10%);
 $color-green: #5baf73;
-$main-font-size: 16px;
-$loading-circle-radius: 3em;
-$smoke-width: #{574 * 2}px;
-$smoke-floating-time: 15s;
-$smoke-background: "../images/smoke.png";
-$project-detail-width: 920px;
-$project-detail-top: 45px;
-$mobile-screen: 560px;

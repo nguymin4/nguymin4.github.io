@@ -20,6 +20,13 @@ body {
   }
 }
 
+body {
+  background: url($main-background) bottom center no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
 @media screen and (max-width: $mobile-screen) {
   html,
   body {
@@ -27,25 +34,19 @@ body {
   }
 }
 
+// Pages
+@import "../pages/index";
+@import "../pages/404";
 
-// Anti ad-block
-.fa {
-  &.fa-linkedin::before {
-    content: "\f08c";
-  }
+// Components
+@import "../components/LoadingScreen";
+@import "../components/Nav";
+@import "../components/Smokes";
 
-  &.fa-linkedin::before {
-    content: "\f0e1";
-  }
-}
+// Views
+@import "../views/Home";
+@import "../views/About";
+@import "../views/Skills";
 
-// Customize perfect scrollbar
-.ps__rail-y {
-  background-color: transparent !important;
-
-  .ps__thumb-y {
-    width: 5px !important;
-  }
-}
-
-@import "components/index";
+// Misc
+@import "misc";

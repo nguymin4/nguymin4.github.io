@@ -1,0 +1,19 @@
+// Anti ad-block
+.fa {
+  &.fa-linkedin::before {
+    content: "\f08c";
+  }
+
+  &.fa-linkedin::before {
+    content: "\f0e1";
+  }
+}
+
+// Customize perfect scrollbar
+.ps__rail-y {
+  background-color: transparent !important;
+
+  .ps__thumb-y {
+    width: 5px !important;
+  }
+}

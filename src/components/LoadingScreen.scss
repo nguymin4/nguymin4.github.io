@@ -1,5 +1,6 @@
 /* Loading animation */
 
+$loading-circle-radius: 3em;
 $diameter: #{$loading-circle-radius * 2}; /* stylelint-disable-line */
 $radius: #{$loading-circle-radius};
 
