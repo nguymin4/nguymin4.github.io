@@ -40,9 +40,9 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby clean && gatsby build",
     "develop": "gatsby develop",
-    "deploy": "gatsby clean && gatsby build && gh-pages -d public -b main",
+    "deploy": "yarn build && gh-pages -d public -b main",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint src"
