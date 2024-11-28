@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import _ from 'lodash';
+import debounce from 'debounce';
 
 const SMOKE_WIDTH = 574;
 
 function Smokes() {
   const [numberOfSmokes, setNumberOfSmokes] = useState(0);
-  const update = _.debounce(() => {
+  const update = debounce(() => {
     const { innerWidth } = window;
     const newNumberOfSmokes = Math.ceil(innerWidth / SMOKE_WIDTH) + 1;
     setNumberOfSmokes(newNumberOfSmokes);
@@ -19,7 +19,7 @@ function Smokes() {
 
   return (
     <div id="smokes">
-      {_.range(numberOfSmokes).map((i) => {
+      {Array.from({ length: numberOfSmokes }, (_v, i) => {
         const key = `${numberOfSmokes}_${i}`;
         const left = `${i * SMOKE_WIDTH * 2}px`;
         return (<div key={key} className="smoke" style={{ left }} />);
