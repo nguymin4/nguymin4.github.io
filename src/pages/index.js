@@ -60,5 +60,5 @@ export default App;
 // Exporting a named function called Head to set the metadata for a page
 // https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
 export function Head() {
-  return <SEO title="Home" />;
+  return <SEO title="Home" description="" />;
 }

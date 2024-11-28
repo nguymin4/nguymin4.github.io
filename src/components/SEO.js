@@ -38,12 +38,8 @@ function SEO({ description, title }) {
   );
 }
 
-SEO.defaultProps = {
-  description: ''
-};
-
 SEO.propTypes = {
-  description: PropTypes.string,
+  description: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired
 };
 
