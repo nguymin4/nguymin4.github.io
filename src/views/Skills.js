@@ -18,13 +18,17 @@ function Skills() {
           </h2>
           <div className="skill">
             <ul>
-              <li>Building and operating ML systems</li>
-              <li>Big data: Apache Beam (Dataflow), Apache Flume, Bigtable, BigQuery</li>
+              <li>Building and operating Big Data and Machine Learning systems</li>
               <li>
-                Terraform, Google Cloud Platform: Composer (Airflow), Cloud Run etc.
+                Big data: Apache Beam (Dataflow), Apache Flume, Apache Kafka,
+                Google Pub/Sub, BigQuery, Bigtable
               </li>
-              <li>Python, Typescript (NodeJS, React, React Native, GraphQL)</li>
-              <li>PostgresSQL, MongoDB, Redis</li>
+              <li>MLOps: VertexAI, Apache Airflow etc.</li>
+              <li>IaC Terraform on GCP, Ansible</li>
+              <li>Python (Numpy, Pandas, Tensorflow etc.)</li>
+              <li>Typescript (NodeJS, React, React Native, GraphQL)</li>
+              <li>Other languages: Bash, Go, Java</li>
+              <li>PostgresSQL, MongoDB, Redis, Firebase</li>
               <li>CI/CD, Linux, Docker</li>
             </ul>
           </div>
