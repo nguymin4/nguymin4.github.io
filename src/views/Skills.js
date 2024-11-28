@@ -1,8 +1,7 @@
 import React from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faCertificate } from '@fortawesome/free-solid-svg-icons';
-import certifications from './certifications';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 function Skills() {
   return (
@@ -28,23 +27,6 @@ function Skills() {
               <li>PostgresSQL, MongoDB, Redis</li>
               <li>CI/CD, Linux, Docker</li>
             </ul>
-          </div>
-        </div>
-        <div className="row">
-          <h2>
-            <FontAwesomeIcon className="me-3" icon={faCertificate} />
-            Certifications
-          </h2>
-          <div className="col-md-12 certification-list">
-            {certifications.map(({ authority, logo, name, url }) => (
-              <div key={url} className="certification d-flex justify-content-between">
-                <div className="text">
-                  <div className="name">{name}</div>
-                  <a href={url}>View</a>
-                </div>
-                <img className="logo" src={logo} alt={authority} title={authority} />
-              </div>
-            ))}
           </div>
         </div>
       </div>
