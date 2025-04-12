@@ -5,14 +5,14 @@
   "version": "1.0.0",
   "author": "Minh Son Nguyen <minh.son.nguyen.1209@gmail.com>",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.7.1",
-    "@fortawesome/free-brands-svg-icons": "^6.7.1",
-    "@fortawesome/free-solid-svg-icons": "^6.7.1",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "bootstrap": "^5.3.3",
+    "bootstrap": "^5.3.5",
     "classnames": "^2.5.1",
     "debounce": "^2.2.0",
-    "gatsby": "^5.14.0",
+    "gatsby": "^5.14.3",
     "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-image": "^3.14.0",
     "gatsby-plugin-manifest": "^5.14.0",
@@ -34,9 +34,9 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-react": "^7.37.2",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "gh-pages": "^6.2.0"
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "gh-pages": "^6.3.0"
   },
   "license": "MIT",
   "scripts": {
