@@ -54,6 +54,7 @@ export default [
             'server/test/**/*.js',
             '*.setup.js',
             'gatsby-*.js',
+            '**/gatsby-*.js',
             'eslint.config.{js,mjs,cjs}',
             '**/*.config.{js,mjs,cjs}',
           ],

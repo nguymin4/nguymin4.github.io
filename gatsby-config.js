@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
     title: 'Minh Son Nguyen',
@@ -6,7 +8,16 @@ module.exports = {
     author: '@nguymin4',
   },
   plugins: [
-    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        implementation: require('sass-embedded'),
+        sassOptions: {
+          quietDeps: true,
+          includePaths: ['node_modules'],
+        },
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

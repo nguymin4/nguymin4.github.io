@@ -1,6 +1,24 @@
-@import "~bootstrap/scss/bootstrap";
-@import "~react-perfect-scrollbar/dist/css/styles.css";
-@import "variables";
+@use "bootstrap/scss/bootstrap";
+@use "react-perfect-scrollbar/dist/css/styles.css";
+
+@use "./variables" as *;
+
+// Pages
+@use "../pages/index";
+@use "../pages/404" as *;
+
+// Components
+@use "../components/LoadingScreen";
+@use "../components/Nav";
+@use "../components/Smokes";
+
+// Views
+@use "../views/Home";
+@use "../views/About";
+@use "../views/Skills";
+
+// Misc
+@use "./misc";
 
 html,
 body {
@@ -33,20 +51,3 @@ body {
     font-size: 14px;
   }
 }
-
-// Pages
-@import "../pages/index";
-@import "../pages/404";
-
-// Components
-@import "../components/LoadingScreen";
-@import "../components/Nav";
-@import "../components/Smokes";
-
-// Views
-@import "../views/Home";
-@import "../views/About";
-@import "../views/Skills";
-
-// Misc
-@import "misc";
