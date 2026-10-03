@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { useStaticQuery, graphql } from 'gatsby'
 
 export const useSiteMetadata = () => {
   const data = useStaticQuery(graphql`
@@ -13,15 +13,15 @@ export const useSiteMetadata = () => {
         }
       }
     }
-  `);
+  `)
 
-  return data.site.siteMetadata;
-};
+  return data.site.siteMetadata
+}
 
 function SEO({ description, title }) {
-  const siteMetadata = useSiteMetadata();
-  const siteTitle = `${title} | ${siteMetadata.title}`;
-  const siteDescription = description || siteMetadata.description;
+  const siteMetadata = useSiteMetadata()
+  const siteTitle = `${title} | ${siteMetadata.title}`
+  const siteDescription = description || siteMetadata.description
 
   return (
     <>
@@ -35,12 +35,12 @@ function SEO({ description, title }) {
       <meta name="twitter:description" content={siteDescription} />
       <meta name="twitter:title" content={siteTitle} />
     </>
-  );
+  )
 }
 
 SEO.propTypes = {
   description: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
-};
+  title: PropTypes.string.isRequired,
+}
 
-export default SEO;
+export default SEO

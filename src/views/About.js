@@ -1,6 +1,6 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 function About() {
   return (
@@ -24,14 +24,14 @@ function About() {
             Hello!
           </p>
           <p>
-            {"I'm a Data Engineer working on Big Data and MLOps at "}
+            {'I\'m a Data Engineer working on Big Data and MLOps at '}
             <a href="https://elisa.com">Elisa Oyj</a>
             {' in Helsinki, Finland.'}
           </p>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default About;
+export default About

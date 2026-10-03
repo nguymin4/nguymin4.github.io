@@ -1,5 +1,5 @@
-import React from 'react';
-import profileLogo from '../images/field3.jpg';
+import React from 'react'
+import profileLogo from '../images/field3.jpg'
 
 function Home() {
   return (
@@ -13,7 +13,7 @@ function Home() {
         <p>-Richard Hamming-</p>
       </div>
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

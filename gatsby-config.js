@@ -3,7 +3,7 @@ module.exports = {
     title: 'Minh Son Nguyen',
 
     description: 'Minh Son Nguyen - Data Engineer - Helsinki, Finland',
-    author: '@nguymin4'
+    author: '@nguymin4',
   },
   plugins: [
     'gatsby-plugin-sass',
@@ -11,8 +11,8 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/images`
-      }
+        path: `${__dirname}/src/images`,
+      },
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
@@ -25,8 +25,8 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/images/zen_circle.png'
-      }
+        icon: 'src/images/zen_circle.png',
+      },
     },
     {
       resolve: 'gatsby-omni-font-loader',
@@ -36,9 +36,9 @@ module.exports = {
         preconnect: ['https://fonts.gstatic.com'],
         web: [{
           name: 'Open Sans',
-          file: 'https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap'
-        }]
-      }
-    }
-  ]
-};
+          file: 'https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap',
+        }],
+      },
+    },
+  ],
+}

@@ -1,17 +1,17 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from 'react'
+import { Link } from 'gatsby'
 
 const indicators = [
   { title: 'Home', href: '#home' },
   { title: 'About', href: '#about' },
-  { title: 'Skills', href: '#skills' }
-];
+  { title: 'Skills', href: '#skills' },
+]
 
-const isActive = (href) => ({ location }) => {
-  const hash = location.hash || '#home';
-  const className = hash === href ? 'view-indicator active' : 'view-indicator';
-  return { className };
-};
+const isActive = href => ({ location }) => {
+  const hash = location.hash || '#home'
+  const className = hash === href ? 'view-indicator active' : 'view-indicator'
+  return { className }
+}
 
 function Nav() {
   return (
@@ -28,7 +28,7 @@ function Nav() {
         </Link>
       ))}
     </nav>
-  );
+  )
 }
 
-export default Nav;
+export default Nav

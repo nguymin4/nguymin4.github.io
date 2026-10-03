@@ -1,13 +1,13 @@
-import React from 'react';
-import PerfectScrollbar from 'react-perfect-scrollbar';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import React from 'react'
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 function Skills() {
   return (
     <PerfectScrollbar options={{
       suppressScrollX: true,
-      scrollYMarginOffset: 25
+      scrollYMarginOffset: 25,
     }}
     >
       <div className="container">
@@ -35,7 +35,7 @@ function Skills() {
         </div>
       </div>
     </PerfectScrollbar>
-  );
+  )
 }
 
-export default Skills;
+export default Skills

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Alert } from 'reactstrap';
-import '../styles/index.scss';
+import React from 'react'
+import { Alert } from 'reactstrap'
+import '../styles/index.scss'
 
 export default function Page404() {
   return (
@@ -10,5 +10,5 @@ export default function Page404() {
         <a href="/">Go to main page</a>
       </Alert>
     </div>
-  );
+  )
 }
